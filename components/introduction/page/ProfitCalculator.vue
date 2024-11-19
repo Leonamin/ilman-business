@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue';
+import {ref, computed, watch} from 'vue';
+import gsap from 'gsap'
 import RowSheetTile from "~/components/introduction/0_components/RowSheetTile.vue";
 
 // 가격 설정
@@ -11,15 +12,23 @@ const 가격_교육상담료: number = 15330;
 
 // 환자 수와 관련 변수
 const 환자수 = ref(100);
+const tweeend환자수 = reactive({
+  number: 0,
+})
+
 const MIN_환자수 = 0;
 const MAX_환자수 = 500;
 
+watch(환자수, (n) => {
+  gsap.to(tweeend환자수, { duration: 1.0, number: Number(n) || 0 })
+})
+
 // 수익 계산
-const 수익_초기평가 = computed(() => 가격_초기평가 * 환자수.value);
-const 수익_계획수립 = computed(() => 가격_계획수립 * 환자수.value);
-const 수익_점검평가료 = computed(() => 가격_점검평가료 * 환자수.value);
-const 수익_환자관리료_중위험군 = computed(() => 가격_환자관리료_중위험군 * 환자수.value);
-const 수익_교육상담료 = computed(() => 가격_교육상담료 * 환자수.value);
+const 수익_초기평가 = computed(() => 가격_초기평가 * parseInt(tweeend환자수.number.toFixed(0)));
+const 수익_계획수립 = computed(() => 가격_계획수립 * parseInt(tweeend환자수.number.toFixed(0)));
+const 수익_점검평가료 = computed(() => 가격_점검평가료 * parseInt(tweeend환자수.number.toFixed(0)));
+const 수익_환자관리료_중위험군 = computed(() => 가격_환자관리료_중위험군 * parseInt(tweeend환자수.number.toFixed(0)));
+const 수익_교육상담료 = computed(() => 가격_교육상담료 * parseInt(tweeend환자수.number.toFixed(0)));
 
 // 총합 계산
 const 총합 = computed(() =>
@@ -45,42 +54,65 @@ const onChanged환자수 = (e: Event) => {
 </script>
 
 <template>
-  <div>
-    <h1>수익 계산기</h1>
-    <div class="input-container">
-      <p>만약 환자가</p>
-      <input
-          type="number"
-          v-model="환자수"
-          @input="onChanged환자수"
-          :min="MIN_환자수"
-          :max="MAX_환자수"
-          placeholder="100"
-      />
-      <p>명이라면</p>
+  <div class="layout">
+    <div class="main-content">
+      <h1>수익 계산기</h1>
+      <div class="input-container">
+        <p>만약 환자가</p>
+        <input
+            type="number"
+            v-model="환자수"
+            @input="onChanged환자수"
+            :min="MIN_환자수"
+            :max="MAX_환자수"
+            placeholder="100"
+        />
+        <p>명이라면</p>
+      </div>
+      <ul>
+        <li>
+          <RowSheetTile label="초기 평가" :amount="수익_초기평가"/>
+        </li>
+        <li>
+          <RowSheetTile label="계획 수립" :amount="수익_계획수립"/>
+        </li>
+        <li>
+          <RowSheetTile label="점검 평가료" :amount="수익_점검평가료"/>
+        </li>
+        <li>
+          <RowSheetTile label="환자 관리료 (중위험군)" :amount="수익_환자관리료_중위험군"/>
+        </li>
+        <li>
+          <RowSheetTile label="교육 상담료" :amount="수익_교육상담료"/>
+        </li>
+      </ul>
+      <p>총합: {{ 총합 }}</p>
     </div>
-    <ul>
-      <li>
-        <RowSheetTile label="초기 평가" :amount="수익_초기평가" />
-      </li>
-      <li>
-        <RowSheetTile label="계획 수립" :amount="수익_계획수립" />
-      </li>
-      <li>
-        <RowSheetTile label="점검 평가료" :amount="수익_점검평가료" />
-      </li>
-      <li>
-        <RowSheetTile label="환자 관리료 (중위험군)" :amount="수익_환자관리료_중위험군" />
-      </li>
-      <li>
-        <RowSheetTile label="교육 상담료" :amount="수익_교육상담료" />
-      </li>
-    </ul>
-    <p>총합: {{ 총합 }}</p>
   </div>
 </template>
 
 <style scoped>
+.layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    width: 100%;
+  }
+
+}
+
 /* 입력 컨테이너 스타일 */
 .input-container {
   display: flex;
@@ -126,3 +158,4 @@ ul {
   margin: 20px 0;
 }
 </style>
+

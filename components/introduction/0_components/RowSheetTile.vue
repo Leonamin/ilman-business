@@ -10,14 +10,14 @@ const formatPrice = (price: number) => {
 </script>
 
 <template>
-  <div class="container">
+  <div class="layout">
     <p>{{ props.label }}</p>
     <p>{{ formatPrice(props.amount) }}</p>
   </div>
 </template>
 
 <style scoped>
-.container {
+.layout {
   display: flex;
   justify-content: space-between;
   padding: 0 20px;

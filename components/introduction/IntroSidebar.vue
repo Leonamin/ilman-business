@@ -19,11 +19,13 @@ const props = defineProps<{
 
 <style scoped>
 .sidebar {
+  width: 70%;
   background-color: #2c3e50;
   color: white;
   padding: 20px;
   border-radius: 8px;
   display: flex;
+  width: fit-content;
   flex-direction: column;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }

@@ -7,6 +7,7 @@ import WorkProcess from "~/components/introduction/page/WorkProcess.vue";
 import FAQ from "~/components/introduction/page/FAQ.vue";
 import DoctorInterview from "~/components/introduction/page/DoctorInterview.vue";
 import IntroSidebar from "~/components/introduction/IntroSidebar.vue";
+import IndexHeader from "~/components/introduction/0_components/IndexHeader.vue";
 
 const sideItems: SideItem[] = [
   {id: 1, label: '소개', href: '#intro'},
@@ -18,54 +19,61 @@ const sideItems: SideItem[] = [
 </script>
 
 <template>
-
-  <div class="stack-container">
+  <div class="layout">
     <!-- 메인 컨텐츠 -->
     <div class="main-content">
-
-<!--      <Introduction id="intro"/>-->
-<!--      <Feature id="feature"/>-->
+      <Introduction id="intro"/>
+      <Feature id="feature"/>
       <ProfitCalculator id="profit-calculator"/>
       <WorkProcess id="work-process"/>
       <DoctorInterview id="faq"/>
       <FAQ/>
     </div>
-
-
-    <!-- 사이드바 -->
-    <div class="sidebar-layout">
+      <div class="sidebar-content">
       <IntroSidebar :list-item="sideItems"/>
-    </div>
+      </div>
+
   </div>
+
+
 </template>
 
 
 <style scoped>
-/* Stack 컨테이너 */
-.stack-container {
+@media (max-width: 768px) {
+  .header-container {
+    height: var(--app-bar-height-mobile);
+  }
+}
+
+.layout {
+  justify-content: space-between;
+
   display: flex;
   width: 100%;
-  height: 100vh;
+  background-color: var(--background-color);
 }
 
 /* 메인 컨텐츠 */
 .main-content {
-  overflow-y: auto;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 20px;
-  background-color: #f5f5f5;
   scroll-behavior: smooth;
+  flex: 2
+}
+
+.spacer {
+  flex: 1;
 }
 
 /* 사이드바 */
-.sidebar-layout {
-  position: absolute;
-  right: 16px;
-  top: 50%;
+.sidebar {
+  position: fixed;
+  bottom: 0;
+}
+
+.sidebar-content {
+  justify-content: flex-end; /* 오른쪽 정렬 */
+  align-content: center;
+  display: flex;
 }
 
 </style>
