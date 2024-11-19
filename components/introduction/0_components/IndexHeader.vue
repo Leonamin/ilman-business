@@ -4,7 +4,7 @@
 
 <template>
   <header class="header-container">
-    <img src="~/assets/svgs/shm_logo.svg">
+    <img class="logo" src="~/assets/svgs/shm_logo.svg">
     <div class="header-nav-item">
       <a href="#intro">소개</a>
       <a href="#feature">기능</a>
@@ -16,11 +16,14 @@
 </template>
 
 <style scoped>
+.logo {
+  padding: 0 32px;
+}
+
 .header-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 16px;
   border-bottom:#cccccc solid 1px;
   width: 100%;
   height: var(--app-bar-height-desktop);
