@@ -1,0 +1,52 @@
+/* 버튼 프리셋: Primary */
+.button-primary {
+    background-color: var(--color-primary);
+    color: var(--color-text-inverse);
+    border: 1px solid var(--color-primary);
+}
+
+.button-primary:hover {
+    background-color: var(--color-primary-hover);
+}
+
+.button-primary:disabled {
+    background-color: var(--color-primary-disabled);
+    color: var(--color-text-tertiary);
+    cursor: not-allowed;
+}
+
+.button-primary-outline {
+    background-color: transparent;
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+}
+
+.button-primary-outline:hover {
+    background-color: var(--color-primary);
+    color: var(--color-text-inverse);
+}
+
+.button-primary-outline:disabled {
+    background-color: transparent;
+    border: 1px solid var(--color-primary-disabled);
+    color: var(--color-primary-disabled);
+    cursor: not-allowed;
+}
+
+/* 버튼 프리셋: Secondary */
+
+.button-secondary {
+    background-color: var(--secondary-color);
+    color: var(--color-text-inverse);
+}
+
+.button-secondary:hover {
+    background-color: var(--secondary-color-hover);
+}
+
+.button-secondary:disabled {
+    background-color: var(--secondary-color-disabled);
+    color: var(--color-text-tertiary);
+    cursor: not-allowed;
+}
+
