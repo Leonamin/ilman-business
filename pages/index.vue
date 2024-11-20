@@ -2,12 +2,11 @@
 import type {SideItem} from "~/types/SideItem";
 import Introduction from "~/components/introduction/page/Introduction.vue";
 import Feature from "~/components/introduction/page/Feature.vue";
-import ProfitCalculator from "~/components/introduction/page/ProfitCalculator.vue";
 import WorkProcess from "~/components/introduction/page/WorkProcess.vue";
 import FAQ from "~/components/introduction/page/FAQ.vue";
 import DoctorInterview from "~/components/introduction/page/DoctorInterview.vue";
 import IntroSidebar from "~/components/introduction/IntroSidebar.vue";
-import IndexHeader from "~/components/introduction/0_components/IndexHeader.vue";
+import ProfitCalculator from "~/components/introduction/page/ProfitCalculator.vue";
 
 const sideItems: SideItem[] = [
   {id: 1, label: '소개', href: '#intro'},
@@ -24,8 +23,7 @@ const sideItems: SideItem[] = [
     <div>
       <Introduction id="intro"/>
       <Feature id="feature"/>
-<!--      사이즈가 옆에 16px 늘어나 버리는 문제 있음-->
-<!--      <ProfitCalculator id="profit-calculator"/>-->
+      <ProfitCalculator id="profit-calculator"/>
       <WorkProcess id="work-process"/>
       <DoctorInterview id="faq"/>
       <FAQ/>
