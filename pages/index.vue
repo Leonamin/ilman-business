@@ -5,8 +5,8 @@ import Feature from "~/components/introduction/page/Feature.vue";
 import WorkProcess from "~/components/introduction/page/WorkProcess.vue";
 import FAQ from "~/components/introduction/page/FAQ.vue";
 import DoctorInterview from "~/components/introduction/page/DoctorInterview.vue";
-import IntroSidebar from "~/components/introduction/IntroSidebar.vue";
 import ProfitCalculator from "~/components/introduction/page/ProfitCalculator.vue";
+import ScrollToTopButton from "~/components/0_components/button/ScrollToTopButton.vue";
 
 const sideItems: SideItem[] = [
   {id: 1, label: '소개', href: '#intro'},
@@ -29,8 +29,9 @@ const sideItems: SideItem[] = [
       <FAQ/>
     </div>
     <div class="sidebar-layout">
-      <IntroSidebar :list-item="sideItems"/>
+      <ScrollToTopButton/>
     </div>
+
 
   </div>
 
@@ -45,14 +46,6 @@ const sideItems: SideItem[] = [
   width: 100%;
   background-color: var(--color-bg-primary);
   scroll-behavior: smooth;
-}
-
-/* 사이드바 */
-
-.sidebar-layout {
-  position: fixed;
-  bottom: 16px;
-  right: 16px;
 }
 
 </style>
