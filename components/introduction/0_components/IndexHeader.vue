@@ -27,7 +27,7 @@
   border-bottom:#cccccc solid 1px;
   width: 100%;
   height: var(--app-bar-height-desktop);
-  background-color: var(--app-bar-background-color);
+  color: var(--color-bg-primary);
 }
 
 .header-nav-item {
@@ -46,10 +46,20 @@
 }
 
 .header-nav-item a:hover {
-  color: var(--primary-color);
+  color: var(--color-primary);
 }
 
 .header-nav-item a:visited {
   color: #1C1C1C;
+}
+
+
+@media (max-width: 768px) {
+  .header-container {
+    height: var(--app-bar-height-mobile);
+  }
+  .header-nav-item {
+    display: none;
+  }
 }
 </style>

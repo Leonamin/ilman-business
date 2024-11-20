@@ -21,17 +21,18 @@ const sideItems: SideItem[] = [
 <template>
   <div class="layout">
     <!-- 메인 컨텐츠 -->
-    <div class="main-content">
+    <div>
       <Introduction id="intro"/>
       <Feature id="feature"/>
-      <ProfitCalculator id="profit-calculator"/>
+<!--      사이즈가 옆에 16px 늘어나 버리는 문제 있음-->
+<!--      <ProfitCalculator id="profit-calculator"/>-->
       <WorkProcess id="work-process"/>
       <DoctorInterview id="faq"/>
       <FAQ/>
     </div>
-      <div class="sidebar-content">
+    <div class="sidebar-layout">
       <IntroSidebar :list-item="sideItems"/>
-      </div>
+    </div>
 
   </div>
 
@@ -40,40 +41,20 @@ const sideItems: SideItem[] = [
 
 
 <style scoped>
-@media (max-width: 768px) {
-  .header-container {
-    height: var(--app-bar-height-mobile);
-  }
-}
-
 .layout {
-  justify-content: space-between;
-
   display: flex;
+  flex-direction: column;
   width: 100%;
-  background-color: var(--background-color);
-}
-
-/* 메인 컨텐츠 */
-.main-content {
+  background-color: var(--color-bg-primary);
   scroll-behavior: smooth;
-  flex: 2
-}
-
-.spacer {
-  flex: 1;
 }
 
 /* 사이드바 */
-.sidebar {
-  position: fixed;
-  bottom: 0;
-}
 
-.sidebar-content {
-  justify-content: flex-end; /* 오른쪽 정렬 */
-  align-content: center;
-  display: flex;
+.sidebar-layout {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
 }
 
 </style>
