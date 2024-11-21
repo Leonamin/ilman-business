@@ -53,7 +53,6 @@
   color: #1C1C1C;
 }
 
-
 @media (max-width: 768px) {
   .header-container {
     height: var(--app-bar-height-mobile);

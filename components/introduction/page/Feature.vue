@@ -2,7 +2,7 @@
   <div class="layout">
     <div class="explanation">
       <AnimatedElement>
-        <h1>일만사업이란 무엇인가요?</h1>
+        <h2>일만사업이란 무엇인가요?</h2>
         <h5>일차병원 만성질환관리사업(이하 일만사업)은 만성질환(고혈압/당뇨병)을 가진 환자들의 건강 수명 증진을 위한 국민건강보험 공단의 사업입니다.</h5>
       </AnimatedElement>
 
@@ -11,9 +11,9 @@
     <div class="feature">
       <AnimatedElement>
 
-        <h1>
+        <h2>
           아임파인으로<br>일만사업에 참여한다면?
-        </h1>
+        </h2>
         <ul class="feature-card">
           <li>도입 단 한달부터 상승하는<br>매출을 직접 확인하세요.</li>
           <li>까다로운 환자관리<br>저희가 전부 도와드리겠습니다.</li>
@@ -46,13 +46,13 @@
   text-align: center;
 }
 
-.explanation h1 {
-  font-size: 3.5rem;
+.explanation h2 {
+  font-size: var(--font-size-h2);
   font-weight: bold;
 }
 
 .explanation h5 {
-  font-size: 1.5rem;
+  font-size: var(--font-size-h5);
   font-weight: normal;
 }
 
@@ -66,8 +66,8 @@
   width: 100%;
 }
 
-.feature h1 {
-  font-size: 3.5rem;
+.feature h2 {
+  font-size: var(--font-size-h2);
   font-weight: bold;
   text-align: center;
 }
@@ -91,6 +91,27 @@ ul, li {
   margin: 20px;
 }
 
+@media (max-width: 768px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .explanation h2 {
+    font-size: var(--font-size-h2-mobile);
+    font-weight: bold;
+  }
+
+  .explanation h5 {
+    font-size: var(--font-size-h5-mobile);
+    font-weight: normal;
+  }
+
+  .feature h2 {
+    font-size: var(--font-size-h2-mobile);
+    font-weight: bold;
+    text-align: center;
+  }
+}
 
 </style>
 <script setup lang="ts">

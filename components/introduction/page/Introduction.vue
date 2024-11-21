@@ -62,7 +62,7 @@ const handleClick = () => {
 }
 
 .main-content h1 {
-  font-size: 4rem;
+  font-size: var(--font-size-h1);
   font-weight: 700;
   line-height: 1.4;
   text-align: center;
@@ -129,7 +129,7 @@ const handleClick = () => {
   }
 
   .main-content h1 {
-    font-size: 2.5rem;
+    font-size: var(--font-size-h1-mobile);
   }
 
   .button-list {
