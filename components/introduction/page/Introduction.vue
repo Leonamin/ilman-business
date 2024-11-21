@@ -5,6 +5,15 @@ import SolidButton from "~/components/0_components/button/SolidButton.vue";
 const handleClick = () => {
 };
 
+const isMobile = ref(false);
+
+// 모바일 화면 768 픽셀 이하인 경우 이미지 변경
+onMounted(() => {
+    window.addEventListener("resize", () => {
+        isMobile.value = window.innerWidth <= 768;
+    });
+});
+
 </script>
 
 <template>
@@ -29,6 +38,12 @@ const handleClick = () => {
         />
       </div>
     </div>
+<!--    코드 개선 필요 v-if 사용하면 성능 낭비-->
+    <div class="background-image">
+      <img v-if="!isMobile" src="~assets/images/intro-background.jpg" alt="Feature Background"/>
+      <img v-if="isMobile" src="~assets/images/intro-background-mobile.jpg" alt="Feature Background"/>
+    </div>
+    <!-- 화살표 -->
     <a href="#feature">
       <div class="arrow-container">
         <img src="~/assets/svgs/icons/icon_chevron_down.svg" alt="Arrow" class="arrow"/>
@@ -53,12 +68,14 @@ const handleClick = () => {
 
 /* 메인 컨텐츠 */
 .main-content {
-  background-color: var(--color-bg-primary);
+  position: relative; /* z-index 적용을 위해 설정 */
+  z-index: 1; /* 배경 이미지 위에 표시 */
   display: flex;
   align-items: center;
   flex-direction: column;
   flex-grow: 1;
   gap: 16px;
+
 }
 
 .main-content h1 {
@@ -96,6 +113,24 @@ const handleClick = () => {
   justify-content: center;
   align-items: center;
   gap: 16px;
+}
+
+.background-image {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 50%; /* 화살표와 버튼 사이에 위치 */
+  z-index: 0; /* 메인 컨텐츠 뒤에 배치 */
+  overflow: hidden;
+}
+
+.background-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 이미지 비율 유지하며 요소에 맞게 채우기 */
+  /* 그라데이션 마스크 */
+  mask-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.2));
 }
 
 /* 화살표 컨테이너 */
