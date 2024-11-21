@@ -4,7 +4,7 @@
 
 <template>
   <header class="header-container">
-    <img class="logo" src="~/assets/svgs/shm_logo.svg">
+    <img class="logo" src="~/assets/svgs/shm_black_logo.svg">
     <div class="header-nav-item">
       <a href="#intro">소개</a>
       <a href="#feature">기능</a>
