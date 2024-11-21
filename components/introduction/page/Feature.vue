@@ -1,19 +1,26 @@
 <template>
   <div class="layout">
     <div class="explanation">
-      <h1>일만사업이란 무엇인가요?</h1>
-      <h5>일차병원 만성질환관리사업(이하 일만사업)은 만성질환(고혈압/당뇨병)을 가진 환자들의 건강 수명 증진을 위한 국민건강보험 공단의 사업입니다.</h5>
+      <AnimatedElement>
+        <h1>일만사업이란 무엇인가요?</h1>
+        <h5>일차병원 만성질환관리사업(이하 일만사업)은 만성질환(고혈압/당뇨병)을 가진 환자들의 건강 수명 증진을 위한 국민건강보험 공단의 사업입니다.</h5>
+      </AnimatedElement>
+
       <SolidButton preset="primaryOutline" text="일만사업에 대해 더 알아보기"/>
     </div>
     <div class="feature">
-      <h1>
-        아임파인으로<br>일만사업에 참여한다면?
-      </h1>
-      <ul class="feature-card">
-        <li>도입 단 한달부터 상승하는<br>매출을 직접 확인하세요.</li>
-        <li>까다로운 환자관리<br>저희가 전부 도와드리겠습니다.</li>
-        <li>필요한 자료<br>저희는 이미 준비를 끝내놓았습니다.</li>
-      </ul>
+      <AnimatedElement>
+
+        <h1>
+          아임파인으로<br>일만사업에 참여한다면?
+        </h1>
+        <ul class="feature-card">
+          <li>도입 단 한달부터 상승하는<br>매출을 직접 확인하세요.</li>
+          <li>까다로운 환자관리<br>저희가 전부 도와드리겠습니다.</li>
+          <li>필요한 자료<br>저희는 이미 준비를 끝내놓았습니다.</li>
+        </ul>
+      </AnimatedElement>
+
     </div>
   </div>
 </template>
@@ -88,4 +95,5 @@ ul, li {
 </style>
 <script setup lang="ts">
 import SolidButton from "~/components/0_components/button/SolidButton.vue";
+import AnimatedElement from "~/components/0_components/animation/AnimatedElement.vue";
 </script>

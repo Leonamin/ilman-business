@@ -2,6 +2,7 @@
 import {ref, computed, reactive, watch} from 'vue';
 import gsap from 'gsap';
 import RowSheetTile from '~/components/introduction/0_components/RowSheetTile.vue';
+import AnimatedElement from "~/components/0_components/animation/AnimatedElement.vue";
 
 // 가격 설정
 const 가격 = {
@@ -79,7 +80,9 @@ onMounted(() => {
   <div class="layout">
     <div class="spacer"/>
     <div class="main-content">
-      <h1>수익 계산기</h1>
+      <AnimatedElement>
+        <h1>수익 계산기</h1>
+      </AnimatedElement>
       <div class="input-container">
         <p>만약 환자가</p>
         <input
