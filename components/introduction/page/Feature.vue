@@ -1,3 +1,29 @@
+<script setup lang="ts">
+import SolidButton from "~/components/0_components/button/SolidButton.vue";
+import AnimatedElement from "~/components/0_components/animation/AnimatedElement.vue";
+
+interface FeatureModel {
+  title: string;
+  description: string;
+}
+
+const features: FeatureModel[] = [
+  {
+    title: "도입 단 한달부터\n상승하는 매출을 직접 확인하세요.",
+    description: "일만사업에 참여하면 단 한달만에 상승하는 매출을 직접 확인할 수 있습니다. 아임파인은 일만사업에 참여하는 병원들을 위해 매출 상승을 위한 다양한 서비스를 제공합니다."
+
+  },
+  {
+    title: "까다로운 환자관리\n저희가 전부 도와드리겠습니다.",
+    description: "일만사업에 참여하면 까다로운 환자관리를 저희가 전부 도와드립니다. 아임파인은 일만사업에 참여하는 병원들을 위해 환자관리를 위한 다양한 서비스를 제공합니다."
+  },
+  {
+    title: "필요한 자료 저희는\n이미 준비를 끝내놓았습니다.",
+    description: "일만사업에 참여하면 필요한 자료를 저희가 이미 준비를 끝내놓았습니다. 아임파인은 일만사업에 참여하는 병원들을 위해 필요한 자료를 제공합니다."
+  }
+]
+</script>
+
 <template>
   <div class="layout">
     <div class="explanation">
@@ -14,11 +40,11 @@
         <h2>
           아임파인으로<br>일만사업에 참여한다면?
         </h2>
-        <ul class="feature-card">
-          <li>도입 단 한달부터 상승하는<br>매출을 직접 확인하세요.</li>
-          <li>까다로운 환자관리<br>저희가 전부 도와드리겠습니다.</li>
-          <li>필요한 자료<br>저희는 이미 준비를 끝내놓았습니다.</li>
-        </ul>
+        <div class="card-container">
+          <div class="card" v-for="feature in features" :key="feature.title">
+            <h3>{{ feature.title }}</h3>
+          </div>
+        </div>
       </AnimatedElement>
 
     </div>
@@ -72,23 +98,23 @@
   text-align: center;
 }
 
-ul, li {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
 
-.feature-card {
+.card-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
-  align-items: stretch;
   width: 100%;
+  gap: 1rem;
 }
 
-.feature-card li {
-  flex: 1;
-  margin: 20px;
+.card {
+  white-space: pre-wrap;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 768px) {
@@ -114,7 +140,3 @@ ul, li {
 }
 
 </style>
-<script setup lang="ts">
-import SolidButton from "~/components/0_components/button/SolidButton.vue";
-import AnimatedElement from "~/components/0_components/animation/AnimatedElement.vue";
-</script>
