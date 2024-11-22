@@ -70,7 +70,7 @@ onMounted(() => {
   justify-content: start;
   align-items: center;
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
 
   scroll-behavior: smooth;
 }
