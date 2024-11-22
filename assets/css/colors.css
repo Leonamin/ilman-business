@@ -4,9 +4,13 @@
     --color-primary-hover: #3700b3;
     --color-primary-disabled: #b39ddb;
 
-    --secondary-color: #03dac5;
-    --secondary-color-hover: #018786;
-    --secondary-color-disabled: #b2dfdb;
+    --color-secondary: #03dac5;
+    --color-secondary-hover: #018786;
+    --color-secondary-disabled: #b2dfdb;
+
+    --color-tertiary: #ff4081;
+    --color-tertiary-hover: #c51162;
+    --color-tertiary-disabled: #f48fb1;
 
     /* 색상 변수 배경*/
 
@@ -32,6 +36,14 @@
 
     --color-text-inverse: #fff;
 
+    --color-text-green: #2e7d32;
+    --color-text-green-light: #4caf50;
+    --color-text-blue: #1565c0;
+    --color-text-blue-light: #2196f3;
+    --color-text-yellow: #f57f17;
+    --color-text-yellow-light: #ff9800;
+    --color-text-red: #c62828;
+    --color-text-red-light: #f44336;
 }
 
 :root.dark {
@@ -40,8 +52,8 @@
     --color-primary-hover: #3700b3;
     --color-primary-disabled: #b39ddb;
 
-    --secondary-color: #03dac5;
-    --secondary-color-hover: #018786;
+    --color-secondary: #03dac5;
+    --color-secondary-hover: #018786;
 
     /* 색상 변수 배경*/
 

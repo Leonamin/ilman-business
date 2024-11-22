@@ -1,0 +1,150 @@
+/* 정렬 */
+
+.center-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    white-space: pre-wrap;
+}
+
+.center-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    white-space: pre-wrap;
+}
+
+.inline-p {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    white-space: pre-wrap;
+}
+
+/* 스페이싱 */
+
+.spb-small {
+    margin-bottom: var(--padding-small);
+}
+
+.spb-medium {
+    margin-bottom: var(--padding-medium);
+}
+
+.spb-large {
+    margin-bottom: var(--padding-large);
+}
+
+/* 텍스트 크기 */
+.text-h1 {
+    font-size: var(--font-size-h1);
+    font-weight: 700;
+}
+
+.text-h2 {
+    font-size: var(--font-size-h2);
+    font-weight: 700;
+}
+
+.text-h3 {
+    font-size: var(--font-size-h3);
+    font-weight: 700;
+}
+
+.text-h4 {
+    font-size: var(--font-size-h4);
+    font-weight: 700;
+}
+
+.text-h5 {
+    font-size: var(--font-size-h5);
+    font-weight: 700;
+}
+
+.text-body1 {
+    font-size: var(--font-size-body1);
+}
+
+.text-body2 {
+    font-size: var(--font-size-body2);
+}
+
+.text-h1-m {
+    font-size: var(--font-size-h1-mobile);
+    font-weight: 700;
+}
+
+.text-h2-m {
+    font-size: var(--font-size-h2-mobile);
+    font-weight: 700;
+}
+
+.text-h3-m {
+    font-size: var(--font-size-h3-mobile);
+    font-weight: 700;
+}
+
+.text-h4-m {
+    font-size: var(--font-size-h4-mobile);
+    font-weight: 700;
+}
+
+.text-h5-m {
+    font-size: var(--font-size-h5-mobile);
+    font-weight: 700;
+}
+
+.text-body1-m {
+    font-size: var(--font-size-body1-mobile);
+}
+
+.text-body2-m {
+    font-size: var(--font-size-body2-mobile);
+}
+
+.text-caption {
+    font-size: var(--font-size-caption);
+}
+
+.text-caption-m {
+    font-size: var(--font-size-caption-mobile);
+}
+
+/* 텍스트 두께 */
+.text-bold {
+    font-weight: 700;
+}
+
+.text-semi-bold {
+    font-weight: 600;
+}
+
+.text-medium {
+    font-weight: 500;
+}
+
+.text-normal {
+    font-weight: 400;
+}
+
+/* 텍스트 색상 */
+
+.text-primary {
+    color: var(--color-primary);
+}
+
+.text-secondary {
+    color: var(--color-secondary);
+}
+
+.text-tertiary {
+    color: var(--color-tertiary);
+}
+
+.text-positive {
+    color: var(--color-text-green);
+}
+
+.text-negative {
+    color: var(--color-text-red);
+}

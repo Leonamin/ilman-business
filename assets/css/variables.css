@@ -16,11 +16,21 @@
     --font-size-h4: 2.5rem;
     --font-size-h5: 2rem;
 
+    --font-size-body1: 1.75rem;
+    --font-size-body2: 1.5rem;
+
+    --font-size-caption: 0.25rem;
+
     --font-size-h1-mobile: 3.5rem;
     --font-size-h2-mobile: 2.5rem;
     --font-size-h3-mobile: 2rem;
     --font-size-h4-mobile: 1.75rem;
     --font-size-h5-mobile: 1.5rem;
+
+    --font-size-body1-mobile: 1.25rem;
+    --font-size-body2-mobile: 1rem;
+
+    --font-size-caption-mobile: 0.75rem;
 
     --font-size-small: 12px;
     --font-size-medium: 16px;
