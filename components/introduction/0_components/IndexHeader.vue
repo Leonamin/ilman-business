@@ -18,6 +18,7 @@
 <style scoped>
 .logo {
   padding: 0 32px;
+  max-width: 250px;
 }
 
 .header-container {
@@ -59,6 +60,9 @@
   }
   .header-nav-item {
     display: none;
+  }
+  .logo {
+    max-width: 200px;
   }
 }
 </style>
