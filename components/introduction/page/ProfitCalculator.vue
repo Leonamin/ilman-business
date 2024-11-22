@@ -13,6 +13,10 @@ const onChangeImfine = () => {
   selected회차.value = isImfine.value ? 회차_아임파인_사용시 : 회차_스스로;
 };
 
+const totalAmountStyle = computed(() => {
+  return 총합.value < 0 ? "text-negative" : "text-positive";
+});
+
 // 가격 설정
 const 가격 = {
   초기평가: 35060,
@@ -67,37 +71,36 @@ const 총합_라운딩 = computed(() => {
   return formatTotalProfit(총합.value);
 });
 
-// 환자 수 변경 핸들러
-const onChanged환자수 = (event: Event) => {
-  const target = event.target as HTMLInputElement;
-  let value = parseInt(target.value);
-  if (isNaN(value)) value = MIN_환자수;
-  환자수.value = Math.max(MIN_환자수, Math.min(value, MAX_환자수));
-};
-
-watch(환자수, () =>
-    console.log(`환자수 변경: ${환자수.value}`));
-
 </script>
 
 <template>
   <div class="layout">
     <div class="main-content">
       <AnimatedElement>
-        <h1>수익 계산기</h1>
+        <div class="center-row">
+          <h2 class="text-h2 text-bold spb-medium">수익 계산기</h2 >
+        </div>
       </AnimatedElement>
-      <div class="selector-container">
-        <p>원장님 스스로</p>
+      <div class="selector-container spb-large">
+        <div class="center-row">
+          <p class="text-body1 text-bold">원장님 </p>
+          <p class="text-body1 text-bold text-negative">스스로</p>
+        </div>
         <AntSwitch :checked="isImfine" @click="onChangeImfine"/>
-        <p>아임파인과 함께</p>
-      </div>
-      <div class="input-container">
-        <p>만약 환자가</p>
-        <p>{{ 환자수 }}</p>
-        <p>명이라면</p>
 
+        <div class="center-row">
+          <p class="text-body1 text-bold">아임파인과 </p>
+          <p class="text-body1 text-bold text-positive">함께</p>
+        </div>
       </div>
-      <h1>{{ 총합_라운딩 }}</h1>
+      <div class="patient-block center-row spb-medium">
+        <p class="text-body1 text-medium">만약 환자가 </p>
+        <p class="text-body1 text-positive text-bold">{{ 환자수 }}</p>
+        <p class="text-body1 text-medium">명이라면</p>
+      </div>
+      <div class="center-row">
+        <p class="text-h5"> {{ 총합_라운딩 }} </p>
+      </div>
 
       <div class="slide-container">
         <AntSlider v-model:value="환자수" :min="MIN_환자수" :max="MAX_환자수" :tooltipOpen=false :step=10></AntSlider>
@@ -105,7 +108,12 @@ watch(환자수, () =>
       <div class="profit-container">
         <ul>
           <li v-for="(value, key) in profits" :key="key">
-            <RowSheetTile :label="value.label" :amount="value.amount"/>
+            <RowSheetTile
+                :label="value.label"
+                :amount="value.amount"
+                label-style="text-body2 "
+                :amount-style="['text-body2', isImfine  ? 'text-positive' : 'text-negative']"
+            />
           </li>
         </ul>
       </div>
@@ -124,7 +132,6 @@ watch(환자수, () =>
   height: 100%;
 }
 
-
 .selector-container {
   display: flex;
   flex-direction: row;
@@ -138,83 +145,15 @@ watch(환자수, () =>
   flex-direction: column;
 }
 
-/* 입력 컨테이너 스타일 */
-.input-container {
-  display: flex;
-  flex-direction: row;
+.patient-block {
   align-items: center;
-  justify-items: center;
-  width: fit-content;
-}
-
-.input-container input {
-  width: 60px;
-  padding: 5px 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-  text-align: center;
-  outline: none;
-}
-
-.input-container input:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-}
-
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.input-container p:first-child {
-  margin-right: 10px;
-}
-
-.input-container p:last-child {
-  margin-left: 10px;
+  justify-content: center;
 }
 
 /* 슬라이더 스타일 */
 
 .slide-container {
   width: 100%; /* Width of the outside container */
-}
-
-/* The slider itself */
-.slider {
-  -webkit-appearance: none; /* Override default CSS styles */
-  appearance: none;
-  width: 100%; /* Full-width */
-  height: 25px; /* Specified height */
-  background: #d3d3d3; /* Grey background */
-  outline: none; /* Remove outline */
-  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
-  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
-  transition: opacity .2s;
-}
-
-/* Mouse-over effects */
-.slider:hover {
-  opacity: 1; /* Fully shown on mouse-over */
-}
-
-/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
-.slider::-webkit-slider-thumb {
-  -webkit-appearance: none; /* Override default look */
-  appearance: none;
-  width: 25px; /* Set a specific slider handle width */
-  height: 25px; /* Slider handle height */
-  background: #04AA6D; /* Green background */
-  cursor: pointer; /* Cursor on hover */
-}
-
-.slider::-moz-range-thumb {
-  width: 25px; /* Set a specific slider handle width */
-  height: 25px; /* Slider handle height */
-  background: #04AA6D; /* Green background */
-  cursor: pointer; /* Cursor on hover */
 }
 
 .profit-container {
@@ -234,4 +173,5 @@ input[type="number"]::-webkit-outer-spin-button {
   margin: 0;
   list-style: none;
 }
+
 </style>

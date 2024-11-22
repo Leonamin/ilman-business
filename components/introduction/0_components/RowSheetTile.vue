@@ -1,7 +1,9 @@
 <script setup lang="ts">
 const props = defineProps<{
   label: string;
+  labelStyle?: string;
   amount: number;
+  amountStyle?: string[];
 }>();
 
 const formatPrice = (price: number) => {
@@ -10,9 +12,9 @@ const formatPrice = (price: number) => {
 </script>
 
 <template>
-  <div class="layout">
-    <p>{{ props.label }}</p>
-    <p>{{ formatPrice(props.amount) }}</p>
+  <div class="layout spb-medium">
+    <p :class="props.labelStyle">{{ props.label }}</p>
+    <p :class="props.amountStyle">{{ formatPrice(props.amount) }}</p>
   </div>
 </template>
 

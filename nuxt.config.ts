@@ -18,5 +18,6 @@ export default defineNuxtConfig({
         '@/assets/css/variables.css',
         '@/assets/css/colors.css',
         '@/assets/css/button.css',
+        '@/assets/css/styles.css',
     ]
 })

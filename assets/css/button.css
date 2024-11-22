@@ -36,16 +36,16 @@
 /* 버튼 프리셋: Secondary */
 
 .button-secondary {
-    background-color: var(--secondary-color);
+    background-color: var(--color-secondary);
     color: var(--color-text-inverse);
 }
 
 .button-secondary:hover {
-    background-color: var(--secondary-color-hover);
+    background-color: var(--color-secondary-hover);
 }
 
 .button-secondary:disabled {
-    background-color: var(--secondary-color-disabled);
+    background-color: var(--color-secondary-disabled);
     color: var(--color-text-tertiary);
     cursor: not-allowed;
 }

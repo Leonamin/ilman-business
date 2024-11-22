@@ -2,16 +2,25 @@
 import IndexHeader from "~/components/introduction/0_components/IndexHeader.vue";
 import SolidButton from "~/components/0_components/button/SolidButton.vue";
 
-const handleClick = () => {
+const handleMoreFeature = () => {
+//   #feature로 스크롤 이동
+  window.location.href = '#feature';
+};
+
+const router = useRouter();
+
+const handleContact = () => {
+//   #contact로 스크롤 이동
+  router.push('/contact');
 };
 
 const isMobile = ref(false);
 
 // 모바일 화면 768 픽셀 이하인 경우 이미지 변경
 onMounted(() => {
-    window.addEventListener("resize", () => {
-        isMobile.value = window.innerWidth <= 768;
-    });
+  window.addEventListener("resize", () => {
+    isMobile.value = window.innerWidth <= 768;
+  });
 });
 
 </script>
@@ -19,26 +28,27 @@ onMounted(() => {
 <template>
   <div class="layout">
     <IndexHeader/>
-    <div class="main-content">
-      <h1 class="animate-content">진료는 그대로<br>매출은 최대로<br>아임파인 일만사업</h1>
-      <div class="button-list animate-content">
+    <div class="main-content animate-content">
+      <h1 class="text-h1 text-bold spb-medium text-center">진료는 그대로<br>매출은 최대로<br>아임파인 일만사업</h1>
+
+      <div class="button-list">
         <SolidButton
             width="150px"
             preset="primaryOutline"
             borderRadius="8px"
             text="더 알아보기"
-            @click="handleClick"
+            @click="handleMoreFeature"
         />
         <SolidButton
             width="150px"
             preset="primary"
             borderRadius="8px"
-            text="문의 하기"
-            @click="handleClick"
+            text="문의하기"
+            @click="handleContact"
         />
       </div>
     </div>
-<!--    코드 개선 필요 v-if 사용하면 성능 낭비-->
+    <!--    코드 개선 필요 v-if 사용하면 성능 낭비-->
     <div class="background-image">
       <img v-if="!isMobile" src="~assets/images/intro-background.jpg" alt="Feature Background"/>
       <img v-if="isMobile" src="~assets/images/intro-background-mobile.jpg" alt="Feature Background"/>
@@ -75,16 +85,7 @@ onMounted(() => {
   flex-direction: column;
   flex-grow: 1;
   gap: 16px;
-
-}
-
-.main-content h1 {
-  font-size: var(--font-size-h1);
-  font-weight: 700;
-  line-height: 1.4;
-  text-align: center;
-  color: #333;
-  font-family: 'Noto Sans KR', sans-serif;
+  padding: var(--padding-xlarge);
 }
 
 /* 애니메이션 초기 상태 */
