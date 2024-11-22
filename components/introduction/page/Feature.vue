@@ -28,8 +28,8 @@ const features: FeatureModel[] = [
   <div class="layout">
     <div class="explanation">
       <AnimatedElement>
-        <h2>일만사업이란 무엇인가요?</h2>
-        <h5>일차병원 만성질환관리사업(이하 일만사업)은 만성질환(고혈압/당뇨병)을 가진 환자들의 건강 수명 증진을 위한 국민건강보험 공단의 사업입니다.</h5>
+        <h2 class="spc-bottom">일만사업이란?</h2>
+        <h5 class="spc-bottom">일차병원 만성질환관리사업(이하 일만사업)은 만성질환(고혈압/당뇨병)을 가진 환자들의 건강 수명 증진을 위한 국민건강보험 공단의 사업입니다.</h5>
       </AnimatedElement>
 
       <SolidButton preset="primaryOutline" text="일만사업에 대해 더 알아보기"/>
@@ -37,11 +37,14 @@ const features: FeatureModel[] = [
     <div class="feature">
       <AnimatedElement>
 
-        <h2>
+        <h2 class="spc-bottom">
           아임파인으로<br>일만사업에 참여한다면?
         </h2>
+      </AnimatedElement>
+      <AnimatedElement :threshold=0.1>
+
         <div class="card-container">
-          <div class="card" v-for="feature in features" :key="feature.title">
+          <div class="card spc-bottom" v-for="feature in features" :key="feature.title">
             <h3>{{ feature.title }}</h3>
           </div>
         </div>
@@ -61,6 +64,10 @@ const features: FeatureModel[] = [
   font-family: 'Noto Sans KR', sans-serif;
 }
 
+.spc-bottom {
+  margin-bottom: var(--padding-large);
+}
+
 /* 일만사업 설명 스타일링 */
 
 .explanation {
@@ -70,6 +77,7 @@ const features: FeatureModel[] = [
   justify-content: center;
   align-items: center;
   text-align: center;
+  padding-top: var(--padding-xlarge);
 }
 
 .explanation h2 {
@@ -90,6 +98,7 @@ const features: FeatureModel[] = [
   justify-content: center;
   align-items: center;
   width: 100%;
+  padding-top: var(--padding-xlarge);
 }
 
 .feature h2 {
@@ -101,18 +110,19 @@ const features: FeatureModel[] = [
 
 .card-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
+  align-items: center;
   width: 100%;
-  gap: 1rem;
+  gap: var(--padding-large);
 }
 
 .card {
+  padding: var(--padding-large);
   white-space: pre-wrap;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
   border-radius: 1rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -136,6 +146,14 @@ const features: FeatureModel[] = [
     font-size: var(--font-size-h2-mobile);
     font-weight: bold;
     text-align: center;
+  }
+
+  .card-container {
+    flex-direction: column;
+  }
+
+  .card {
+    margin-inline: var(--padding-large);
   }
 }
 
