@@ -78,7 +78,7 @@ const 총합_라운딩 = computed(() => {
     <div class="main-content">
       <AnimatedElement>
         <div class="center-row">
-          <h2>수익 계산기</h2>
+          <h2 class="text-h2 text-bold spb-medium">수익 계산기</h2 >
         </div>
       </AnimatedElement>
       <div class="selector-container spb-large">
@@ -145,12 +145,6 @@ const 총합_라운딩 = computed(() => {
   flex-direction: column;
 }
 
-.main-content h2 {
-  font-size: var(--font-size-h2);
-  font-weight: bold;
-  margin-bottom: var(--padding-medium);
-}
-
 .patient-block {
   align-items: center;
   justify-content: center;
@@ -180,9 +174,4 @@ const 총합_라운딩 = computed(() => {
   list-style: none;
 }
 
-@media (max-width: 768px) {
-  .main-content h2 {
-    font-size: var(--font-size-h2-mobile);
-  }
-}
 </style>

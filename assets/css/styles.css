@@ -35,79 +35,137 @@
     margin-bottom: var(--padding-large);
 }
 
+.spb-xLarge {
+    margin-bottom: var(--padding-xlarge);
+}
+
 /* 텍스트 크기 */
 .text-h1 {
     font-size: var(--font-size-h1);
     font-weight: 700;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 .text-h2 {
     font-size: var(--font-size-h2);
     font-weight: 700;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 .text-h3 {
     font-size: var(--font-size-h3);
     font-weight: 700;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 .text-h4 {
     font-size: var(--font-size-h4);
     font-weight: 700;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 .text-h5 {
     font-size: var(--font-size-h5);
     font-weight: 700;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 .text-body1 {
     font-size: var(--font-size-body1);
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 .text-body2 {
     font-size: var(--font-size-body2);
-}
-
-.text-h1-m {
-    font-size: var(--font-size-h1-mobile);
-    font-weight: 700;
-}
-
-.text-h2-m {
-    font-size: var(--font-size-h2-mobile);
-    font-weight: 700;
-}
-
-.text-h3-m {
-    font-size: var(--font-size-h3-mobile);
-    font-weight: 700;
-}
-
-.text-h4-m {
-    font-size: var(--font-size-h4-mobile);
-    font-weight: 700;
-}
-
-.text-h5-m {
-    font-size: var(--font-size-h5-mobile);
-    font-weight: 700;
-}
-
-.text-body1-m {
-    font-size: var(--font-size-body1-mobile);
-}
-
-.text-body2-m {
-    font-size: var(--font-size-body2-mobile);
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 .text-caption {
     font-size: var(--font-size-caption);
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
-.text-caption-m {
-    font-size: var(--font-size-caption-mobile);
+@media (max-width: 768px) {
+
+    .text-h1 {
+        font-size: var(--font-size-h1-mobile);
+        font-weight: 700;
+    }
+
+    .text-h2 {
+        font-size: var(--font-size-h2-mobile);
+        font-weight: 700;
+    }
+
+    .text-h3 {
+        font-size: var(--font-size-h3-mobile);
+        font-weight: 700;
+    }
+
+    .text-h4 {
+        font-size: var(--font-size-h4-mobile);
+        font-weight: 700;
+    }
+
+    .text-h5 {
+        font-size: var(--font-size-h5-mobile);
+        font-weight: 700;
+    }
+
+    .text-body1 {
+        font-size: var(--font-size-body1-mobile);
+    }
+
+    .text-body2 {
+        font-size: var(--font-size-body2-mobile);
+    }
+
+    .text-caption {
+        font-size: var(--font-size-caption-mobile);
+    }
+}
+
+.text-line-through {
+    text-decoration: line-through;
+}
+
+.text-underline {
+    text-decoration: underline;
+}
+
+.text-italic {
+    font-style: italic;
+}
+
+.text-line-break {
+    white-space: pre-wrap;
+}
+
+.text-line-height-small {
+    line-height: 1.2;
+}
+
+.text-line-height-medium {
+    line-height: 1.5;
+}
+
+.text-line-height-large {
+    line-height: 1.7;
+}
+
+
+
+/* 텍스트 정렬 */
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
 }
 
 /* 텍스트 두께 */
