@@ -2,7 +2,16 @@
 import IndexHeader from "~/components/introduction/0_components/IndexHeader.vue";
 import SolidButton from "~/components/0_components/button/SolidButton.vue";
 
-const handleClick = () => {
+const handleMoreFeature = () => {
+//   #feature로 스크롤 이동
+  window.location.href = '#feature';
+};
+
+const router = useRouter();
+
+const handleContact = () => {
+//   #contact로 스크롤 이동
+  router.push('/contact');
 };
 
 const isMobile = ref(false);
@@ -27,14 +36,14 @@ onMounted(() => {
             preset="primaryOutline"
             borderRadius="8px"
             text="더 알아보기"
-            @click="handleClick"
+            @click="handleMoreFeature"
         />
         <SolidButton
             width="150px"
             preset="primary"
             borderRadius="8px"
-            text="문의 하기"
-            @click="handleClick"
+            text="문의하기"
+            @click="handleContact"
         />
       </div>
     </div>
@@ -75,7 +84,7 @@ onMounted(() => {
   flex-direction: column;
   flex-grow: 1;
   gap: 16px;
-  padding: var(--top-padding-large);
+  padding: var(--padding-xlarge);
 }
 
 .main-title {
