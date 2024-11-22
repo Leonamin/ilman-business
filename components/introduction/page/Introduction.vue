@@ -19,9 +19,9 @@ onMounted(() => {
 <template>
   <div class="layout">
     <IndexHeader/>
-    <div class="main-content">
-      <h1 class="animate-content">진료는 그대로<br>매출은 최대로<br>아임파인 일만사업</h1>
-      <div class="button-list animate-content">
+    <div class="main-content animate-content">
+      <h1 class="main-title ">진료는 그대로<br>매출은 최대로<br>아임파인 일만사업</h1>
+      <div class="button-list">
         <SolidButton
             width="150px"
             preset="primaryOutline"
@@ -75,10 +75,10 @@ onMounted(() => {
   flex-direction: column;
   flex-grow: 1;
   gap: 16px;
-
+  padding: var(--top-padding-large);
 }
 
-.main-content h1 {
+.main-title {
   font-size: var(--font-size-h1);
   font-weight: 700;
   line-height: 1.4;
