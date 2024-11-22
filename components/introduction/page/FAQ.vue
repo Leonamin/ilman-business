@@ -42,16 +42,16 @@ const toggleFAQ = (index: number) => {
   <div class="layout">
     <div class="spacer"></div>
     <div class="faq">
-      <h2>자주 묻는 질문</h2>
+      <h5>자주 묻는 질문</h5>
       <div
           v-for="(item, index) in faqList"
           :key="index"
           class="faq-item"
       >
         <div class="faq-header" @click="toggleFAQ(index)">
-          <h5 :style="{
+          <p class="question" :style="{
               color: activeIndex === index ? 'var(--color-primary)' : 'black'
-            }">{{ item.question }}</h5>
+            }">{{ item.question }}</p>
           <ChevronDown
               v-if="activeIndex !== index"
               color="black"
@@ -64,7 +64,7 @@ const toggleFAQ = (index: number) => {
           />
         </div>
         <div
-            class="faq-content"
+            class="answer"
             v-if="activeIndex === index"
         >
           <p>{{ item.answer }}</p>
@@ -88,11 +88,16 @@ const toggleFAQ = (index: number) => {
   overflow: hidden;
 }
 
-.faq h2 {
+.faq h5 {
   text-align: center;
-  font-size: var(--font-size-h2);
+  font-size: var(--font-size-h5);
   font-weight: bold;
   margin-bottom: 32px;
+}
+
+.question {
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .faq-item {
@@ -108,7 +113,7 @@ const toggleFAQ = (index: number) => {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 16px;
+  padding-inline: 8px;
   cursor: pointer;
 }
 
@@ -116,14 +121,10 @@ const toggleFAQ = (index: number) => {
   background: var(--color-bg-primary-hover)
 }
 
-.faq-header h5 {
-  font-size: var(--font-size-h5);
-  font-weight: bold;
-}
-
-.faq-content {
-  padding-inline: 16px;
+.answer {
+  font-size: 1rem;
   line-height: 1.6;
+  padding-inline: 8px;
 }
 
 @media (max-width: 768px) {
@@ -131,13 +132,16 @@ const toggleFAQ = (index: number) => {
     max-width: 100%;
   }
 
-  .faq h2 {
-    font-size: var(--font-size-h2-mobile);
+  .faq h5 {
+    font-size: var(--font-size-h5-mobile);
   }
 
-  .faq-header h5 {
-    font-size: var(--font-size-h5-mobile);
-    font-weight: bold;
+  .question {
+    font-size: 1rem;
+  }
+
+  .answer {
+    font-size: 0.875rem;
   }
 }
 </style>

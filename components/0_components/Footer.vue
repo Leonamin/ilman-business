@@ -1,6 +1,6 @@
 <template>
   <footer class="footer">
-    <p>© 2024 주식회사 케어스퀘어. All rights reserved.</p>
+    <p>© 2024 (주)케어스퀘어. All rights reserved.</p>
   </footer>
 </template>
 
