@@ -1,0 +1,24 @@
+.card-white {
+    background-color: var(--color-bg-primary);
+    box-shadow: 0 0 10px rgba(var(--color-bg-primary), 0.1);
+}
+
+.card-green {
+    background-color: var(--color-bg-green);
+    box-shadow: 0 0 10px rgba(var(--color-bg-green), 0.1);
+}
+
+.card-blue {
+    background-color: var(--color-bg-blue);
+    box-shadow: 0 0 10px rgba(var(--color-bg-blue), 0.1);
+}
+
+.card-yellow {
+    background-color: var(--color-bg-yellow);
+    box-shadow: 0 0 10px rgba(var(--color-bg-yellow), 0.1);
+}
+
+.card-red {
+    background-color: var(--color-bg-red);
+    box-shadow: 0 0 10px rgba(var(--color-bg-red), 0.1);
+}

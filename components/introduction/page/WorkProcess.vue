@@ -22,6 +22,8 @@ onMounted(() => {
   window.addEventListener("resize", () => {
     isMobile.value = window.innerWidth <= 768;
   });
+
+  isMobile.value = window.innerWidth <= 768;
 });
 
 </script>
@@ -96,7 +98,6 @@ onMounted(() => {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding-inline: var(--padding-xlarge)
 }
 
 .process-inner {
