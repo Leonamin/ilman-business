@@ -40,16 +40,15 @@ const toggleFAQ = (index: number) => {
 
 <template>
   <div class="layout">
-    <div class="spacer"></div>
     <div class="faq">
-      <h5>자주 묻는 질문</h5>
+      <h2 class="text-h2 text-bold text-center spb-large">자주 묻는 질문</h2>
       <div
           v-for="(item, index) in faqList"
           :key="index"
           class="faq-item"
       >
         <div class="faq-header" @click="toggleFAQ(index)">
-          <p class="question" :style="{
+          <p class="text-h5 text-bold text-left padding-vertical-large" :style="{
               color: activeIndex === index ? 'var(--color-primary)' : 'black'
             }">{{ item.question }}</p>
           <ChevronDown
@@ -64,14 +63,13 @@ const toggleFAQ = (index: number) => {
           />
         </div>
         <div
-            class="answer"
+            class="text-body1 text-medium padding-vertical-medium"
             v-if="activeIndex === index"
         >
           <p>{{ item.answer }}</p>
         </div>
       </div>
     </div>
-    <div class="spacer"></div>
   </div>
 </template>
 
@@ -80,24 +78,13 @@ const toggleFAQ = (index: number) => {
   padding: 32px 0;
 }
 
+
 .faq {
   width: 100%;
   max-width: 70%;
   margin: 0 auto;
   border-radius: 8px;
   overflow: hidden;
-}
-
-.faq h5 {
-  text-align: center;
-  font-size: var(--font-size-h5);
-  font-weight: bold;
-  margin-bottom: 32px;
-}
-
-.question {
-  font-size: 1.5rem;
-  font-weight: bold;
 }
 
 .faq-item {
@@ -113,7 +100,6 @@ const toggleFAQ = (index: number) => {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding-inline: 8px;
   cursor: pointer;
 }
 
@@ -121,27 +107,9 @@ const toggleFAQ = (index: number) => {
   background: var(--color-bg-primary-hover)
 }
 
-.answer {
-  font-size: 1rem;
-  line-height: 1.6;
-  padding-inline: 8px;
-}
-
 @media (max-width: 768px) {
   .faq {
-    max-width: 100%;
-  }
-
-  .faq h5 {
-    font-size: var(--font-size-h5-mobile);
-  }
-
-  .question {
-    font-size: 1rem;
-  }
-
-  .answer {
-    font-size: 0.875rem;
+    max-width: 80%;
   }
 }
 </style>

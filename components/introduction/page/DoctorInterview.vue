@@ -4,7 +4,7 @@
 <template>
   <div class="layout">
     <div class="main-content">
-      <h2>고니를 아냐구요? 그는 제가 아는 최고의 땃쥐였어요</h2>
+      <h2 class="text-h2 text-bold text-center">아임파인 일만사업을 써보고 내 집이 바뀌었다</h2>
     </div>
   </div>
 </template>
@@ -20,20 +20,6 @@
   margin: 0 auto;
   border-radius: 8px;
   overflow: hidden;
-}
-
-.main-content h2 {
-  text-align: center;
-  font-size: var(--font-size-h2);
-  font-weight: bold;
-  margin-bottom: 32px;
-}
-
-
-@media (max-width: 768px) {
-  .main-content h2 {
-    font-size: var(--font-size-h2-mobile);
-  }
 }
 
 </style>

@@ -39,6 +39,21 @@
     margin-bottom: var(--padding-xlarge);
 }
 
+.padding-vertical-small {
+    padding-top: var(--padding-small);
+    padding-bottom: var(--padding-small);
+}
+
+.padding-vertical-medium {
+    padding-top: var(--padding-medium);
+    padding-bottom: var(--padding-medium);
+}
+
+.padding-vertical-large {
+    padding-top: var(--padding-large);
+    padding-bottom: var(--padding-large);
+}
+
 /* 텍스트 크기 */
 .text-h1 {
     font-size: var(--font-size-h1);
