@@ -2,6 +2,13 @@
 export default defineNuxtConfig({
     compatibilityDate: '2024-04-03',
     devtools: {enabled: true},
+    vite: {
+        resolve: {
+            alias: {
+                'lodash-es': 'lodash-es',
+            },
+        },
+    },
     css: [
         '@/assets/css/global.css',
         '@/assets/css/reset.css',
