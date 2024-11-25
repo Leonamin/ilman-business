@@ -92,15 +92,15 @@ onMounted(() => {
 /* 애니메이션 초기 상태 */
 .animate-content {
   opacity: 0;
-  transform: translateY(-30px);
-  animation: fadeIn 1s linear forwards;
-  animation-delay: 1s;
+  transform: translateY(-15px);
+  animation: fadeIn 0.5s linear forwards;
+  animation-delay: 0.5s;
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(-30px);
+    transform: translateY(-15px);
   }
   to {
     opacity: 1;
