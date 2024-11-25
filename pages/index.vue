@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import type {SideItem} from "~/types/SideItem";
 import Introduction from "~/components/introduction/page/Introduction.vue";
 import Feature from "~/components/introduction/page/Feature.vue";
 import WorkProcess from "~/components/introduction/page/WorkProcess.vue";
@@ -8,13 +7,6 @@ import DoctorInterview from "~/components/introduction/page/DoctorInterview.vue"
 import ProfitCalculator from "~/components/introduction/page/ProfitCalculator.vue";
 import ScrollToTopButton from "~/components/0_components/button/ScrollToTopButton.vue";
 
-const sideItems: SideItem[] = [
-  {id: 1, label: '소개', href: '#intro'},
-  {id: 2, label: '기능', href: '#feature'},
-  {id: 3, label: '매출 계산기', href: '#profit-calculator'},
-  {id: 4, label: '워크 프로세스', href: '#work-process'},
-  {id: 4, label: 'FAQ', href: '#faq'},
-]
 </script>
 
 <template>
@@ -24,9 +16,9 @@ const sideItems: SideItem[] = [
       <Introduction id="intro"/>
       <Feature id="feature"/>
       <ProfitCalculator id="profit-calculator"/>
-      <WorkProcess id="work-process"/>
-      <DoctorInterview id="faq"/>
-      <FAQ/>
+      <WorkProcess id="process"/>
+      <DoctorInterview />
+      <FAQ id="faq"/>
     </div>
     <div class="sidebar-layout">
       <ScrollToTopButton/>

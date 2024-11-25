@@ -6,10 +6,10 @@
   <header class="header-container">
     <img class="logo" src="~/assets/svgs/shm_black_logo.svg">
     <div class="header-nav-item">
-      <a href="/">소개</a>
+      <a href="/#intro">소개</a>
       <a href="/#feature">기능</a>
       <a href="/#profit-calculator">매출 계산기</a>
-      <a href="/#work-process">워크 프로세스</a>
+      <a href="/#process">일만사업 절차</a>
       <a href="/#faq">FAQ</a>
     </div>
   </header>
@@ -22,6 +22,7 @@
 }
 
 .header-container {
+  position: fixed;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -29,6 +30,8 @@
   width: 100%;
   height: var(--app-bar-height-desktop);
   color: var(--color-bg-primary);
+  background-color: white;
+  z-index: 4;
 }
 
 .header-nav-item {

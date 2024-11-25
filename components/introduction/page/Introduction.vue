@@ -26,9 +26,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="layout">
+  <div class="layout ">
     <div class="main-content animate-content">
-      <h1 class="text-h1 text-bold spb-medium text-center">진료는 그대로<br>매출은 최대로<br>아임파인 일만사업</h1>
+      <h1 class="text-h1 text-bold spt-xLarge spb-medium text-center">진료는 그대로<br>매출은 최대로<br>아임파인 일만사업</h1>
 
       <div class="button-list">
         <SolidButton
@@ -69,7 +69,7 @@ onMounted(() => {
   justify-content: start;
   align-items: center;
   width: 100%;
-  height: calc(100dvh - var(--app-bar-height-desktop));
+  height: 100dvh;
 
   scroll-behavior: smooth;
 }
@@ -160,7 +160,7 @@ onMounted(() => {
 /* 반응형 디자인 */
 @media (max-width: 768px) {
   .layout {
-    height: calc(100dvh - var(--app-bar-height-mobile));
+    height: 100dvh;
   }
   .main-content {
     padding-top: 40px;

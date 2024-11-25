@@ -75,10 +75,10 @@ const 총합_라운딩 = computed(() => {
 
 <template>
   <div class="layout">
-    <div class="main-content">
+    <div class="main-content spt-xLarge">
       <AnimatedElement>
         <div class="center-row">
-          <h2 class="text-h2 text-bold spb-medium">수익 계산기</h2 >
+          <h2 class="text-h2 text-bold spt-xLarge spb-medium">수익 계산기</h2 >
         </div>
       </AnimatedElement>
       <div class="selector-container spb-large">
