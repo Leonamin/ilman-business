@@ -6,11 +6,11 @@
   <header class="header-container">
     <img class="logo" src="~/assets/svgs/shm_black_logo.svg">
     <div class="header-nav-item">
-      <a href="#intro">소개</a>
-      <a href="#feature">기능</a>
-      <a href="#profit-calculator">매출 계산기</a>
-      <a href="#work-process">워크 프로세스</a>
-      <a href="#faq">FAQ</a>
+      <a href="/">소개</a>
+      <a href="/#feature">기능</a>
+      <a href="/#profit-calculator">매출 계산기</a>
+      <a href="/#work-process">워크 프로세스</a>
+      <a href="/#faq">FAQ</a>
     </div>
   </header>
 </template>

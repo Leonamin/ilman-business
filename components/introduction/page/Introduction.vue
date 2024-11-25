@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import IndexHeader from "~/components/introduction/0_components/IndexHeader.vue";
 import SolidButton from "~/components/0_components/button/SolidButton.vue";
 
 const handleMoreFeature = () => {
@@ -28,7 +27,6 @@ onMounted(() => {
 
 <template>
   <div class="layout">
-    <IndexHeader/>
     <div class="main-content animate-content">
       <h1 class="text-h1 text-bold spb-medium text-center">진료는 그대로<br>매출은 최대로<br>아임파인 일만사업</h1>
 
@@ -71,7 +69,7 @@ onMounted(() => {
   justify-content: start;
   align-items: center;
   width: 100%;
-  height: 100dvh;
+  height: calc(100dvh - var(--app-bar-height-desktop));
 
   scroll-behavior: smooth;
 }
@@ -161,6 +159,9 @@ onMounted(() => {
 
 /* 반응형 디자인 */
 @media (max-width: 768px) {
+  .layout {
+    height: calc(100dvh - var(--app-bar-height-mobile));
+  }
   .main-content {
     padding-top: 40px;
   }

@@ -1,5 +1,6 @@
 <template>
   <div class="layout">
+    <IndexHeader/>
     <main>
       <NuxtPage/>
     </main>
@@ -9,6 +10,7 @@
 
 <script setup>
 import Footer from "~/components/0_components/Footer.vue";
+import IndexHeader from "~/components/introduction/0_components/IndexHeader.vue";
 
 </script>
 

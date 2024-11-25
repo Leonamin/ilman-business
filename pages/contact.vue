@@ -45,7 +45,6 @@ const methods = [
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   background-color: var(--color-bg-primary);
   scroll-behavior: smooth;
   max-width: 70%;
