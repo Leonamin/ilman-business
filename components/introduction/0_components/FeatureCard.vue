@@ -14,8 +14,6 @@ const cssCardStyle = [
 ]
 const cardStyle = computed(() => cardPresets[props.preset || 'white']);
 
-console.log(cardStyle.value)
-
 </script>
 
 <template>
