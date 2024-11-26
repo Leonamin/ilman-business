@@ -7,15 +7,10 @@ import AntSlider from 'ant-design-vue/es/slider';
 import {useProfitCalculator} from "~/composables/useProfitCalculator";
 import type {ProfitModel} from "~/types/profit";
 
-const isImfine = ref(false);
-const onChangeImfine = () => {
-  isImfine.value = !isImfine.value;
-  selected회차.value = isImfine.value ? 회차_아임파인_사용시 : 회차_스스로;
+const useImFine = ref(false);
+const onChangeImFine = () => {
+  useImFine.value = !useImFine.value;
 };
-
-const totalAmountStyle = computed(() => {
-  return 총합.value < 0 ? "text-negative" : "text-positive";
-});
 
 // 가격 설정
 const 가격 = {
@@ -42,7 +37,6 @@ const 회차_아임파인_사용시 = {
   "교육상담료": 8,
 }
 
-const selected회차 = ref(회차_스스로);
 
 // 환자 수와 관련된 변수
 const 환자수 = ref<number>(100);
@@ -52,23 +46,97 @@ const MAX_환자수 = 500;
 
 // 계산 로직 사용
 const {calculateProfit, calculateTotalProfit, formatTotalProfit} =
-    useProfitCalculator(가격, selected회차, 환자수);
+    useProfitCalculator(환자수);
 
-const profits: Reactive<ProfitModel>[] = reactive([
-  {label: "초기평가", amount: computed(() => calculateProfit("초기평가").value)},
-  {label: "계획수립", amount: computed(() => calculateProfit("계획수립").value)},
-  {label: "점검평가료", amount: computed(() => calculateProfit("점검평가료").value)},
-  {label: "환자관리료", amount: computed(() => calculateProfit("환자관리료").value)},
-  {label: "교육상담료", amount: computed(() => calculateProfit("교육상담료").value)},
+const 스스로한_경우_수익: Reactive<ProfitModel>[] = reactive([
+  {
+    label: "초기평가", amount: computed(() => calculateProfit(
+        가격["초기평가"],
+        회차_스스로["초기평가"],
+    ).value)
+  },
+  {
+    label: "계획수립", amount: computed(() => calculateProfit(
+        가격["계획수립"],
+        회차_스스로["계획수립"],
+    ).value)
+  },
+  {
+    label: "점검평가료", amount: computed(() => calculateProfit(
+        가격["점검평가료"],
+        회차_스스로["점검평가료"],
+    ).value)
+  },
+  {
+    label: "환자관리료", amount: computed(() => calculateProfit(
+        가격["환자관리료"],
+        회차_스스로["환자관리료"],
+    ).value)
+  },
+  {
+    label: "교육상담료", amount: computed(() => calculateProfit(
+        가격["교육상담료"],
+        회차_스스로["교육상담료"],
+    ).value)
+  },
 ]);
 
-// 총합 계산
-const 총합 = computed(() => {
-  return calculateTotalProfit(profits).value;
+const 아임파인_사용한_경우_수익: Reactive<ProfitModel>[] = reactive([
+  {
+    label: "초기평가", amount: computed(() => calculateProfit(
+        가격["초기평가"],
+        회차_아임파인_사용시["초기평가"],
+    ).value)
+  },
+  {
+    label: "계획수립", amount: computed(() => calculateProfit(
+        가격["계획수립"],
+        회차_아임파인_사용시["계획수립"],
+    ).value)
+  },
+  {
+    label: "점검평가료", amount: computed(() => calculateProfit(
+        가격["점검평가료"],
+        회차_아임파인_사용시["점검평가료"],
+    ).value)
+  },
+  {
+    label: "환자관리료", amount: computed(() => calculateProfit(
+        가격["환자관리료"],
+        회차_아임파인_사용시["환자관리료"],
+    ).value)
+  },
+  {
+    label: "교육상담료", amount: computed(() => calculateProfit(
+        가격["교육상담료"],
+        회차_아임파인_사용시["교육상담료"],
+    ).value)
+  },
+]);
+
+// 화면에 표시할 값
+
+// 수익
+
+const 표시되는_수익 = computed(() => {
+  if (useImFine.value) {
+    return 아임파인_사용한_경우_수익;
+  } else {
+    return 스스로한_경우_수익;
+  }
 });
 
+// 총합 계산
+const 총합 = () => {
+  if (useImFine.value) {
+    return calculateTotalProfit(아임파인_사용한_경우_수익);
+  } else {
+    return calculateTotalProfit(스스로한_경우_수익);
+  }
+};
+
 const 총합_라운딩 = computed(() => {
-  return formatTotalProfit(총합.value);
+  return formatTotalProfit(총합().value);
 });
 
 </script>
@@ -78,20 +146,12 @@ const 총합_라운딩 = computed(() => {
     <div class="main-content spt-64">
       <AnimatedElement>
         <div class="center-row">
-          <h2 class="text-h2 text-bold spt-64 spb-16">수익 계산기</h2 >
+          <h2 class="text-h2 text-bold spt-64 spb-16">수익 계산기</h2>
         </div>
       </AnimatedElement>
       <div class="selector-container spb-32">
-        <div class="center-row">
-          <p class="text-body1 text-bold">원장님 </p>
-          <p class="text-body1 text-bold text-negative">스스로</p>
-        </div>
-        <AntSwitch :checked="isImfine" @click="onChangeImfine"/>
-
-        <div class="center-row">
-          <p class="text-body1 text-bold">아임파인과 </p>
-          <p class="text-body1 text-bold text-positive">함께</p>
-        </div>
+        <p class="text-body1 text-bold">아임파인과 함께</p>
+        <AntSwitch :checked="useImFine" @click="onChangeImFine"/>
       </div>
       <div class="patient-block center-row spb-16">
         <p class="text-body1 text-medium">만약 환자가 </p>
@@ -107,12 +167,12 @@ const 총합_라운딩 = computed(() => {
       </div>
       <div class="profit-container">
         <ul>
-          <li v-for="(value, key) in profits" :key="key">
+          <li v-for="(value, key) in 표시되는_수익" :key="key">
             <RowSheetTile
                 :label="value.label"
                 :amount="value.amount"
                 label-style="text-body2 "
-                :amount-style="['text-body2', isImfine  ? 'text-positive' : 'text-negative']"
+                :amount-style="['text-body2', useImFine  ? 'text-positive' : 'text-negative']"
             />
           </li>
         </ul>

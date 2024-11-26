@@ -2,14 +2,16 @@ import {computed, type Reactive} from "vue";
 import type {ProfitModel} from "~/types/profit";
 
 export const useProfitCalculator = (
-    가격: Record<string, number>,
-    회차: Ref<Record<string, number>>,
     환자수: Ref<number>,
 ) => {
     // 수익 계산
-    const calculateProfit = (key: string): ComputedRef<number> => {
+    const calculateProfit = (
+        가격: number,
+        회차: number,
+    ): ComputedRef<number> => {
         return computed(() => {
-            return 가격[key] * 회차.value[key] * Math.round(환자수.value);
+            const 수익 = 가격 * 회차 * Math.round(환자수.value);
+            return 수익;
         });
     };
 
