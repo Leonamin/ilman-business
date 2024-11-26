@@ -74,7 +74,7 @@ const images = [
       </div>
     </div>
     <Vue3Marquee>
-      <img :src="item.src" :alt="item.alt" v-for="(item, index) in images" :key="index" class="slider-item" />
+      <img :src="item.src" :alt="item.alt" v-for="(item, index) in images" :key="index" class="slider-item"/>
     </Vue3Marquee>
   </div>
 </template>
@@ -99,7 +99,6 @@ const images = [
   display: flex;
   align-items: center;
   flex-direction: column;
-  flex-grow: 1;
   gap: 16px;
   padding: var(--spacing-64);
 }
@@ -145,6 +144,7 @@ const images = [
   .layout {
     height: 100dvh;
   }
+
   .main-content {
     padding-top: 40px;
   }

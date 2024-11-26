@@ -1,11 +1,11 @@
 <template>
   <div class="card">
     <div class="backdrop"></div> <!-- 전체 영역에 적용될 블러 배경 -->
-    <img class="card-image" :src="props.feature.image" alt="Feature Image" />
+    <img class="card-image" :src="props.feature.image" alt="Feature Image"/>
     <div class="card-content">
       <p class="title text-semi-bold text-left spb-8 text-line-break line-height-34">
         {{ props.feature.title }}</p>
-      <img class="expand-icon" src="/svgs/icons/icon-expand-circle.svg" alt="Expand Icon" />
+      <img class="expand-icon" src="/svgs/icons/icon-expand-circle.svg" alt="Expand Icon"/>
       <p class="description text-medium text-left text-tertiary text-line-break line-height-20">
         {{ props.feature.description }}</p>
     </div>
@@ -14,7 +14,7 @@
 </template>
 
 <script setup lang="ts">
-import type { FeatureModel } from "~/models/FeatureModel";
+import type {FeatureModel} from "~/models/FeatureModel";
 
 const props = defineProps<{
   feature: FeatureModel;
@@ -89,7 +89,8 @@ const props = defineProps<{
   height: 24px;
   opacity: 1;
   visibility: visible;
-  transition: transform 0.5s, opacity 0.5s, visibility 0.5s;
+  transform: scale(1);
+  transition: transform 0.5s, opacity 0.5s, visibility 0.5s, scale 0.5s;
 }
 
 .card:hover .title {
@@ -109,7 +110,7 @@ const props = defineProps<{
 .card:hover .expand-icon {
   opacity: 0;
   visibility: hidden;
-  transform: translateY(32px);
+  transform: scale(0);
 }
 
 @media (max-width: 768px) {
@@ -119,25 +120,49 @@ const props = defineProps<{
 }
 
 @media (pointer: coarse) {
+  /* 모바일에서는 그냥 표시 */
+  .card .title {
+    font-size: var(--font-size-h18);
+    line-height: 24px;
+  }
+
+  .card .description {
+    opacity: 1;
+  }
+
+  .card .backdrop {
+    opacity: 1; /* 완전히 보이게 */
+    visibility: visible; /* 요소를 표시 */
+  }
+
+  .card .expand-icon {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0);
+  }
+
+  /*
   .card:hover .title {
-    font-size: var(--font-size-h24); /* 기본값으로 되돌림 */
-    line-height: 34px;            /* 원래 설정으로 초기화 */
+    font-size: var(--font-size-h24);
+    line-height: 34px;
   }
 
   .card:hover .description {
-    opacity: 0; /* 기본값으로 되돌림 */
+    opacity: 0;
   }
 
   .card:hover .backdrop {
-    opacity: 0; /* 기본값으로 되돌림 */
-    visibility: hidden; /* 기본값으로 되돌림 */
+    opacity: 0;
+    visibility: hidden;
   }
 
   .card:hover .expand-icon {
-    opacity: 1; /* 기본값으로 되돌림 */
-    visibility: visible; /* 기본값으로 되돌림 */
-    transform: translateY(0); /* 기본값으로 되돌림 */
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
   }
+  */
+
 }
 
 </style>
