@@ -38,7 +38,7 @@ const props = defineProps<{
 }
 
 .card {
-  padding: var(--padding-large);
+  padding: var(--spacing-32);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 16px;
   aspect-ratio: 1.2;

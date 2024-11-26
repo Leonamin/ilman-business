@@ -9,37 +9,41 @@
     --app-bar-height-mobile: 56px;
     --padding-default: 16px;
 
+    --spx-header:390px;
+
     /* 폰트 크기 */
-    --font-size-h1: 5rem;
-    --font-size-h2: 3.5rem;
-    --font-size-h3: 3rem;
-    --font-size-h4: 2.5rem;
-    --font-size-h5: 2rem;
+    --font-size-h48: 48px;
+    --font-size-h40: 40px;
+    --font-size-h32: 32px;
+    --font-size-h28: 28px;
+    --font-size-h24: 24px;
+    --font-size-h20: 20px;
+    --font-size-h18: 18px;
 
-    --font-size-body1: 1.75rem;
-    --font-size-body2: 1.5rem;
+    --font-size-body16: 16px;
+    --font-size-body14: 14px;
 
-    --font-size-caption: 0.25rem;
-
-    --font-size-h1-mobile: 3.5rem;
-    --font-size-h2-mobile: 2.5rem;
-    --font-size-h3-mobile: 2rem;
-    --font-size-h4-mobile: 1.75rem;
-    --font-size-h5-mobile: 1.5rem;
-
-    --font-size-body1-mobile: 1.25rem;
-    --font-size-body2-mobile: 1rem;
-
-    --font-size-caption-mobile: 0.75rem;
+    --font-size-caption12: 12px;
+    --font-size-caption10: 10px;
 
     --font-size-small: 12px;
     --font-size-medium: 16px;
     --font-size-large: 24px;
 
     /* 패딩 변수 */
-    --padding-tiny: 4px;
-    --padding-small: 8px;
-    --padding-medium: 16px;
-    --padding-large: 32px;
-    --padding-xlarge: 64px;
+    --spacing-4: 4px;
+    --spacing-8: 8px;
+    --spacing-12: 12px;
+    --spacing-16: 16px;
+    --spacing-20: 20px;
+    --spacing-24: 24px;
+    --spacing-32: 32px;
+    --spacing-36: 36px;
+    --spacing-40: 40px;
+    --spacing-44: 44px;
+    --spacing-64: 64px;
+    --spacing-80: 80px;
+    --spacing-96: 96px;
+    --spacing-112: 112px;
+    --spacing-128: 128px;
 }

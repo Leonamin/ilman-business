@@ -27,7 +27,7 @@ const props = defineProps<{
 
 .card {
   position: relative;
-  padding: var(--padding-large);
+  padding: var(--spacing-32);
   border-radius: 16px;
   aspect-ratio: 1.2;
   display: flex;
@@ -69,7 +69,7 @@ const props = defineProps<{
 }
 
 .title {
-  font-size: var(--font-size-h3);
+  font-size: var(--font-size-h32);
   white-space: pre-line;
   word-break: keep-all;
   word-wrap: break-word;
@@ -78,12 +78,12 @@ const props = defineProps<{
 
 .description {
   opacity: 0;
-  font-size: var(--font-size-body1);
+  font-size: var(--font-size-body16);
   transition: opacity 0.5s;
 }
 
 .card:hover .title {
-  font-size: var(--font-size-h5);
+  font-size: var(--font-size-h24);
 }
 
 .card:hover .description {

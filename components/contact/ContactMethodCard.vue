@@ -22,7 +22,7 @@ defineProps<{
 
 <style scoped>
 .card {
-  padding: var(--padding-large);
+  padding: var(--spacing-32);
   border-radius: 16px;
   border: 1px solid var(--color-border-primary);
   cursor: pointer;

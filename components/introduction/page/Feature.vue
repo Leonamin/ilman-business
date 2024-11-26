@@ -76,7 +76,7 @@ const features: FeatureModel[] = [
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding-top: var(--padding-xlarge);
+  padding-top: var(--spacing-64);
 }
 
 /* 일만사업 기능 스타일링 */
@@ -95,7 +95,7 @@ const features: FeatureModel[] = [
   justify-content: center;
   align-items: stretch;
   width: 100%;
-  gap: var(--padding-large);
+  gap: var(--spacing-32);
 }
 
 @media (max-width: 768px) {
@@ -108,7 +108,7 @@ const features: FeatureModel[] = [
   }
 
   .card {
-    margin-inline: var(--padding-large);
+    margin-inline: var(--spacing-32);
   }
 }
 

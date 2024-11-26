@@ -84,7 +84,7 @@ onMounted(() => {
   flex-direction: column;
   flex-grow: 1;
   gap: 16px;
-  padding: var(--padding-xlarge);
+  padding: var(--spacing-64);
 }
 
 /* 애니메이션 초기 상태 */

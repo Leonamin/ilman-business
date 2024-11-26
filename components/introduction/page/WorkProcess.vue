@@ -119,11 +119,11 @@ onMounted(() => {
 
 @media (max-width: 768px) {
   .content-layout {
-    padding-inline: var(--padding-medium);
+    padding-inline: var(--spacing-16);
   }
 
   .process-outer {
-    padding-inline: var(--padding-medium);
+    padding-inline: var(--spacing-16);
 
   }
 

@@ -33,7 +33,7 @@
 @media (max-width: 768px) {
   .layout {
     max-width: 90%;
-    padding-inline: var(--padding-medium);
+    padding-inline: var(--spacing-16);
   }
 }
 </style>

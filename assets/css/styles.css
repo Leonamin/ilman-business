@@ -25,175 +25,193 @@
 /* 스페이싱 */
 
 .sph-small {
-    padding-left: var(--padding-small);
-    padding-right: var(--padding-small);
+    padding-left: var(--spacing-8);
+    padding-right: var(--spacing-8);
 }
 
 .sph-medium {
-    padding-left: var(--padding-medium);
-    padding-right: var(--padding-medium);
+    padding-left: var(--spacing-16);
+    padding-right: var(--spacing-16);
 }
 
 .sph-large {
-    padding-left: var(--padding-large);
-    padding-right: var(--padding-large);
+    padding-left: var(--spacing-32);
+    padding-right: var(--spacing-32);
 }
 
 .sph-xLarge {
-    padding-left: var(--padding-xlarge);
-    padding-right: var(--padding-xlarge);
+    padding-left: var(--spacing-64);
+    padding-right: var(--spacing-64);
 }
 
 .spv-small {
-    padding-top: var(--padding-small);
-    padding-bottom: var(--padding-small);
+    padding-top: var(--spacing-8);
+    padding-bottom: var(--spacing-8);
 }
 
 .spv-medium {
-    padding-top: var(--padding-medium);
-    padding-bottom: var(--padding-medium);
+    padding-top: var(--spacing-16);
+    padding-bottom: var(--spacing-16);
 }
 
 .spv-large {
-    padding-top: var(--padding-large);
-    padding-bottom: var(--padding-large);
+    padding-top: var(--spacing-32);
+    padding-bottom: var(--spacing-32);
 }
 
 .spv-xLarge {
-    padding-top: var(--padding-xlarge);
-    padding-bottom: var(--padding-xlarge);
+    padding-top: var(--spacing-64);
+    padding-bottom: var(--spacing-64);
 }
 
 .spt-small {
-    padding-top: var(--padding-small);
+    padding-top: var(--spacing-8);
 }
 
 .spt-medium {
-    padding-top: var(--padding-medium);
+    padding-top: var(--spacing-16);
 }
 
 .spt-large {
-    padding-top: var(--padding-large);
+    padding-top: var(--spacing-32);
 }
 
 .spt-xLarge {
-    padding-top: var(--padding-xlarge);
+    padding-top: var(--spacing-64);
 }
 
 .spb-small {
-    margin-bottom: var(--padding-small);
+    margin-bottom: var(--spacing-8);
 }
 
 .spb-medium {
-    margin-bottom: var(--padding-medium);
+    margin-bottom: var(--spacing-16);
 }
 
 .spb-large {
-    margin-bottom: var(--padding-large);
+    margin-bottom: var(--spacing-32);
 }
 
 .spb-xLarge {
-    margin-bottom: var(--padding-xlarge);
+    margin-bottom: var(--spacing-64);
 }
 
 .padding-vertical-small {
-    padding-top: var(--padding-small);
-    padding-bottom: var(--padding-small);
+    padding-top: var(--spacing-8);
+    padding-bottom: var(--spacing-8);
 }
 
 .padding-vertical-medium {
-    padding-top: var(--padding-medium);
-    padding-bottom: var(--padding-medium);
+    padding-top: var(--spacing-16);
+    padding-bottom: var(--spacing-16);
 }
 
 .padding-vertical-large {
-    padding-top: var(--padding-large);
-    padding-bottom: var(--padding-large);
+    padding-top: var(--spacing-32);
+    padding-bottom: var(--spacing-32);
 }
 
 /* 텍스트 크기 */
 .text-h1 {
-    font-size: var(--font-size-h1);
+    font-size: var(--font-size-h48);
     font-weight: 700;
     font-family: 'Noto Sans KR', sans-serif;
 }
 
 .text-h2 {
-    font-size: var(--font-size-h2);
+    font-size: var(--font-size-h40);
     font-weight: 700;
     font-family: 'Noto Sans KR', sans-serif;
 }
 
 .text-h3 {
-    font-size: var(--font-size-h3);
+    font-size: var(--font-size-h32);
     font-weight: 700;
     font-family: 'Noto Sans KR', sans-serif;
 }
 
 .text-h4 {
-    font-size: var(--font-size-h4);
+    font-size: var(--font-size-h28);
     font-weight: 700;
     font-family: 'Noto Sans KR', sans-serif;
 }
 
 .text-h5 {
-    font-size: var(--font-size-h5);
+    font-size: var(--font-size-h24);
     font-weight: 700;
     font-family: 'Noto Sans KR', sans-serif;
 }
 
+.text-h6 {
+    font-size: var(--font-size-h20);
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.text-h7 {
+    font-size: var(--font-size-h18);
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
 .text-body1 {
-    font-size: var(--font-size-body1);
+    font-size: var(--font-size-body16);
     font-family: 'Noto Sans KR', sans-serif;
 }
 
 .text-body2 {
-    font-size: var(--font-size-body2);
+    font-size: var(--font-size-body14);
     font-family: 'Noto Sans KR', sans-serif;
 }
 
 .text-caption {
-    font-size: var(--font-size-caption);
+    font-size: var(--font-size-caption12);
     font-family: 'Noto Sans KR', sans-serif;
 }
 
 @media (max-width: 768px) {
 
     .text-h1 {
-        font-size: var(--font-size-h1-mobile);
+        font-size: var(--font-size-h32);
         font-weight: 700;
     }
 
     .text-h2 {
-        font-size: var(--font-size-h2-mobile);
+        font-size: var(--font-size-h24);
         font-weight: 700;
     }
 
     .text-h3 {
-        font-size: var(--font-size-h3-mobile);
+        font-size: var(--font-size-h20);
         font-weight: 700;
     }
 
     .text-h4 {
-        font-size: var(--font-size-h4-mobile);
+        font-size: var(--font-size-h18);
         font-weight: 700;
     }
 
     .text-h5 {
-        font-size: var(--font-size-h5-mobile);
+        font-size: var(--font-size-body16);
         font-weight: 700;
     }
 
+    .text-h6 {
+        font-size: var(--font-size-body14);
+    }
+
+    .text-h7 {
+        font-size: var(--font-size-body14);
+    }
+
     .text-body1 {
-        font-size: var(--font-size-body1-mobile);
+        font-size: var(--font-size-body16);
     }
 
     .text-body2 {
-        font-size: var(--font-size-body2-mobile);
+        font-size: var(--font-size-body14);
     }
 
     .text-caption {
-        font-size: var(--font-size-caption-mobile);
+        font-size: var(--font-size-caption10);
     }
 }
 
@@ -260,11 +278,11 @@
 /* 텍스트 색상 */
 
 .text-primary {
-    color: var(--color-primary);
+    color: var(--color-text-priamry);
 }
 
 .text-secondary {
-    color: var(--color-secondary);
+    color: var(--color-text-secondary);
 }
 
 .text-tertiary {
