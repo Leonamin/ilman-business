@@ -3,9 +3,10 @@
     <div class="backdrop"></div> <!-- 전체 영역에 적용될 블러 배경 -->
     <img class="card-image" :src="props.feature.image" alt="Feature Image" />
     <div class="card-content">
-      <p class="title text-semi-bold text-left spb-8 text-line-break text-line-height-small">
+      <p class="title text-semi-bold text-left spb-8 text-line-break line-height-34">
         {{ props.feature.title }}</p>
-      <p class="description text-medium text-left text-positive text-line-break text-line-height-small">
+      <img class="expand-icon" src="/svgs/icons/icon-expand-circle.svg" alt="Expand Icon" />
+      <p class="description text-medium text-left text-tertiary text-line-break line-height-20">
         {{ props.feature.description }}</p>
     </div>
     <div class="spacer"></div>
@@ -29,7 +30,7 @@ const props = defineProps<{
   position: relative;
   padding: var(--spacing-32);
   border-radius: 16px;
-  aspect-ratio: 1.2;
+  aspect-ratio: 1.23;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -69,21 +70,31 @@ const props = defineProps<{
 }
 
 .title {
-  font-size: var(--font-size-h32);
+  font-size: var(--font-size-h24);
   white-space: pre-line;
   word-break: keep-all;
   word-wrap: break-word;
-  transition: visibility 0s, font-size 0.5s;
+  transition: font-size 0.5s, line-height 0.5s;
 }
 
 .description {
   opacity: 0;
   font-size: var(--font-size-body16);
   transition: opacity 0.5s;
+  z-index: 1;
+}
+
+.expand-icon {
+  width: 24px;
+  height: 24px;
+  opacity: 1;
+  visibility: visible;
+  transition: transform 0.5s, opacity 0.5s, visibility 0.5s;
 }
 
 .card:hover .title {
-  font-size: var(--font-size-h24);
+  font-size: var(--font-size-h18);
+  line-height: 24px;
 }
 
 .card:hover .description {
@@ -95,9 +106,38 @@ const props = defineProps<{
   visibility: visible; /* 요소를 표시 */
 }
 
+.card:hover .expand-icon {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(32px);
+}
+
 @media (max-width: 768px) {
   .card {
     aspect-ratio: 1.0;
   }
 }
+
+@media (pointer: coarse) {
+  .card:hover .title {
+    font-size: var(--font-size-h24); /* 기본값으로 되돌림 */
+    line-height: 34px;            /* 원래 설정으로 초기화 */
+  }
+
+  .card:hover .description {
+    opacity: 0; /* 기본값으로 되돌림 */
+  }
+
+  .card:hover .backdrop {
+    opacity: 0; /* 기본값으로 되돌림 */
+    visibility: hidden; /* 기본값으로 되돌림 */
+  }
+
+  .card:hover .expand-icon {
+    opacity: 1; /* 기본값으로 되돌림 */
+    visibility: visible; /* 기본값으로 되돌림 */
+    transform: translateY(0); /* 기본값으로 되돌림 */
+  }
+}
+
 </style>
