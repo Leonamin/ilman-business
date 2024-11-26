@@ -50,3 +50,35 @@
     cursor: not-allowed;
 }
 
+.button-blue {
+    background-color: var(--color-bg-blue);
+    color: var(--color-text-inverse);
+}
+
+/*.button-blue:hover {*/
+/*    background-color: var(--color-bg-indigo);*/
+/*}*/
+
+.button-blue:disabled {
+    background-color: var(--color-bg-blue-light);
+    color: var(--color-text-tertiary);
+    cursor: not-allowed;
+}
+
+.button-blue-outline {
+    background-color: transparent;
+    border: 1px solid var(--color-bg-blue);
+    color: var(--color-bg-blue);
+}
+
+/*.button-blue-outline:hover {*/
+/*    background-color: var(--color-bg-blue);*/
+/*    color: var(--color-text-inverse);*/
+/*}*/
+
+.button-blue-outline:disabled {
+    background-color: transparent;
+    border: 1px solid var(--color-bg-blue-light);
+    color: var(--color-bg-blue-light);
+    cursor: not-allowed;
+}

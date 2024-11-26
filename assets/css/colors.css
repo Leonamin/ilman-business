@@ -24,7 +24,9 @@
     --color-bg-inverse-hover: #333;
 
     --color-bg-green: #e0f2f1;
-    --color-bg-blue: #e3f2fd;
+    --color-bg-blue: #3B82F6;
+    --color-bg-blue-light: #EEF2FF;
+    --color-bg-indigo: #6366F1;
     --color-bg-yellow: #fff9c4;
     --color-bg-red: #ffcdd2;
 
@@ -40,7 +42,7 @@
 
     --color-text-green: #2e7d32;
     --color-text-green-light: #4caf50;
-    --color-text-blue: #1565c0;
+    --color-text-blue: #3B82F6;
     --color-text-blue-light: #2196f3;
     --color-text-yellow: #f57f17;
     --color-text-yellow-light: #ff9800;
@@ -50,6 +52,8 @@
     --color-border-primary: #e0e0e0;
     --color-border-secondary: #DEDEDE;
     --color-border-inverse: #333;
+
+    --color-border-blue: #3B82F6;
 }
 
 :root.dark {
