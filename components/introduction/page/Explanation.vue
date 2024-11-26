@@ -31,4 +31,10 @@ import AnimatedElement from "~/components/0_components/animation/AnimatedElement
   align-items: center;
   gap: 16px;
 }
+
+@media (max-width: 768px) {
+  .content {
+    padding: 0 16px;
+  }
+}
 </style>
