@@ -6,7 +6,7 @@ import FAQ from "~/components/introduction/page/FAQ.vue";
 import DoctorInterview from "~/components/introduction/page/DoctorInterview.vue";
 import ProfitCalculator from "~/components/introduction/page/ProfitCalculator.vue";
 import ScrollToTopButton from "~/components/0_components/button/ScrollToTopButton.vue";
-import Explaination from "~/components/introduction/page/Explaination.vue";
+import Explanation from "~/components/introduction/page/Explanation.vue";
 
 </script>
 
@@ -15,7 +15,7 @@ import Explaination from "~/components/introduction/page/Explaination.vue";
     <!-- 메인 컨텐츠 -->
     <div>
       <Introduction id="intro"/>
-      <Explaination id="explaination"/>
+      <Explanation id="explaination"/>
       <Feature id="feature"/>
       <ProfitCalculator id="profit-calculator"/>
       <WorkProcess id="process"/>

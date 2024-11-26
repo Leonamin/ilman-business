@@ -7,7 +7,7 @@
     /* 크기 변수 */
     --app-bar-height-desktop: 64px;
     --app-bar-height-mobile: 56px;
-    --padding-default: 16px;
+    --desktop-max-width: 1128px;
 
     --spx-header:390px;
 

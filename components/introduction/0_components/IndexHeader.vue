@@ -48,7 +48,7 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 1128px; /* 중앙 정렬 및 최대 너비 제한 */
+  max-width: var(--desktop-max-width); /* 중앙 정렬 및 최대 너비 제한 */
   padding: 0 16px; /* 좌우 여백 추가 */
 }
 
