@@ -8,7 +8,7 @@ defineProps<{
 <template>
   <div class="card outer">
     <div>
-      <p class="text-h5 text-semi-bold text-left spb-small text-line-break text-line-height-small">
+      <p class="text-h5 text-semi-bold text-left spb-8 text-line-break text-line-height-small">
         {{ title }}</p>
       <p class="text-body1 text-medium text-left text-positive text-line-break text-line-height-small">
         {{ description }}</p>

@@ -3,7 +3,7 @@
     <div class="backdrop"></div> <!-- 전체 영역에 적용될 블러 배경 -->
     <img class="card-image" :src="props.feature.image" alt="Feature Image" />
     <div class="card-content">
-      <p class="title text-semi-bold text-left spb-small text-line-break text-line-height-small">
+      <p class="title text-semi-bold text-left spb-8 text-line-break text-line-height-small">
         {{ props.feature.title }}</p>
       <p class="description text-medium text-left text-positive text-line-break text-line-height-small">
         {{ props.feature.description }}</p>

@@ -12,7 +12,7 @@ const formatPrice = (price: number) => {
 </script>
 
 <template>
-  <div class="layout spb-medium">
+  <div class="layout spb-16">
     <p :class="props.labelStyle">{{ props.label }}</p>
     <p :class="props.amountStyle">{{ formatPrice(props.amount) }}</p>
   </div>

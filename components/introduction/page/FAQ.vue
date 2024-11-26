@@ -41,7 +41,7 @@ const toggleFAQ = (index: number) => {
 <template>
   <div class="layout">
     <div class="faq">
-      <h2 class="text-h2 text-bold text-center spb-large">자주 묻는 질문</h2>
+      <h2 class="text-h2 text-bold text-center spb-32">자주 묻는 질문</h2>
       <div
           v-for="(item, index) in faqList"
           :key="index"

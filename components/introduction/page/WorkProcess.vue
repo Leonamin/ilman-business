@@ -29,7 +29,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <h2 class="text-h2 text-semi-bold center-row spt-xLarge spb-large">아임파인의 일만사업 절차</h2>
+  <h2 class="text-h2 text-semi-bold center-row spt-64 spb-32">아임파인의 일만사업 절차</h2>
   <div class="content-layout">
 
     <div v-if="isMobile">

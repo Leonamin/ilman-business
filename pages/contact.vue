@@ -23,13 +23,13 @@ const methods = [
 
 <template>
   <div class="layout">
-    <p class="title text-h1 text-center text-bold spv-xLarge text-line-height-medium">
+    <p class="title text-h1 text-center text-bold spy-64 text-line-height-medium">
       아임파인 일만사업에 관심을 가져주셔서 진심으로 감사드립니다!
     </p>
     <p class="text-h5 text-center text-bold">
       도입이나 문의를 희망하신다면 아래의 창구를 통해 저희가 도움을 드리겠습니다.
     </p>
-    <div class="spb-xLarge">
+    <div class="spb-64">
     </div>
     <div class="contacts-container">
       <ContactMethodCard

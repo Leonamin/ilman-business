@@ -10,7 +10,7 @@ const props = defineProps<{
 <template>
   <div class="outer card">
     <div>
-      <p class="text-h5 text-semi-bold text-left spb-small">{{ props.process.title }}</p>
+      <p class="text-h5 text-semi-bold text-left spb-8">{{ props.process.title }}</p>
       <p class="text-body1 text-medium text-left text-positive">{{ props.process.description }}</p>
     </div>
     <div class="spacer"></div>

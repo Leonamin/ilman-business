@@ -28,7 +28,7 @@ onMounted(() => {
 <template>
   <div class="layout ">
     <div class="main-content animate-content">
-      <h1 class="text-h1 text-bold spt-xLarge spb-medium text-center">진료는 그대로<br>매출은 최대로<br>아임파인 일만사업</h1>
+      <p class="text-h1 text-bold spt-64 spb-16 text-center">진료는 그대로<br>매출은 최대로<br>아임파인 일만사업</p>
 
       <div class="button-list">
         <SolidButton
@@ -164,10 +164,6 @@ onMounted(() => {
   }
   .main-content {
     padding-top: 40px;
-  }
-
-  .main-content h1 {
-    font-size: var(--font-size-h1-mobile);
   }
 
   .button-list {

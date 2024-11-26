@@ -24,91 +24,80 @@
 
 /* 스페이싱 */
 
-.sph-small {
+.spx-8 {
     padding-left: var(--spacing-8);
     padding-right: var(--spacing-8);
 }
 
-.sph-medium {
+.spx-16 {
     padding-left: var(--spacing-16);
     padding-right: var(--spacing-16);
 }
 
-.sph-large {
+.spx-32 {
     padding-left: var(--spacing-32);
     padding-right: var(--spacing-32);
 }
 
-.sph-xLarge {
+.spx-64 {
     padding-left: var(--spacing-64);
     padding-right: var(--spacing-64);
 }
 
-.spv-small {
+.spy-8 {
     padding-top: var(--spacing-8);
     padding-bottom: var(--spacing-8);
 }
 
-.spv-medium {
+.spy-16 {
     padding-top: var(--spacing-16);
     padding-bottom: var(--spacing-16);
 }
 
-.spv-large {
+.spy-32 {
     padding-top: var(--spacing-32);
     padding-bottom: var(--spacing-32);
 }
 
-.spv-xLarge {
+.spy-64 {
     padding-top: var(--spacing-64);
     padding-bottom: var(--spacing-64);
 }
 
-.spt-small {
+.spt-8 {
     padding-top: var(--spacing-8);
 }
 
-.spt-medium {
+.spt-16 {
     padding-top: var(--spacing-16);
 }
 
-.spt-large {
+.spt-24 {
+    padding-top: var(--spacing-24);
+}
+
+.spt-32 {
     padding-top: var(--spacing-32);
 }
 
-.spt-xLarge {
+.spt-64 {
     padding-top: var(--spacing-64);
 }
 
-.spb-small {
+.spb-8 {
     margin-bottom: var(--spacing-8);
 }
 
-.spb-medium {
+.spb-16 {
     margin-bottom: var(--spacing-16);
 }
 
-.spb-large {
+.spb-32 {
     margin-bottom: var(--spacing-32);
 }
 
-.spb-xLarge {
+.spb-64 {
     margin-bottom: var(--spacing-64);
-}
-
-.padding-vertical-small {
-    padding-top: var(--spacing-8);
-    padding-bottom: var(--spacing-8);
-}
-
-.padding-vertical-medium {
-    padding-top: var(--spacing-16);
-    padding-bottom: var(--spacing-16);
-}
-
-.padding-vertical-large {
-    padding-top: var(--spacing-32);
-    padding-bottom: var(--spacing-32);
 }
 
 /* 텍스트 크기 */

@@ -75,13 +75,13 @@ const 총합_라운딩 = computed(() => {
 
 <template>
   <div class="layout">
-    <div class="main-content spt-xLarge">
+    <div class="main-content spt-64">
       <AnimatedElement>
         <div class="center-row">
-          <h2 class="text-h2 text-bold spt-xLarge spb-medium">수익 계산기</h2 >
+          <h2 class="text-h2 text-bold spt-64 spb-16">수익 계산기</h2 >
         </div>
       </AnimatedElement>
-      <div class="selector-container spb-large">
+      <div class="selector-container spb-32">
         <div class="center-row">
           <p class="text-body1 text-bold">원장님 </p>
           <p class="text-body1 text-bold text-negative">스스로</p>
@@ -93,7 +93,7 @@ const 총합_라운딩 = computed(() => {
           <p class="text-body1 text-bold text-positive">함께</p>
         </div>
       </div>
-      <div class="patient-block center-row spb-medium">
+      <div class="patient-block center-row spb-16">
         <p class="text-body1 text-medium">만약 환자가 </p>
         <p class="text-body1 text-positive text-bold">{{ 환자수 }}</p>
         <p class="text-body1 text-medium">명이라면</p>
