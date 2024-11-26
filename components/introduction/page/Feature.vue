@@ -25,14 +25,6 @@ const features: FeatureModel[] = [
 
 <template>
   <div class="layout">
-    <div class="explanation spb-32">
-      <AnimatedElement>
-        <h2 class="spt-64 spb-32 text-h2 text-bold">일만사업이란?</h2>
-        <h5 class="spb-32 text-h5 text-medium ">일차병원 만성질환관리사업(이하 일만사업)은 만성질환(고혈압/당뇨병)을 가진 환자들의 건강 수명 증진을 위한 국민건강보험 공단의 사업입니다.</h5>
-      </AnimatedElement>
-
-      <SolidButton preset="primaryOutline" text="일만사업에 대해 더 알아보기"/>
-    </div>
     <div class="feature-content">
       <AnimatedElement>
 
@@ -41,7 +33,7 @@ const features: FeatureModel[] = [
       <AnimatedElement :threshold=0.1>
         <div class="card-container spb-32">
           <FeatureCard
-              :feature="feature" :preset="feature.preset" class="flex-equal" v-for="feature in features"
+              :feature="feature" class="flex-equal" v-for="feature in features"
               :key="feature.title"/>
         </div>
       </AnimatedElement>
