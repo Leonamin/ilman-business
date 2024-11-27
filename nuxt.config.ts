@@ -20,6 +20,7 @@ export default defineNuxtConfig({
         '@/assets/css/button.css',
         '@/assets/css/styles.css',
         '@/assets/css/card.css',
+        '@/assets/css/presets/badge.css',
     ],
     plugins: [
         '@/plugins/Vue3Marquee.client.ts',

@@ -1,0 +1,4 @@
+.badge-red {
+    background-color: var(--color-bg-red-light);
+    color: var(--color-text-red);
+}

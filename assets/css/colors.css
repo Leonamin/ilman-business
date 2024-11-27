@@ -31,7 +31,9 @@
     --color-bg-blue-light: #EEF2FF;
     --color-bg-indigo: #6366F1;
     --color-bg-yellow: #fff9c4;
-    --color-bg-red: #ffcdd2;
+    --color-bg-red: #ef4444;
+    --color-bg-red-hover: #991b1b;
+    --color-bg-red-light: #fef2f2;
 
     /* 색상 변수 텍스트 */
 
@@ -49,8 +51,8 @@
     --color-text-blue-light: #2196f3;
     --color-text-yellow: #f57f17;
     --color-text-yellow-light: #ff9800;
-    --color-text-red: #c62828;
-    --color-text-red-light: #f44336;
+    --color-text-red: #ef4444;
+    --color-text-red-hover: #991b1b;
 
     --color-border-primary: #e0e0e0;
     --color-border-secondary: #DEDEDE;
