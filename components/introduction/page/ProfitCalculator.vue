@@ -5,7 +5,7 @@ import AntSlider from 'ant-design-vue/es/slider';
 import {useProfitCalculator} from "~/composables/useProfitCalculator";
 import Badge from "~/components/0_components/badge/Badge.vue";
 
-const useImFine = ref(false);
+const useImFine = ref(true);
 const onChangeImFine = () => {
   useImFine.value = !useImFine.value;
 };
@@ -49,7 +49,7 @@ const 회차_아임파인_사용시 = {
 }
 
 // 환자 수와 관련된 변수
-const 환자수 = ref<number>(100);
+const 환자수 = ref<number>(500);
 const MIN_환자수 = 0;
 const MAX_환자수 = 500;
 
