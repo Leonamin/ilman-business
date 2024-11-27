@@ -29,6 +29,14 @@
     white-space: pre-wrap;
 }
 
+.column-start {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    white-space: pre-wrap;
+}
+
 .inline-p {
     display: flex;
     flex-direction: row;
@@ -120,6 +128,10 @@
 
 .spb-32 {
     margin-bottom: var(--spacing-32);
+}
+
+.spb-40 {
+    margin-bottom: var(--spacing-40);
 }
 
 .spb-48 {
