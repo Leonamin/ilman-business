@@ -18,7 +18,7 @@ import AnimatedElement from "~/components/0_components/animation/AnimatedElement
 <style scoped>
 .layout {
   width: 100%;
-  min-height: 100dvh;
+  height: 100dvh;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -33,6 +33,12 @@ import AnimatedElement from "~/components/0_components/animation/AnimatedElement
 }
 
 @media (max-width: 768px) {
+  .layout {
+    height: auto;
+    padding-top: 300px;
+    padding-bottom: 300px;
+  }
+
   .content {
     padding: 0 16px;
   }
