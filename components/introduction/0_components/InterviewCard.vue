@@ -7,7 +7,21 @@ const props = defineProps<{
   direction?: Direction
 }>()
 
-const directionClass = props.direction === Direction.Left ? 'column-start' : 'column-end'
+const isMobile = ref(false);
+
+onMounted(() => {
+  window.addEventListener("resize", () => {
+    isMobile.value = window.innerWidth <= 768;
+  });
+  isMobile.value = window.innerWidth <= 768;
+});
+
+const directionClass = () => {
+  if (isMobile.value) {
+    return 'column-start'
+  }
+  return props.direction === Direction.Left ? 'column-start' : 'column-end'
+}
 
 </script>
 
@@ -16,10 +30,10 @@ const directionClass = props.direction === Direction.Left ? 'column-start' : 'co
     <div class="content"  :class="directionClass">
       <div class="text-container">
         <div class="column-start">
-          <p class="text-h7 text-semi-bold line-height-28 spb-16">
+          <p class="text-h7 text-semi-bold line-height-28 spb-16 spb-12--mobile">
             {{ props.interview.hospital }}
           </p>
-          <p class="text-h3 text-semi-bold line-height-48 spb-40">
+          <p class="text-h3 text-semi-bold line-height-48 line-height-34--mobile spb-40 spb-16--mobile">
             {{ props.interview.title }}
           </p>
           <p class="text-h7 text-tertiary line-height-28">
@@ -78,6 +92,7 @@ const directionClass = props.direction === Direction.Left ? 'column-start' : 'co
 
 .image-card {
   border-radius: 40px;
+  object-fit: cover;
 }
 
 @media (max-width: 768px) {
@@ -86,8 +101,35 @@ const directionClass = props.direction === Direction.Left ? 'column-start' : 'co
   }
 
   .content {
+    gap: 24px;
     flex-direction: column;
+    align-items: flex-start;
   }
 
+  .content .text-container,
+  .content .image-container {
+    order: unset;
+  }
+
+  .text-container {
+    padding-inline: 16px;
+  }
+
+  .image-container {
+    padding-inline: 16px;
+  }
+
+
+  .line-height-34--mobile {
+    line-height: 34px;
+  }
+
+  .spb-12--mobile {
+    margin-bottom: 12px;
+  }
+
+  .spb-16--mobile {
+    margin-bottom: 16px;
+  }
 }
 </style>

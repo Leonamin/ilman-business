@@ -74,8 +74,15 @@ const interviews: InterviewModel[] = [
   justify-content: center;
   align-items: center;
   max-width: var(--desktop-max-width);
-  padding: 200px;
+  padding: 200px 0;
   gap: 400px;
+}
+
+@media (max-width: 768px) {
+  .content {
+    padding: 128px 0;
+    gap: 40px;
+  }
 }
 
 </style>
