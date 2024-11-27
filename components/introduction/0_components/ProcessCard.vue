@@ -8,24 +8,22 @@ const props = defineProps<{
 </script>
 
 <template>
-  <div class="outer card">
+  <div class="container card">
     <div>
-      <p class="text-h5 text-semi-bold text-left spb-8">{{ props.process.title }}</p>
-      <p class="text-body1 text-medium text-left text-positive">{{ props.process.description }}</p>
+      <p class="text-h5 text-semi-bold text-left line-height-34 spb-8">{{ props.process.title }}</p>
+      <p class="text-body1 text-medium text-left text-tertiary line-height-24">{{ props.process.description }}</p>
     </div>
     <div class="spacer"></div>
     <div class="bottom">
-      <div style="width:100px; height:100px; background-color: #cccccc">
-
-      </div>
+      <img :src="process.imageSrc" alt="절차 이미지"/>
     </div>
-<!--    image icon-->
+    <!--    image icon-->
   </div>
 
 </template>
 
 <style scoped>
-.outer {
+.container {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -38,13 +36,18 @@ const props = defineProps<{
 }
 
 .card {
-  padding: var(--spacing-32);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: var(--spacing-36);
+  background-color: #FAFAFA;
   border-radius: 16px;
   aspect-ratio: 1.2;
 }
 
 .bottom {
   margin-left: auto
+}
+
+.process-icon {
+  width: 64px;
+  height: 64px;
 }
 </style>

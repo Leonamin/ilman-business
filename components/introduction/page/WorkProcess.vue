@@ -7,12 +7,37 @@ import ChevronLeft from "~/components/0_components/icons/ChevronLeft.vue";
 import ProcessCard from "~/components/introduction/0_components/ProcessCard.vue";
 
 const process: WorkProcessStepModel[] = [
-  {title: '환자 등록 관리', description: '아임파인이 8개의\n작업을 처리합니다.'},
-  {title: '진료', description: '아임파인이 6개의\n작업을 처리합니다.'},
-  {title: '포괄 평가', description: '아임파인이 4개의\n작업을 처리합니다.'},
-  {title: '교육 상담', description: '아임파인이 5개의\n작업을 처리합니다.'},
-  {title: '환자 관리', description: '아임파인이 모두\n처리합니다.'},
-  {title: '중간 점검', description: '아임파인이 5개의\n작업을 처리합니다.'},
+  {
+    title: '환자 등록 관리',
+    description: '아임파인이 8개의\n작업을 처리합니다.',
+    imageSrc: '/svgs/icons/icon_monitor.svg'
+  },
+  {
+    title: '진료',
+    description: '아임파인이 6개의\n작업을 처리합니다.',
+    imageSrc: '/svgs/icons/icon_medical_bag.svg'
+  },
+  {
+    title: '포괄 평가',
+    description: '아임파인이 4개의\n작업을 처리합니다.',
+    imageSrc: '/svgs/icons/icon_book.svg'
+  },
+  {
+    title: '교육 상담',
+    description: '아임파인이 5개의\n작업을 처리합니다.',
+    imageSrc: '/svgs/icons/icon_edu_hat.svg'
+  },
+  {
+    title: '환자 관리',
+    description: '아임파인이 모두\n처리합니다.',
+    imageSrc: '/svgs/icons/icon_people.svg',
+  },
+  {
+    title: '중간 점검',
+    description: '아임파인이 5개의\n작업을 처리합니다.',
+    imageSrc: '/svgs/icons/icon_monitor_log.svg',
+
+  },
 ]
 
 const isMobile = ref(false);

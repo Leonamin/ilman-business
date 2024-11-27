@@ -6,7 +6,7 @@ defineProps<{
 </script>
 
 <template>
-  <div class="card outer">
+  <div class="card container">
     <div>
       <p class="text-h5 text-semi-bold text-left spb-8 text-line-break text-line-height-small">
         {{ title }}</p>
@@ -28,7 +28,7 @@ defineProps<{
   cursor: pointer;
 }
 
-.outer {
+.container {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
