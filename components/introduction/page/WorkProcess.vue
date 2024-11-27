@@ -55,54 +55,58 @@ onMounted(() => {
 
 <template>
   <div class="layout">
-    <h2 class="text-h2 text-semi-bold center-row spb-32">아임파인의 일만사업 절차</h2>
-    <div v-if="isMobile">
-      <div class="center-column" v-for="(item, index) in process" :key="item.title">
-        <ProcessCard :process="item"/>
-        <div v-if="index !== process.length - 1" class="card-gap center-column">
-          <ChevronDown color="black" size="24"/>
-        </div>
-      </div>
-    </div>
-    <div v-if="!isMobile">
-      <div class="process-outer">
-      <!--    첫번째 줄 1, 2, 3-->
-        <div class="process-inner">
-          <ProcessCard class="flex-equal" :process="process[0]"/>
-          <div class="card-gap center-column">
-            <ChevronRight color="black" size="24"/>
-          </div>
-          <ProcessCard class="flex-equal" :process="process[1]"/>
-          <div class="card-gap center-column">
-            <ChevronRight color="black" size="24"/>
-          </div>
-          <ProcessCard class="flex-equal" :process="process[2]"/>
+    <div class="content">
 
-        </div>
-        <!--    공백 줄 오직 가장 왼쪽 아래 화살표를 위해 존재-->
-        <div class="process-inner">
-          <div class="flex-equal"></div>
-          <div class="card-gap"/>
-          <div class="flex-equal"></div>
-          <div class="card-gap"/>
-          <div class="flex-equal card-gap center-column">
+      <h2 class="text-h2 text-semi-bold center-row spb-32">아임파인의 일만사업 절차</h2>
+      <div v-if="isMobile">
+        <div class="center-column" v-for="(item, index) in process" :key="item.title">
+          <ProcessCard :process="item"/>
+          <div v-if="index !== process.length - 1" class="card-gap center-column">
             <ChevronDown color="black" size="24"/>
           </div>
         </div>
-        <!--    세번째 줄 6, 5, 4-->
-        <div class="process-inner">
-          <ProcessCard class="flex-equal" :process="process[5]"/>
-          <div class="card-gap center-column">
-            <ChevronLeft color="black" size="24"/>
+      </div>
+      <div v-if="!isMobile">
+        <div class="process-outer">
+          <!--    첫번째 줄 1, 2, 3-->
+          <div class="process-inner">
+            <ProcessCard class="flex-equal" :process="process[0]"/>
+            <div class="card-gap center-column">
+              <ChevronRight color="black" size="24"/>
+            </div>
+            <ProcessCard class="flex-equal" :process="process[1]"/>
+            <div class="card-gap center-column">
+              <ChevronRight color="black" size="24"/>
+            </div>
+            <ProcessCard class="flex-equal" :process="process[2]"/>
+
           </div>
-          <ProcessCard class="flex-equal" :process="process[4]"/>
-          <div class="card-gap center-column">
-            <ChevronLeft color="black" size="24"/>
+          <!--    공백 줄 오직 가장 왼쪽 아래 화살표를 위해 존재-->
+          <div class="process-inner">
+            <div class="flex-equal"></div>
+            <div class="card-gap"/>
+            <div class="flex-equal"></div>
+            <div class="card-gap"/>
+            <div class="flex-equal card-gap center-column">
+              <ChevronDown color="black" size="24"/>
+            </div>
           </div>
-          <ProcessCard class="flex-equal" :process="process[3]"/>
+          <!--    세번째 줄 6, 5, 4-->
+          <div class="process-inner">
+            <ProcessCard class="flex-equal" :process="process[5]"/>
+            <div class="card-gap center-column">
+              <ChevronLeft color="black" size="24"/>
+            </div>
+            <ProcessCard class="flex-equal" :process="process[4]"/>
+            <div class="card-gap center-column">
+              <ChevronLeft color="black" size="24"/>
+            </div>
+            <ProcessCard class="flex-equal" :process="process[3]"/>
+          </div>
         </div>
       </div>
     </div>
+
   </div>
 
 
@@ -116,6 +120,15 @@ onMounted(() => {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  width: 100%;
+  max-width: var(--desktop-max-width);
 }
 
 .process-outer {
@@ -143,7 +156,6 @@ onMounted(() => {
 }
 
 
-
 @media (max-width: 768px) {
   .content {
     padding-inline: var(--spacing-16);
@@ -156,15 +168,6 @@ onMounted(() => {
 
   .process-inner {
     flex-direction: column;
-  }
-
-  .chevron-down {
-    display: block;
-  }
-
-  .chevron-down:last-child {
-    display: none;
-
   }
 }
 </style>
