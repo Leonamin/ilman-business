@@ -15,7 +15,7 @@ const props = defineProps<{
     </div>
     <div class="spacer"></div>
     <div class="bottom">
-      <img :src="process.imageSrc" alt="절차 이미지"/>
+      <img class="process-icon" :src="process.imageSrc" alt="절차 이미지"/>
     </div>
     <!--    image icon-->
   </div>
