@@ -150,7 +150,7 @@ const 손해 = computed(() => {
               <p class="text-body2 text-medium line-height-24">{{ value.value.toLocaleString() }}원</p>
             </div>
             <Badge
-                :class="['badge-item', {'badge-visible' : !useImFine}]" preset="red" :text="손해목록[key].value.toLocaleString() + '원'"
+                :class="['badge-item', {'badge-visible' : !useImFine && 손해목록[key].value != 0}]" preset="red" :text="손해목록[key].value.toLocaleString() + '원'"
                 text-class="text-caption1 line-height-16"
             />
           </div>
@@ -226,7 +226,7 @@ const 손해 = computed(() => {
 .profit-container {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: stretch;
   border-radius: 24px;
   border: solid 1px var(--color-border-primary);
   margin: 16px;
@@ -235,7 +235,6 @@ const 손해 = computed(() => {
 .profit-item {
   display: flex;
   flex-direction: column;
-  width: calc(100% - 72px);
   margin-top: 36px;
   margin-inline: 36px;
 }
