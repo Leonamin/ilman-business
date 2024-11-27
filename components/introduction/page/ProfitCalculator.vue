@@ -3,6 +3,7 @@ import {ref, computed} from 'vue';
 import AntSwitch from 'ant-design-vue/es/switch';
 import AntSlider from 'ant-design-vue/es/slider';
 import {useProfitCalculator} from "~/composables/useProfitCalculator";
+import Badge from "~/components/0_components/badge/Badge.vue";
 
 const useImFine = ref(false);
 const onChangeImFine = () => {
@@ -146,12 +147,14 @@ const 손해 = computed(() => {
           <div class="profit-item" v-for="(value, key) in 표시되는_수익" :key="key">
             <div class="row-space-between">
               <p class="text-body1 text-semi-bold line-height-24">{{ key }}</p>
-              <p class="text-body2 text-medium line-height-24">{{ value }}</p>
+              <p class="text-body2 text-medium line-height-24">{{ value.value.toLocaleString() }}원</p>
             </div>
-            <p class="profit-diff-text">{{ 손해목록[key] }}</p>
+            <Badge
+                :class="['badge-item', {'badge-visible' : !useImFine}]" preset="red" :text="손해목록[key].value.toLocaleString() + '원'"
+                text-class="text-caption1 line-height-16"
+            />
           </div>
         </div>
-
       </div>
     </div>
   </div>
@@ -224,13 +227,15 @@ const 손해 = computed(() => {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  align-self: stretch;
   border-radius: 24px;
   border: solid 1px var(--color-border-primary);
   margin: 16px;
 }
 
 .profit-item {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 72px);
   margin-top: 36px;
   margin-inline: 36px;
 }
@@ -239,7 +244,19 @@ const 손해 = computed(() => {
   margin-bottom: 36px;
 }
 
-.profit-diff-text {
-  margin: 0 auto;
+.badge-item {
+  display: flex;
+  width: fit-content;
+  align-self: flex-end;
+  justify-content: flex-end; /* Alignment.centerRight */
+  align-items: center; /* 수직 중앙 정렬 */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.badge-visible {
+  visibility: visible;
+  opacity: 1;
 }
 </style>
