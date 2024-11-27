@@ -40,17 +40,22 @@ const toggleFAQ = (index: number) => {
 
 <template>
   <div class="layout">
-    <div class="faq">
+    <div class="content">
       <h2 class="text-h2 text-bold text-center spb-32">자주 묻는 질문</h2>
       <div
           v-for="(item, index) in faqList"
           :key="index"
-          class="faq-item"
+          :class="['faq-item', { 'faq-selected-item': activeIndex === index }]"
       >
-        <div class="faq-header" @click="toggleFAQ(index)">
-          <p class="text-h5 text-bold text-left padding-vertical-large" :style="{
-              color: activeIndex === index ? 'var(--color-primary)' : 'black'
-            }">{{ item.question }}</p>
+        <div class="question-container" @click="toggleFAQ(index)">
+          <div class="question">
+            <img class="faq-icon" alt="질문 아이콘" src="/svgs/icons/icon_question.svg"
+                 width="24" height="24">
+            <div class="spl-24 sm-spl-12"/>
+            <p class="text-h5 text-semi-bold text-left padding-vertical-large">
+              {{ item.question }}
+            </p>
+          </div>
           <ChevronDown
               v-if="activeIndex !== index"
               color="black"
@@ -66,7 +71,14 @@ const toggleFAQ = (index: number) => {
             class="text-body1 text-medium padding-vertical-medium"
             v-if="activeIndex === index"
         >
-          <p>{{ item.answer }}</p>
+          <div class="answer">
+            <img class="faq-icon" alt="답변 아이콘" src="/svgs/icons/icon_answer.svg"
+                 width="24" height="24">
+            <div class="spl-24 sm-spl-12"/>
+            <p class="text-body1 text-left text-tertiary line-height-24">
+              {{ item.answer }}
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -75,41 +87,72 @@ const toggleFAQ = (index: number) => {
 
 <style scoped>
 .layout {
-  padding: 32px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-family: 'Noto Sans KR', sans-serif;
+  padding: 0 0 200px 0;
 }
 
-
-.faq {
+.content {
+  display: flex;
   width: 100%;
-  max-width: 70%;
-  margin: 0 auto;
-  border-radius: 8px;
-  overflow: hidden;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: var(--desktop-max-width);
 }
 
 .faq-item {
-  border-bottom: 1px solid #ddd;
+  align-self: stretch;
 }
 
-.faq-item:first-child {
-  border-top: 1px solid #ddd;
+
+.faq-selected-item {
+  background: #FAFAFA;
 }
 
-.faq-header {
+.question-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
+  padding: 26px 48px;
 }
 
-.faq-header:hover {
+.question-container:hover {
   background: var(--color-bg-primary-hover)
 }
 
+.question {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.answer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 26px 48px;
+}
+
+.faq-icon {
+  width: 48px;
+  height: 48px;
+}
+
 @media (max-width: 768px) {
-  .faq {
-    max-width: 80%;
+  .sm-spl-12 {
+    margin-left: 12px;
+  }
+  .faq-icon {
+    width: 24px;
+    height: 24px;
   }
 }
 </style>

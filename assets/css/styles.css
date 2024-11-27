@@ -142,6 +142,62 @@
     margin-bottom: var(--spacing-64);
 }
 
+.spr-4 {
+    margin-right: var(--spacing-4);
+}
+
+.spr-8 {
+    margin-right: var(--spacing-8);
+}
+
+.spr-16 {
+    margin-right: var(--spacing-16);
+}
+
+.spr-24 {
+    margin-right: var(--spacing-24);
+}
+
+.spr-32 {
+    margin-right: var(--spacing-32);
+}
+
+.spr-40 {
+    margin-right: var(--spacing-40);
+}
+
+.spr-48 {
+    margin-right: var(--spacing-48);
+}
+
+.spl-4 {
+    margin-left: var(--spacing-4);
+}
+
+.spl-8 {
+    margin-left: var(--spacing-8);
+}
+
+.spl-16 {
+    margin-left: var(--spacing-16);
+}
+
+.spl-24 {
+    margin-left: var(--spacing-24);
+}
+
+.spl-32 {
+    margin-left: var(--spacing-32);
+}
+
+.spl-40 {
+    margin-left: var(--spacing-40);
+}
+
+.spl-48 {
+    margin-left: var(--spacing-48);
+}
+
 /* 텍스트 크기 */
 .text-h1 {
     font-size: var(--font-size-h48);

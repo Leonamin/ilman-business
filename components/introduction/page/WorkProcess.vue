@@ -67,7 +67,7 @@ onMounted(() => {
     </div>
     <div v-if="!isMobile">
       <div class="process-outer">
-        <!--    첫번째 줄 1, 2, 3-->
+      <!--    첫번째 줄 1, 2, 3-->
         <div class="process-inner">
           <ProcessCard class="flex-equal" :process="process[0]"/>
           <div class="card-gap center-column">
@@ -142,6 +142,8 @@ onMounted(() => {
   height: 54px;
 }
 
+
+
 @media (max-width: 768px) {
   .content-layout {
     padding-inline: var(--spacing-16);
@@ -154,6 +156,15 @@ onMounted(() => {
 
   .process-inner {
     flex-direction: column;
+  }
+
+  .chevron-down {
+    display: block;
+  }
+
+  .chevron-down:last-child {
+    display: none;
+
   }
 }
 </style>
