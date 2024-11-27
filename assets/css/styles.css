@@ -7,6 +7,20 @@
     white-space: pre-wrap;
 }
 
+.row-space-between {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    white-space: pre-wrap;
+}
+
+.row-start {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    white-space: pre-wrap;
+}
+
 .center-column {
     display: flex;
     flex-direction: column;
@@ -100,8 +114,16 @@
     margin-bottom: var(--spacing-16);
 }
 
+.spb-24 {
+    margin-bottom: var(--spacing-24);
+}
+
 .spb-32 {
     margin-bottom: var(--spacing-32);
+}
+
+.spb-48 {
+    margin-bottom: var(--spacing-48);
 }
 
 .spb-64 {
@@ -261,6 +283,10 @@
     line-height: 20px;
 }
 
+.line-height {
+    line-height: 18px;
+}
+
 .line-height-16 {
     line-height: 16px;
 }
@@ -325,6 +351,10 @@
 
 .text-positive {
     color: var(--color-text-green);
+}
+
+.text-blue {
+    color: var(--color-text-blue);
 }
 
 .text-negative {
