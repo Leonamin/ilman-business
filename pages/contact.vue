@@ -18,8 +18,11 @@ const methods = [
   },
   {
     title: '이메일 문의',
-    description: '이메일로 문의하실 수 있습니다.',
+    description: '이메일로 문의하실 수 있습니다.\n' + 'contact@caresquare.kr',
     imageSrc: '/svgs/icons/icon_mail_open.svg',
+    onClick: () => {
+      window.location.href = 'mailto:contact@caresquare.kr';
+    },
   }
 ]
 </script>
@@ -59,6 +62,7 @@ const methods = [
 
 .content {
   display: flex;
+  width: 100%;
   flex: 1;
   align-self: center;
   flex-direction: column;
@@ -90,6 +94,7 @@ const methods = [
 @media (max-width: 768px) {
   .content {
     padding: 128px 16px;
+    width: auto;
   }
 
   .contacts-container {
