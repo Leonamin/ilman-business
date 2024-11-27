@@ -16,12 +16,12 @@ onMounted(() => {
   isMobile.value = window.innerWidth <= 768;
 });
 
-const directionClass = () => {
+const directionClass = computed(() => {
   if (isMobile.value) {
     return 'column-start'
   }
   return props.direction === Direction.Left ? 'column-start' : 'column-end'
-}
+});
 
 </script>
 
