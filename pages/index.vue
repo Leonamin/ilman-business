@@ -15,7 +15,7 @@ import Explanation from "~/components/introduction/page/Explanation.vue";
     <!-- 메인 컨텐츠 -->
     <div>
       <Introduction id="intro"/>
-      <Explanation id="explaination"/>
+      <Explanation id="explanation"/>
       <Feature id="feature"/>
       <ProfitCalculator id="profit-calculator"/>
       <WorkProcess id="process"/>

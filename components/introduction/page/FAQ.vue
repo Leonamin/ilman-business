@@ -89,7 +89,9 @@ const toggleFAQ = (index: number) => {
   align-items: center;
   width: 100%;
   font-family: 'Noto Sans KR', sans-serif;
-  padding: 0 0 200px 0;
+  padding-top: 128px;
+  padding-bottom: 128px;
+
 }
 
 .content {

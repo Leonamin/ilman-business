@@ -118,7 +118,7 @@ const 손해 = computed(() => {
 <template>
   <div class="layout">
     <div class="content">
-      <div class="main-content spt-64">
+      <div class="main-content">
         <div class="selector-container spb-48">
           <p class="text-body1 text-semi-bold line-height-18">아임파인과 함께</p>
           <AntSwitch :checked="useImFine" @click="onChangeImFine"/>
@@ -164,6 +164,7 @@ const 손해 = computed(() => {
 <style scoped>
 .layout {
   display: flex;
+  padding-top: 128px;
   width: 100%;
   justify-content: center; /* 자식 요소의 너비를 부모에 맞춤 */
   align-items: center; /* 자식 요소의 높이를 부모에 맞춤 */

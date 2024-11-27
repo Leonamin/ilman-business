@@ -54,9 +54,8 @@ onMounted(() => {
 </script>
 
 <template>
-  <h2 class="text-h2 text-semi-bold center-row spt-64 spb-32">아임파인의 일만사업 절차</h2>
-  <div class="content-layout">
-
+  <div class="layout">
+    <h2 class="text-h2 text-semi-bold center-row spb-32">아임파인의 일만사업 절차</h2>
     <div v-if="isMobile">
       <div class="center-column" v-for="(item, index) in process" :key="item.title">
         <ProcessCard :process="item"/>
@@ -111,8 +110,9 @@ onMounted(() => {
 
 
 <style scoped>
-.content-layout {
+.layout {
   display: flex;
+  padding-top: 128px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -145,7 +145,7 @@ onMounted(() => {
 
 
 @media (max-width: 768px) {
-  .content-layout {
+  .content {
     padding-inline: var(--spacing-16);
   }
 
