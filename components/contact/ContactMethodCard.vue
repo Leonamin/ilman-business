@@ -2,6 +2,7 @@
 defineProps<{
   title: string;
   description: string;
+  imageSrc?: string;
 }>();
 </script>
 
@@ -10,12 +11,11 @@ defineProps<{
     <div>
       <p class="text-h5 text-semi-bold text-left spb-8 text-line-break text-line-height-small">
         {{ title }}</p>
-      <p class="text-body1 text-medium text-left text-positive text-line-break text-line-height-small">
+      <p class="text-body1 text-medium text-left text-tertiary text-line-break text-line-height-small">
         {{ description }}</p>
     </div>
     <div class="bottom">
-      <div style="width:100px; height:100px; background-color: #cccccc">
-      </div>
+      <img class="bottom-icon" :src="imageSrc" alt="icon">
     </div>
   </div>
 </template>
@@ -24,7 +24,7 @@ defineProps<{
 .card {
   padding: var(--spacing-32);
   border-radius: 16px;
-  border: 1px solid var(--color-border-primary);
+  background-color: #FAFAFA;
   cursor: pointer;
 }
 
@@ -33,7 +33,7 @@ defineProps<{
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  gap: 16px;
+  gap: 14px;
 }
 
 .bottom {
@@ -45,9 +45,11 @@ defineProps<{
   background-color: var(--color-bg-secondary);
 }
 
+.bottom-icon {
+  width: 64px;
+  height: 64px;
+}
+
 @media (max-width: 768px) {
-  .bottom {
-    display: none;
-  }
 }
 </style>
