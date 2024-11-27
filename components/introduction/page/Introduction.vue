@@ -141,10 +141,6 @@ const images = [
 
 /* 반응형 디자인 */
 @media (max-width: 768px) {
-  .layout {
-    height: 100dvh;
-  }
-
   .main-content {
     padding-top: 40px;
   }
