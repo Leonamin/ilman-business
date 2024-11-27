@@ -116,6 +116,8 @@ onMounted(() => {
 <style scoped>
 .layout {
   display: flex;
+  width: 100%;
+  max-width: 100%;
   padding-top: 128px;
   flex-direction: column;
   justify-content: center;
@@ -127,7 +129,6 @@ onMounted(() => {
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
-  width: 100%;
   max-width: var(--desktop-max-width);
 }
 
