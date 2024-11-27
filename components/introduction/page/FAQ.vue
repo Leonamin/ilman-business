@@ -6,23 +6,20 @@ import ChevronUp from "~/components/0_components/icons/ChevronUp.vue";
 const faqList: FAQModel[] = [
   {
     question: "우리 의원도 설치 가능한가요?",
-    answer: "아니요"
+    answer: "네 아임파인 일만사업 솔루션은 일차병원에 적합하게 설계된 아임파인 닥터를 기반으로 합니다." +
+        "따라서 일차병원이라면 누구나 아임파인 일만사업 솔루션을 설치하고 사용할 수 있습니다."
   },
   {
     question: "도입 비용은 얼마나 드나요?",
-    answer: "100만원입니다."
+    answer: "최초 도입 비용은 아임파인 닥터의 요금제를 따르며 일차병원의 규모와 요구사항에 따라 다를 수 있습니다."
   },
   {
     question: "유지 비용도 있나요?",
-    answer: "네"
-  },
-  {
-    question: "하면 뭐가 좋나요?",
-    answer: "위에서 설명했을텐데"
+    answer: "아임파인 일만사업은 건별 이용료로 부과되며 규모에 따라 수수료는 10~15%가 책정됩니다. 자세한 내용은 문의해주세요."
   },
   {
     question: "지속적인 지원도 받을 수 있나요?",
-    answer: "돈을 내신다면야."
+    answer: "네 아임파인 일만사업 솔루션은 카카오톡 채널이나 전화 등을 통해 지원받으실 수 있으며 빠른 문제 해결을 위해 최선을 다하겠습니다."
   }
 ]
 
@@ -153,6 +150,18 @@ const toggleFAQ = (index: number) => {
   .faq-icon {
     width: 24px;
     height: 24px;
+  }
+
+  .faq-item {
+    margin-inline: 16px;
+  }
+
+  .question-container {
+    padding: 26px 12px;
+  }
+
+  .answer {
+    padding: 26px 12px;
   }
 }
 </style>
