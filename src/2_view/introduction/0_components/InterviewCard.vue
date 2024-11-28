@@ -33,10 +33,10 @@ const directionClass = computed(() => {
           <p class="text-h7 text-semi-bold line-height-28 spb-16 spb-12--mobile">
             {{ props.interview.hospital }}
           </p>
-          <p class="text-h3 text-semi-bold line-height-48 line-height-34--mobile spb-40 spb-16--mobile">
+          <p class="text-h3 text-semi-bold line-height-48 sm-line-height-34 spb-40 spb-16--mobile">
             {{ props.interview.title }}
           </p>
-          <p class="text-h7 text-tertiary line-height-28">
+          <p class="text-h7 text-tertiary line-height-28 sm-line-height-24">
             {{ props.interview.description }}
           </p>
         </div>
@@ -119,8 +119,11 @@ const directionClass = computed(() => {
     padding-inline: 16px;
   }
 
+  .sm-line-height-24 {
+    line-height: 24px;
+  }
 
-  .line-height-34--mobile {
+  .sm-line-height-34 {
     line-height: 34px;
   }
 

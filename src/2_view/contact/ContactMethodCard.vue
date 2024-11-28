@@ -14,6 +14,7 @@ defineProps<{
       <p class="text-body1 text-medium text-left text-tertiary text-line-break text-line-height-small">
         {{ description }}</p>
     </div>
+    <img src="/svgs/icons/icon_arrow_forward.svg" class="forward-icon">
     <div class="bottom">
       <img class="bottom-icon" :src="imageSrc" alt="icon">
     </div>
@@ -43,6 +44,11 @@ defineProps<{
 
 .card:hover {
   background-color: var(--color-bg-secondary);
+}
+
+.forward-icon {
+  width: 24px;
+  height: 24px;
 }
 
 .bottom-icon {
