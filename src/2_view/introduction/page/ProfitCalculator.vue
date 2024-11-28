@@ -130,7 +130,7 @@ const 손해 = computed(() => {
         <div class="center-column text-h6 line-height-28 text-semi-bold spb-24">
           <p>아임파인을 사용하지 않는다면</p>
           <div class="row-start">
-            <p class="text-negative">{{ 손해.toLocaleString() }}원</p>
+            <p class="text-red">{{ 손해.toLocaleString() }}원</p>
             <p> 손해</p>
           </div>
         </div>
