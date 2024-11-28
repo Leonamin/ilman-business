@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {badgePresets, type BadgePreset} from "~/style/BadgePreset";
+import {badgePresets, type BadgePreset} from "~/src/style/BadgePreset";
 
 const props = defineProps<{
   preset: BadgePreset;

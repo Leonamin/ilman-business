@@ -10,7 +10,18 @@
     <p class="text-h5 spb-32">
       * 인터넷 환경에 따라 신청서 양식을 불러오는 데 시간이 걸릴 수 있습니다.
     </p>
-    <iframe class="airtable-embed" src="https://airtable.com/embed/apph5AtjI1HVpHTDc/pagz9sfMRBqDNyxhC/form"
+    <!--    타이틀-->
+    <!--    설명-->
+    <!--    인라인 입력 폼(의원명)-->
+    <!--    인라인 입력 폼(지역명)-->
+    <!--    인라인 입력 폼(성함)-->
+    <!--    인라인 입력 폼(전화번호)-->
+    <!--    인라인 입력 폼(사용중인 EMR)-->
+    <!--    드랍 다운(옵션: 전화번호로 전화, 카카오톡)-->
+    <!--    장문 입력 폼(궁금한 점)-->
+    <!--    초기화 버튼-->
+    <!--    제출 버튼-->
+    <iframe class="airtable-embed" src="https://airtable.com/embed/appdx5BXToJFqzDNx/pagaXGdRp8K2RNQ3J/form"
             onmousewheel="" width="100%" height="533"
             style="background: transparent; border: 1px solid #ccc;">
     </iframe>

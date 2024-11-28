@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import SolidButton from "~/components/0_components/button/SolidButton.vue";
+import SolidButton from "~/src/2_view/0_components/0_components/button/SolidButton.vue";
 
 const handleMoreFeature = () => {
 //   #feature로 스크롤 이동

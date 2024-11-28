@@ -14,7 +14,7 @@
 </template>
 
 <script setup lang="ts">
-import type {FeatureModel} from "~/models/FeatureModel";
+import type {FeatureModel} from "~/src/0_models/FeatureModel";
 
 const props = defineProps<{
   feature: FeatureModel;

@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type FAQModel from "~/models/FAQModel";
-import ChevronDown from "~/components/0_components/icons/ChevronDown.vue";
-import ChevronUp from "~/components/0_components/icons/ChevronUp.vue";
+import type FAQModel from "~/src/0_models/FAQModel";
+import ChevronDown from "~/src/2_view/0_components/0_components/icons/ChevronDown.vue";
+import ChevronUp from "~/src/2_view/0_components/0_components/icons/ChevronUp.vue";
 
 const faqList: FAQModel[] = [
   {

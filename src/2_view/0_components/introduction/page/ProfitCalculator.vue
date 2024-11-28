@@ -2,8 +2,8 @@
 import {ref, computed} from 'vue';
 import AntSwitch from 'ant-design-vue/es/switch';
 import AntSlider from 'ant-design-vue/es/slider';
-import {useProfitCalculator} from "~/composables/useProfitCalculator";
-import Badge from "~/components/0_components/badge/Badge.vue";
+import {useProfitCalculator} from "~/src/composables/useProfitCalculator";
+import Badge from "~/src/2_view/0_components/0_components/badge/Badge.vue";
 
 const useImFine = ref(true);
 const onChangeImFine = () => {

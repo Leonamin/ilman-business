@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type {WorkProcessStepModel} from "~/models/WorkProcessStepModel";
+import type {WorkProcessStepModel} from "~/src/0_models/WorkProcessStepModel";
 
 const props = defineProps<{
   process: WorkProcessStepModel;

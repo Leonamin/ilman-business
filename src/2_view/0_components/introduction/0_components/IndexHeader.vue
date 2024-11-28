@@ -12,11 +12,11 @@
           </div>
         </a>
         <nav class="header-nav-item">
-          <a class="text-h7 text-semi-bold" href="/#intro">소개</a>
-          <a class="text-h7 text-semi-bold" href="/#feature">기능</a>
-          <a class="text-h7 text-semi-bold" href="/#profit-calculator">매출 계산기</a>
-          <a class="text-h7 text-semi-bold" href="/#process">일만사업 절차</a>
-          <a class="text-h7 text-semi-bold" href="/#faq">FAQ</a>
+          <a class="text-h7 text-semi-bold" href="/public#intro">소개</a>
+          <a class="text-h7 text-semi-bold" href="/public#feature">기능</a>
+          <a class="text-h7 text-semi-bold" href="/public#profit-calculator">매출 계산기</a>
+          <a class="text-h7 text-semi-bold" href="/public#process">일만사업 절차</a>
+          <a class="text-h7 text-semi-bold" href="/public#faq">FAQ</a>
         </nav>
       </div>
     </header>

@@ -12,7 +12,7 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
-import {buttonClassMap, type ButtonPreset} from "~/style/button/ButtonColorPreset";
+import {buttonClassMap, type ButtonPreset} from "~/src/style/button/ButtonColorPreset";
 
 // Props 정의
 const props = defineProps<{

@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import AnimatedElement from "~/components/0_components/animation/AnimatedElement.vue";
-import type {FeatureModel} from "~/models/FeatureModel";
-import FeatureCard from "~/components/introduction/0_components/FeatureCard.vue";
+import AnimatedElement from "~/src/2_view/0_components/0_components/animation/AnimatedElement.vue";
+import type {FeatureModel} from "~/src/0_models/FeatureModel";
+import FeatureCard from "~/src/2_view/0_components/introduction/0_components/FeatureCard.vue";
 
 const features: FeatureModel[] = [
   {

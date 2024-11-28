@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type {InterviewModel} from "~/models/InterviewModel";
-import {Direction} from "~/types/Direction";
+import type {InterviewModel} from "~/src/0_models/InterviewModel";
+import {Direction} from "~/src/0_models/types/Direction";
 
 const props = defineProps<{
   interview: InterviewModel

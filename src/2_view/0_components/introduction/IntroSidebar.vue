@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type {SideItem} from "~/types/SideItem";
+import type {SideItem} from "~/src/0_models/types/SideItem";
 
 const props = defineProps<{
   listItem: SideItem[]

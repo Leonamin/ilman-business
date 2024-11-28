@@ -1,10 +1,10 @@
 <script setup lang="ts">
 
-import type {WorkProcessStepModel} from "~/models/WorkProcessStepModel";
-import ChevronRight from "~/components/0_components/icons/ChevronRight.vue";
-import ChevronDown from "~/components/0_components/icons/ChevronDown.vue";
-import ChevronLeft from "~/components/0_components/icons/ChevronLeft.vue";
-import ProcessCard from "~/components/introduction/0_components/ProcessCard.vue";
+import type {WorkProcessStepModel} from "~/src/0_models/WorkProcessStepModel";
+import ChevronRight from "~/src/2_view/0_components/0_components/icons/ChevronRight.vue";
+import ChevronDown from "~/src/2_view/0_components/0_components/icons/ChevronDown.vue";
+import ChevronLeft from "~/src/2_view/0_components/0_components/icons/ChevronLeft.vue";
+import ProcessCard from "~/src/2_view/0_components/introduction/0_components/ProcessCard.vue";
 
 const process: WorkProcessStepModel[] = [
   {
