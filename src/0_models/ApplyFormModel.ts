@@ -8,6 +8,8 @@ export interface ApplyFormModelBase {
     // 설명 (폼에 표시될 설명)
     description?: string;
 
+    hintText? : string;
+
     // 필수 여부
     required?: boolean;
 

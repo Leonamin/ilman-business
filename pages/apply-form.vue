@@ -16,7 +16,7 @@ const forms: ApplyFormModelBase[] = [
       {
         fieldName: 'name',
         title: '성함',
-        description: '성함을 입력해주세요',
+        hintText: '성함을 입력해주세요',
         required: true,
       },
   ),
@@ -24,7 +24,7 @@ const forms: ApplyFormModelBase[] = [
       {
         fieldName: 'hosName',
         title: '의원명',
-        description: '의원명을 입력해주세요',
+        hintText: '의원명을 입력해주세요',
         required: true,
       },
   ),
@@ -32,7 +32,7 @@ const forms: ApplyFormModelBase[] = [
       {
         fieldName: 'region',
         title: '지역명',
-        description: '지역명을 입력해주세요',
+        hintText: '지역명을 입력해주세요',
         required: true,
       },
   ),
@@ -41,7 +41,7 @@ const forms: ApplyFormModelBase[] = [
       {
         fieldName: 'phone',
         title: '전화번호',
-        description: '전화번호를 입력해주세요',
+        hintText: '전화번호를 입력해주세요',
         required: true,
       },
   ),
@@ -49,7 +49,7 @@ const forms: ApplyFormModelBase[] = [
       {
         fieldName: 'emr',
         title: '사용중인 EMR',
-        description: '사용중인 EMR을 선택해주세요',
+        description: '사용중인 EMR을 선택해주세요\n\n지원가능 EMR: 의사랑, 닥터비트, 다솜 메디케어, 이지스, 전능 IT\n지원불가능: 아담스NC, 병원과컴퓨터\n\n아임파인은 계속발전해나가고 있으며 추후 지원 가능한 EMR이 추가될 예정입니다.',
         required: true,
         type: 'drop-down',
         formObject: {
@@ -74,7 +74,7 @@ const forms: ApplyFormModelBase[] = [
       {
         fieldName: 'question',
         title: '궁금한 점',
-        description: '궁금한 점을 입력해주세요',
+        hintText: '어떤 것이든 궁금한 것이 있으면 입력해주세요.',
         required: false,
         type: 'multi-line',
       },
@@ -176,6 +176,7 @@ const submitForm = async () => {
             v-if="form.type === 'text'"
             :title="form.title"
             :description="form.description || ''"
+            :placeholder="form.hintText"
             :is-important="form.required || false"
             v-model="refValue[form.fieldName].value"
         />
@@ -190,7 +191,7 @@ const submitForm = async () => {
         <MultilineTextField
             v-if="form.type === 'multi-line'"
             :title="form.title"
-            :description="form.description || ''"
+            :placeholder="form.hintText"
             :is-required="form.required || false"
             v-model="refValue[form.fieldName].value"
         />

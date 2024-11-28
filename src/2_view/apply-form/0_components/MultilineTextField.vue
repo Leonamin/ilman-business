@@ -2,7 +2,7 @@
 
 const props = defineProps<{
   title: string;
-  description: string;
+  description?: string;
   placeholder?: string;
   isRequired: boolean;
   modelValue: string;
@@ -17,7 +17,7 @@ const localValue = computed({
   set: (value) => emit('update:modelValue', value)
 });
 
-const hasDescription = computed(() => props.description.length > 0);
+const hasDescription = computed(() => props.description?.length !== undefined && props.description.length > 0);
 
 const maxLength = computed(() => props.maxLength || 1000);
 const minLine = computed(() => props.minLine || 4);
