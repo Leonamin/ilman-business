@@ -1,7 +1,7 @@
 <script setup lang="ts">
 
 import type {InterviewModel} from "~/src/0_models/InterviewModel";
-import InterviewCard from "~/src/2_view/0_components/introduction/0_components/InterviewCard.vue";
+import InterviewCard from "~/src/2_view/introduction/0_components/InterviewCard.vue";
 import {Direction} from "~/src/0_models/types/Direction";
 
 const interviews: InterviewModel[] = [

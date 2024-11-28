@@ -5,10 +5,10 @@
   <div class="header">
     <header class="header-container">
       <div class="header-inner">
-        <a href="/">
+        <a href="/public">
           <div class="logo-container">
             <img class="logo-1" src="/svgs/logo.svg" alt="Logo 1">
-            <img class="logo-2" src="~/assets/svgs/shm_black_logo.svg" alt="Logo 2">
+            <img class="logo-2" src="../../../../assets/svgs/shm_black_logo.svg" alt="Logo 2">
           </div>
         </a>
         <nav class="header-nav-item">

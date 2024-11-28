@@ -1,7 +1,7 @@
 <script setup lang="ts">
 
 // 상단으로 스크롤 이동
-import ChevronUp from "~/src/2_view/0_components/0_components/icons/ChevronUp.vue";
+import ChevronUp from "~/src/2_view/0_components/icons/ChevronUp.vue";
 
 const scrollToTop = () => {
   window.scrollTo({

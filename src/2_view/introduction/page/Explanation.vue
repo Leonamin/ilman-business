@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-import AnimatedElement from "~/src/2_view/0_components/0_components/animation/AnimatedElement.vue";
+import AnimatedElement from "~/src/2_view/0_components/animation/AnimatedElement.vue";
 </script>
 
 <template>
