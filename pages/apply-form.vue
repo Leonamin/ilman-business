@@ -5,7 +5,6 @@ import {
   type ApplyFormModelBase,
   createApplyFormModel,
 } from "~/src/0_models/ApplyFormModel";
-import {useDebounce} from "~/src/composables/useDebounce";
 import {FormService} from "~/src/1_service/AirtableService";
 import {Airtable_Select_EMR, Airtable_Select_연락수단} from "~/src/0_models/types/AirtableType";
 import DropdownField from "~/src/2_view/apply-form/0_components/DropdownField.vue";
@@ -97,22 +96,18 @@ const reset = () => {
 };
 
 const submit = () => {
-  useDebounce(() => {
-    const isAllValid = checkAll();
-    if (!isAllValid) return;
-    submitForm();
-  }, 300);
+  const isAllValid = checkAll();
+  if (!isAllValid) return;
+  submitForm();
 };
 
 const checkAll = () => {
-  let isAllValid = true;
   for (const form of forms) {
-    isAllValid = checkRequired(form) && isAllValid;
-    if (!isAllValid) {
-      break;
+    if (!checkRequired(form)) {
+      return false;
     }
   }
-  return isAllValid;
+  return true
 };
 
 const checkRequired = (form: ApplyFormModelBase) => {
