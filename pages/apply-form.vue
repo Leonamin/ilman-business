@@ -1,13 +1,18 @@
 <script setup lang="ts">
 import InlineTextField from "~/src/2_view/apply-form/0_components/InlineTextField.vue";
 import SolidButton from "~/src/2_view/0_components/button/SolidButton.vue";
-import {type ApplyFormModel, createApplyFormModel} from "~/src/0_models/ApplyFormModel";
+import {
+  type ApplyFormModel,
+  type ApplyFormModelBase,
+  createApplyFormModel, type DropDownFormModel,
+  type TextFormModel
+} from "~/src/0_models/ApplyFormModel";
 import {useDebounce} from "~/src/composables/useDebounce";
 import {FormService} from "~/src/1_service/AirtableService";
-import {Airtable_연락수단} from "~/src/0_models/types/AirtableType";
+import {Airtable_Select_EMR, Airtable_Select_연락수단} from "~/src/0_models/types/AirtableType";
 import DropdownField from "~/src/2_view/apply-form/0_components/DropdownField.vue";
 
-const forms = [
+const forms: ApplyFormModelBase[] = [
   createApplyFormModel(
       {
         fieldName: 'name',
@@ -45,8 +50,12 @@ const forms = [
       {
         fieldName: 'emr',
         title: '사용중인 EMR',
-        description: '사용중인 EMR을 입력해주세요',
+        description: '사용중인 EMR을 선택해주세요',
         required: true,
+        type: 'drop-down',
+        formObject: {
+          options: Airtable_Select_EMR,
+        }
       },
   ),
   createApplyFormModel(
@@ -55,10 +64,10 @@ const forms = [
         title: '연락받으실 수단',
         description: '연락받으실 수단을 선택해주세요',
         required: false,
-        initialValue: Airtable_연락수단[0],
+        initialValue: Airtable_Select_연락수단[0],
         type: 'drop-down',
         formObject: {
-          options: Airtable_연락수단,
+          options: Airtable_Select_연락수단,
         }
       },
   ),
@@ -80,7 +89,7 @@ const refValue: Record<string, Ref<string, string>> = forms.reduce((acc, form) =
 const reset = () => {
   for (const form of forms) {
     if (form.fieldName === 'contactMethod') {
-      refValue[form.fieldName].value = Airtable_연락수단[0];
+      refValue[form.fieldName].value = Airtable_Select_연락수단[0];
     } else {
       refValue[form.fieldName].value = '';
     }
@@ -106,7 +115,7 @@ const checkAll = () => {
   return isAllValid;
 };
 
-const checkRequired = (form: ApplyFormModel) => {
+const checkRequired = (form: ApplyFormModelBase) => {
   if (form.required && refValue[form.fieldName].value === '') {
     alert(`${form.title}을 입력해주세요`);
     return false;

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { Airtable_연락수단 } from "~/src/0_models/types/AirtableType";
 import { DownOutlined } from '@ant-design/icons-vue';
 import { computed } from "vue";
 
@@ -19,7 +18,7 @@ const emit = defineEmits<{
 const hasDescription = computed(() => props.description.length > 0);
 
 // 연락수단 데이터
-const 연락수단 = Airtable_연락수단;
+const 연락수단 = props.options;
 
 // 선택된 값 처리
 const handleSelect = (value: string) => {
@@ -51,7 +50,7 @@ const handleSelect = (value: string) => {
         </a-menu>
       </template>
       <a-button>
-        {{ props.modelValue || '선택하세요' }}
+        {{ props.modelValue || '선택' }}
         <DownOutlined />
       </a-button>
     </a-dropdown>
