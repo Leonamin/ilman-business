@@ -4,6 +4,8 @@ import SolidButton from "~/src/2_view/0_components/button/SolidButton.vue";
 import {type ApplyFormModel, createApplyFormModel} from "~/src/0_models/ApplyFormModel";
 import {useDebounce} from "~/src/composables/useDebounce";
 import {FormService} from "~/src/1_service/AirtableService";
+import {Airtable_연락수단} from "~/src/0_models/types/AirtableType";
+import DropdownField from "~/src/2_view/apply-form/0_components/DropdownField.vue";
 
 const forms = [
   createApplyFormModel(
@@ -52,7 +54,12 @@ const forms = [
         fieldName: 'contactMethod',
         title: '연락받으실 수단',
         description: '연락받으실 수단을 선택해주세요',
-        required: true,
+        required: false,
+        initialValue: Airtable_연락수단[0],
+        type: 'drop-down',
+        formObject: {
+          options: Airtable_연락수단,
+        }
       },
   ),
   createApplyFormModel(
@@ -66,13 +73,17 @@ const forms = [
 ]
 
 const refValue: Record<string, Ref<string, string>> = forms.reduce((acc, form) => {
-  acc[form.fieldName] = ref<string>(''); // fieldName을 키로, 초기값 '' 설정
+  acc[form.fieldName] = ref<string>(form.initialValue || ''); // fieldName을 키로, 초기값 '' 설정
   return acc;
 }, {} as Record<string, Ref<string, string>>);
 
 const reset = () => {
   for (const form of forms) {
-    refValue[form.fieldName].value = '';
+    if (form.fieldName === 'contactMethod') {
+      refValue[form.fieldName].value = Airtable_연락수단[0];
+    } else {
+      refValue[form.fieldName].value = '';
+    }
   }
 };
 
@@ -95,7 +106,7 @@ const checkAll = () => {
   return isAllValid;
 };
 
-const checkRequired = (form: ApplyFormModel)  => {
+const checkRequired = (form: ApplyFormModel) => {
   if (form.required && refValue[form.fieldName].value === '') {
     alert(`${form.title}을 입력해주세요`);
     return false;
@@ -135,33 +146,45 @@ const submitForm = async () => {
 
 <template>
   <div class="layout">
-    <p class="text-h1 spb-64 spt-16">
-      아임파인 일만사업 솔루션 도입 신청서
-    </p>
-    <p class="text-body1 text-tertiary">
-      소중한 시간 내어주셔서 감사합니다.
+    <div class="text-container">
+      <p class="text-h1 spb-16">
+        도입 신청서
+      </p>
+      <p class="text-body1 text-tertiary line-height-24 spb-36">
+        소중한 시간 내어주셔서 감사합니다. 저희와 함께하시면 어려울게 없습니다.<br>
+        영업일 기준 1일내 응답 드리겠습니다.
+      </p>
+    </div>
+    <div class="dv-hori-1 spb-36">
 
-
-
-      저희와 함께하시면 어려울게 없습니다.
-
-      영업일 기준 1일내 응답 드리겠습니다.
-    </p>
-    <div class="spb-64"/>
+    </div>
     <div class="form-container">
-      <InlineTextField
+      <div
           v-for="form in forms"
           :key="form.fieldName"
-          :title="form.title"
-          :description="form.description || ''"
-          :is-important="form.required || false"
-          v-model="refValue[form.fieldName].value"
-      />
+      >
+        <InlineTextField
+            v-if="form.type === 'text'"
+            :title="form.title"
+            :description="form.description || ''"
+            :is-important="form.required || false"
+            v-model="refValue[form.fieldName].value"
+        />
+        <DropdownField
+            v-if="form.type === 'drop-down'"
+            :title="form.title"
+            :description="form.description || ''"
+            :is-required="form.required || false"
+            :options="form.formObject.options"
+            v-model="refValue[form.fieldName].value"
+        />
+      </div>
+
+
     </div>
     <div class="spb-24"/>
     <div class="button-container">
-      <SolidButton preset="blueOutline" text="초기화" @click="reset"/>
-      <SolidButton preset="blue" text="제출" @click="submit"/>
+      <SolidButton preset="blue" text="제출하기" @click="submit"/>
     </div>
   </div>
 </template>
@@ -179,6 +202,14 @@ const submitForm = async () => {
   padding: 128px 0;
 }
 
+.text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  white-space: pre-line;
+}
+
 .form-container {
   display: flex;
   flex-direction: column;
@@ -188,7 +219,11 @@ const submitForm = async () => {
 
 .button-container {
   display: flex;
+  justify-content: flex-end;
+  align-items: center;
   gap: 16px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 @media (max-width: 768px) {

@@ -1,6 +1,4 @@
-
-// 사용할 때는 뷰측에서 fieldName으로 된 반응형 변수 이름을 가진 객체 생성하도록 함
-export interface ApplyFormModel {
+export interface ApplyFormModelBase {
     // 에어테이블 필드명
     fieldName: string;
 
@@ -13,30 +11,28 @@ export interface ApplyFormModel {
     // 필수 여부
     required?: boolean;
 
-    // 입력 타입
-    type: 'text' | 'long-text' | 'drop-down';
-
-    // 입력 타입에 따른 추가 정보
-    formObject: TextFormObject | LongTextFormObject | DropDownFormObject;
+    // 초기값
+    initialValue?: string;
 }
 
-const defaultApplyFormModel: ApplyFormModel = {
-    fieldName: '',
-    title: '',
-    description: '',
-    required: false,
-    type: 'text',
-    formObject: {
-        placeholder: '',
-    },
+// 타입에 따른 폼 객체 정의
+export interface TextFormModel extends ApplyFormModelBase {
+    type: 'text';
+    formObject: TextFormObject;
 }
 
-export function createApplyFormModel(form: Partial<ApplyFormModel>): ApplyFormModel {
-    return {
-        ...defaultApplyFormModel,
-        ...form,
-    };
+export interface LongTextFormModel extends ApplyFormModelBase {
+    type: 'long-text';
+    formObject: LongTextFormObject;
 }
+
+export interface DropDownFormModel extends ApplyFormModelBase {
+    type: 'drop-down';
+    formObject: DropDownFormObject;
+}
+
+// ApplyFormModel 유니온 타입
+export type ApplyFormModel = TextFormModel | LongTextFormModel | DropDownFormModel;
 
 export interface TextFormObject {
     placeholder: string;
@@ -48,4 +44,26 @@ export interface LongTextFormObject {
 
 export interface DropDownFormObject {
     options: string[];
+}
+
+// 기본값 생성 함수
+const defaultApplyFormModel: ApplyFormModel = {
+    fieldName: '',
+    title: '',
+    required: false,
+    type: 'text',
+    formObject: {
+        placeholder: '',
+    },
+};
+
+// ApplyFormModel 생성 함수
+export function createApplyFormModel<T extends ApplyFormModel>(
+    form: Partial<T>
+): T {
+    const defaultForm = defaultApplyFormModel as T;
+    return {
+        ...defaultForm,
+        ...form,
+    };
 }
