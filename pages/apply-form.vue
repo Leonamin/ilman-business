@@ -2,15 +2,14 @@
 import InlineTextField from "~/src/2_view/apply-form/0_components/InlineTextField.vue";
 import SolidButton from "~/src/2_view/0_components/button/SolidButton.vue";
 import {
-  type ApplyFormModel,
   type ApplyFormModelBase,
-  createApplyFormModel, type DropDownFormModel,
-  type TextFormModel
+  createApplyFormModel,
 } from "~/src/0_models/ApplyFormModel";
 import {useDebounce} from "~/src/composables/useDebounce";
 import {FormService} from "~/src/1_service/AirtableService";
 import {Airtable_Select_EMR, Airtable_Select_연락수단} from "~/src/0_models/types/AirtableType";
 import DropdownField from "~/src/2_view/apply-form/0_components/DropdownField.vue";
+import MultilineTextField from "~/src/2_view/apply-form/0_components/MultilineTextField.vue";
 
 const forms: ApplyFormModelBase[] = [
   createApplyFormModel(
@@ -77,6 +76,7 @@ const forms: ApplyFormModelBase[] = [
         title: '궁금한 점',
         description: '궁금한 점을 입력해주세요',
         required: false,
+        type: 'multi-line',
       },
   ),
 ]
@@ -185,6 +185,13 @@ const submitForm = async () => {
             :description="form.description || ''"
             :is-required="form.required || false"
             :options="form.formObject.options"
+            v-model="refValue[form.fieldName].value"
+        />
+        <MultilineTextField
+            v-if="form.type === 'multi-line'"
+            :title="form.title"
+            :description="form.description || ''"
+            :is-required="form.required || false"
             v-model="refValue[form.fieldName].value"
         />
       </div>

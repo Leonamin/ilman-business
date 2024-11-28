@@ -22,7 +22,7 @@ export interface TextFormModel extends ApplyFormModelBase {
 }
 
 export interface LongTextFormModel extends ApplyFormModelBase {
-    type: 'long-text';
+    type: 'multi-line';
     formObject: LongTextFormObject;
 }
 
