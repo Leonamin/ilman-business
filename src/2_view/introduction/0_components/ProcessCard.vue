@@ -39,7 +39,7 @@ const props = defineProps<{
   padding: var(--spacing-36);
   background-color: #FAFAFA;
   border-radius: 16px;
-  aspect-ratio: 1.2;
+  align-self: stretch;
 }
 
 .bottom {

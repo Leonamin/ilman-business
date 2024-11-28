@@ -58,7 +58,7 @@ onMounted(() => {
     <div class="content">
 
       <h2 class="text-h2 text-semi-bold center-row spb-32">아임파인의 일만사업 절차</h2>
-      <div v-if="isMobile">
+      <div class="process-list" v-if="isMobile">
         <div class="center-column" v-for="(item, index) in process" :key="item.title">
           <ProcessCard :process="item"/>
           <div v-if="index !== process.length - 1" class="card-gap center-column">
@@ -126,10 +126,19 @@ onMounted(() => {
 
 .content {
   display: flex;
+  width: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
   max-width: var(--desktop-max-width);
+}
+
+.process-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  padding-inline: 16px;
 }
 
 .process-outer {
@@ -158,13 +167,8 @@ onMounted(() => {
 
 
 @media (max-width: 768px) {
-  .content {
-    padding-inline: var(--spacing-16);
-  }
-
   .process-outer {
     padding-inline: var(--spacing-16);
-
   }
 
   .process-inner {
