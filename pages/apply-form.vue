@@ -141,6 +141,7 @@ const makeAirtableRecord = () => {
 
 const submitForm = async () => {
   const record = makeAirtableRecord();
+  isLoading.value = true;
   const response = await formService.submitFormData(record.fields);
   console.log(response);
   if (response) {
@@ -149,11 +150,18 @@ const submitForm = async () => {
   } else {
     alert('제출에 실패했습니다. 다시 시도해주세요.');
   }
+  isLoading.value = false;
 }
+
+const isLoading = ref<boolean>(false);
 
 </script>
 
 <template>
+  <div v-if="isLoading" class="loading-overlay">
+    <a-spin size="large" tip="로딩 중..."/>
+  </div>
+
   <div class="layout">
     <div class="text-container">
       <p class="text-h1 spb-16">
@@ -207,6 +215,20 @@ const submitForm = async () => {
 </template>
 
 <style scoped>
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8); /* 불투명 배경 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* 화면 상단에 표시 */
+  pointer-events: all; /* 클릭 차단 */
+}
+
 .layout {
   display: flex;
   flex-direction: column;
