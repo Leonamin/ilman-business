@@ -1,4 +1,105 @@
 <script setup lang="ts">
+import InlineTextField from "~/src/2_view/apply-form/0_components/InlineTextField.vue";
+import SolidButton from "~/src/2_view/0_components/button/SolidButton.vue";
+import {type ApplyFormModel, createApplyFormModel} from "~/src/0_models/ApplyFormModel";
+import {useDebounce} from "~/src/composables/useDebounce";
+
+const forms = [
+  createApplyFormModel(
+      {
+        fieldName: 'name',
+        title: '성함',
+        description: '성함을 입력해주세요',
+        required: true,
+      },
+  ),
+  createApplyFormModel(
+      {
+        fieldName: 'hosName',
+        title: '의원명',
+        description: '의원명을 입력해주세요',
+        required: true,
+      },
+  ),
+  createApplyFormModel(
+      {
+        fieldName: 'region',
+        title: '지역명',
+        description: '지역명을 입력해주세요',
+        required: true,
+      },
+  ),
+
+  createApplyFormModel(
+      {
+        fieldName: 'phone',
+        title: '전화번호',
+        description: '전화번호를 입력해주세요',
+        required: true,
+      },
+  ),
+  createApplyFormModel(
+      {
+        fieldName: 'emr',
+        title: '사용중인 EMR',
+        description: '사용중인 EMR을 입력해주세요',
+        required: true,
+      },
+  ),
+  createApplyFormModel(
+      {
+        fieldName: 'contactMethod',
+        title: '연락받으실 수단',
+        description: '연락받으실 수단을 선택해주세요',
+        required: true,
+      },
+  ),
+  createApplyFormModel(
+      {
+        fieldName: 'question',
+        title: '궁금한 점',
+        description: '궁금한 점을 입력해주세요',
+        required: false,
+      },
+  ),
+]
+
+const refValue: Record<string, Ref<string, string>> = forms.reduce((acc, form) => {
+  acc[form.fieldName] = ref<string>(''); // fieldName을 키로, 초기값 '' 설정
+  return acc;
+}, {} as Record<string, Ref<string, string>>);
+
+const reset = () => {
+  for (const form of forms) {
+    refValue[form.fieldName].value = '';
+  }
+};
+
+const submit = () => {
+  useDebounce(() => {
+    const isAllValid = checkAll();
+    if (!isAllValid) return;
+  }, 300);
+};
+
+const checkAll = () => {
+  let isAllValid = true;
+  for (const form of forms) {
+    isAllValid = checkRequired(form) && isAllValid;
+    if (!isAllValid) {
+      break;
+    }
+  }
+  return isAllValid;
+};
+
+const checkRequired = (form: ApplyFormModel)  => {
+  if (form.required && refValue[form.fieldName].value === '') {
+    alert(`${form.title}을 입력해주세요`);
+    return false;
+  }
+  return true;
+};
 
 </script>
 
@@ -7,24 +108,31 @@
     <p class="text-h1 spb-64 spt-16">
       아임파인 일만사업 솔루션 도입 신청서
     </p>
-    <p class="text-h5 spb-32">
-      * 인터넷 환경에 따라 신청서 양식을 불러오는 데 시간이 걸릴 수 있습니다.
+    <p class="text-body1 text-tertiary">
+      소중한 시간 내어주셔서 감사합니다.
+
+
+
+      저희와 함께하시면 어려울게 없습니다.
+
+      영업일 기준 1일내 응답 드리겠습니다.
     </p>
-    <!--    타이틀-->
-    <!--    설명-->
-    <!--    인라인 입력 폼(의원명)-->
-    <!--    인라인 입력 폼(지역명)-->
-    <!--    인라인 입력 폼(성함)-->
-    <!--    인라인 입력 폼(전화번호)-->
-    <!--    인라인 입력 폼(사용중인 EMR)-->
-    <!--    드랍 다운(옵션: 전화번호로 전화, 카카오톡)-->
-    <!--    장문 입력 폼(궁금한 점)-->
-    <!--    초기화 버튼-->
-    <!--    제출 버튼-->
-    <iframe class="airtable-embed" src="https://airtable.com/embed/appdx5BXToJFqzDNx/pagaXGdRp8K2RNQ3J/form"
-            onmousewheel="" width="100%" height="533"
-            style="background: transparent; border: 1px solid #ccc;">
-    </iframe>
+    <div class="spb-64"/>
+    <div class="form-container">
+      <InlineTextField
+          v-for="form in forms"
+          :key="form.fieldName"
+          :title="form.title"
+          :description="form.description || ''"
+          :is-important="form.required || false"
+          v-model="refValue[form.fieldName].value"
+      />
+    </div>
+    <div class="spb-24"/>
+    <div class="button-container">
+      <SolidButton preset="blueOutline" text="초기화" @click="reset"/>
+      <SolidButton preset="blue" text="제출" @click="submit"/>
+    </div>
   </div>
 </template>
 
@@ -38,7 +146,19 @@
   scroll-behavior: smooth;
   max-width: 70%;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 128px 0;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.button-container {
+  display: flex;
+  gap: 16px;
 }
 
 @media (max-width: 768px) {

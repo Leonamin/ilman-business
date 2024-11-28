@@ -1,4 +1,7 @@
 <script setup lang="ts">
+
+import ContactMethodCard from "~/src/2_view/contact/ContactMethodCard.vue";
+
 const methods = [
   {
     title: '전화 문의',

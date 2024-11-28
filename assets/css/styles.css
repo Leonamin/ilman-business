@@ -114,6 +114,10 @@
     padding-top: var(--spacing-128);
 }
 
+.spb-4 {
+    margin-bottom: var(--spacing-4);
+}
+
 .spb-8 {
     margin-bottom: var(--spacing-8);
 }
@@ -425,6 +429,6 @@
     color: var(--color-text-blue);
 }
 
-.text-negative {
+.text-red {
     color: var(--color-text-red);
 }

@@ -3,7 +3,6 @@
       :class="[buttonClass, { disabled }]"
       :style="{ borderRadius, width }"
       :disabled="disabled"
-      @click="$emit('click')"
   >
     {{ text }}
   </button>

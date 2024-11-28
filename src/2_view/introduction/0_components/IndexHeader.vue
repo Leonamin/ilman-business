@@ -5,18 +5,18 @@
   <div class="header">
     <header class="header-container">
       <div class="header-inner">
-        <a href="/public">
+        <a href="/">
           <div class="logo-container">
             <img class="logo-1" src="/svgs/logo.svg" alt="Logo 1">
-            <img class="logo-2" src="../../../../assets/svgs/shm_black_logo.svg" alt="Logo 2">
+            <img class="logo-2" src="~/assets/svgs/shm_black_logo.svg" alt="Logo 2">
           </div>
         </a>
         <nav class="header-nav-item">
-          <a class="text-h7 text-semi-bold" href="/public#intro">소개</a>
-          <a class="text-h7 text-semi-bold" href="/public#feature">기능</a>
-          <a class="text-h7 text-semi-bold" href="/public#profit-calculator">매출 계산기</a>
-          <a class="text-h7 text-semi-bold" href="/public#process">일만사업 절차</a>
-          <a class="text-h7 text-semi-bold" href="/public#faq">FAQ</a>
+          <a class="text-h7 text-semi-bold" href="/#intro">소개</a>
+          <a class="text-h7 text-semi-bold" href="/#feature">기능</a>
+          <a class="text-h7 text-semi-bold" href="/#profit-calculator">매출 계산기</a>
+          <a class="text-h7 text-semi-bold" href="/#process">일만사업 절차</a>
+          <a class="text-h7 text-semi-bold" href="/#faq">FAQ</a>
         </nav>
       </div>
     </header>
