@@ -3,6 +3,7 @@ import InlineTextField from "~/src/2_view/apply-form/0_components/InlineTextFiel
 import SolidButton from "~/src/2_view/0_components/button/SolidButton.vue";
 import {type ApplyFormModel, createApplyFormModel} from "~/src/0_models/ApplyFormModel";
 import {useDebounce} from "~/src/composables/useDebounce";
+import {FormService} from "~/src/1_service/AirtableService";
 
 const forms = [
   createApplyFormModel(
@@ -79,6 +80,7 @@ const submit = () => {
   useDebounce(() => {
     const isAllValid = checkAll();
     if (!isAllValid) return;
+    submitForm();
   }, 300);
 };
 
@@ -100,6 +102,34 @@ const checkRequired = (form: ApplyFormModel)  => {
   }
   return true;
 };
+
+const formService = new FormService();
+
+const makeAirtableRecord = () => {
+  return {
+    fields: {
+      문의자: refValue.name.value,
+      의원명: refValue.hosName.value,
+      지역명: refValue.region.value,
+      전화번호: refValue.phone.value,
+      사용중인EMR: refValue.emr.value,
+      연락수단: refValue.contactMethod.value,
+      기타: refValue.question.value,
+    }
+  }
+}
+
+const submitForm = async () => {
+  const record = makeAirtableRecord();
+  const response = await formService.submitFormData(record.fields);
+  console.log(response);
+  if (response) {
+    alert('제출이 완료되었습니다.');
+    reset();
+  } else {
+    alert('제출에 실패했습니다. 다시 시도해주세요.');
+  }
+}
 
 </script>
 
