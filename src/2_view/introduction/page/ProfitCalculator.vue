@@ -119,13 +119,14 @@ const 손해 = computed(() => {
   <div class="layout">
     <div class="content">
       <div class="main-content">
+        <p class="text-h1 text-center spb-64">예상 매출 계산</p>
         <div class="selector-container spb-48">
           <p class="text-body1 text-semi-bold line-height-18">아임파인과 함께</p>
           <AntSwitch :checked="useImFine" @click="onChangeImFine"/>
         </div>
 
         <div class="center-row">
-          <p class="text-h1 text-bold text-center line-height-64"> {{ 총합_라운딩 }} </p>
+          <p class="text-h2 text-bold text-center line-height-64"> {{ 총합_라운딩 }} </p>
         </div>
         <div class="center-column text-h6 line-height-28 text-semi-bold spb-24">
           <p>아임파인을 사용하지 않는다면</p>
@@ -164,7 +165,7 @@ const 손해 = computed(() => {
 <style scoped>
 .layout {
   display: flex;
-  padding-top: 128px;
+  padding-top: var(--desktop-section-top);
   width: 100%;
   justify-content: center; /* 자식 요소의 너비를 부모에 맞춤 */
   align-items: center; /* 자식 요소의 높이를 부모에 맞춤 */

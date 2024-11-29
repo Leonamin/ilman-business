@@ -74,7 +74,7 @@ const interviews: InterviewModel[] = [
   justify-content: center;
   align-items: center;
   max-width: var(--desktop-max-width);
-  padding: 200px 0;
+  padding-top: var(--desktop-section-top);
   gap: 400px;
 }
 

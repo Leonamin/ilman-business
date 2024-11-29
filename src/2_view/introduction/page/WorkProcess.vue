@@ -118,7 +118,7 @@ onMounted(() => {
   display: flex;
   width: 100%;
   max-width: 100%;
-  padding-top: 128px;
+  padding-top: var(--desktop-section-top);
   flex-direction: column;
   justify-content: center;
   align-items: center;
