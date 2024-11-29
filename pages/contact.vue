@@ -20,11 +20,11 @@ const methods = [
     imageSrc: '/svgs/icons/icon_file_folder.svg',
   },
   {
-    title: '이메일 문의',
-    description: '이메일로 문의하실 수 있습니다.\n' + 'contact@caresquare.kr',
+    title: '카카오톡 문의',
+    description: '카카오톡으로 문의하실 수 있습니다.\n' + '여기를 눌러 일만사업 채널 입장',
     imageSrc: '/svgs/icons/icon_mail_open.svg',
     onClick: () => {
-      window.location.href = 'mailto:contact@caresquare.kr';
+      window.location.href = 'http://pf.kakao.com/_KmHpG';
     },
   }
 ]
