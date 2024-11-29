@@ -93,7 +93,7 @@ const images = [
 
 /* 메인 컨텐츠 */
 .main-content {
-  position: relative; /* z-index 적용을 위해 설정 */
+  position: relative; /* z-1_index 적용을 위해 설정 */
   z-index: 1; /* 배경 이미지 위에 표시 */
   display: flex;
   align-items: center;

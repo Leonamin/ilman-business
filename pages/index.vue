@@ -5,9 +5,9 @@ import WorkProcess from "~/src/2_view/introduction/page/WorkProcess.vue";
 import FAQ from "~/src/2_view/introduction/page/FAQ.vue";
 import DoctorInterview from "~/src/2_view/introduction/page/DoctorInterview.vue";
 import ProfitCalculator from "~/src/2_view/introduction/page/ProfitCalculator.vue";
-import ScrollToTopButton from "~/src/2_view/0_components/button/ScrollToTopButton.vue";
 import Explanation from "~/src/2_view/introduction/page/Explanation.vue";
 import SolidButton from "~/src/2_view/0_components/button/SolidButton.vue";
+import FixedContactButton from "~/src/2_view/1_index/0_component/FixedContactButton.vue";
 
 const isVisible = ref(false);
 
@@ -51,7 +51,7 @@ const handleContact = () => {
       <DoctorInterview/>
       <FAQ id="faq"/>
     </div>
-<!--    <ScrollToTopButton/>-->
+    <!--    <ScrollToTopButton/>-->
     <div class="bottom-bar"
          :class="{ 'visible': isVisible }"
     >
@@ -65,6 +65,7 @@ const handleContact = () => {
         />
       </div>
     </div>
+    <FixedContactButton class="contact-button" :class="{ 'visible': isVisible }"/>
   </div>
 
 
@@ -128,9 +129,23 @@ const handleContact = () => {
   transition: transform 0.3s ease 0s, top 0.3s ease 0s, right 0.3s ease 0s; /* 부드러운 전환 */
 }
 
+.contact-button {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.contact-button.visible {
+  opacity: 1; /* 보이게 설정 */
+}
+
 @media (max-width: 768px) {
   .bottom-bar {
     display: none;
+  }
+
+  .contact-button {
+    display: block;
   }
 }
 </style>

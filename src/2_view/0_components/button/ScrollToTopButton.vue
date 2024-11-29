@@ -17,7 +17,7 @@ const scrollToTop = () => {
 <template>
   <!-- 버튼은 스크롤이 200px 이상 내려갔을 때만 보임 -->
   <button
-      class="scroll-to-top"
+      class="fixed-layout"
       @click="scrollToTop"
   >
     <ChevronUp color="white" size="24" />
@@ -26,7 +26,7 @@ const scrollToTop = () => {
 </template>
 
 <style scoped>
-.scroll-to-top {
+.fixed-layout {
   position: fixed;
   bottom: 32px; /* 화면 하단으로부터 32px */
   right: 32px; /* 화면 오른쪽으로부터 32px */
@@ -54,13 +54,13 @@ const scrollToTop = () => {
 }
 
 /* 호버 상태 */
-.scroll-to-top:hover {
+.fixed-layout:hover {
   background-color: var(--color-bg-inverse-hover);
   transform: scale(1.1); /* 살짝 확대 */
 }
 
 /* 숨길 때 투명하게 */
-.scroll-to-top[aria-hidden="true"] {
+.fixed-layout[aria-hidden="true"] {
   opacity: 0;
   pointer-events: none;
 }
