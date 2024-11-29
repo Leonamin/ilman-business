@@ -7,6 +7,7 @@ import DoctorInterview from "~/src/2_view/introduction/page/DoctorInterview.vue"
 import ProfitCalculator from "~/src/2_view/introduction/page/ProfitCalculator.vue";
 import ScrollToTopButton from "~/src/2_view/0_components/button/ScrollToTopButton.vue";
 import Explanation from "~/src/2_view/introduction/page/Explanation.vue";
+import SolidButton from "~/src/2_view/0_components/button/SolidButton.vue";
 
 </script>
 
@@ -19,14 +20,21 @@ import Explanation from "~/src/2_view/introduction/page/Explanation.vue";
       <Feature id="feature"/>
       <ProfitCalculator id="profit-calculator"/>
       <WorkProcess id="process"/>
-      <DoctorInterview />
+      <DoctorInterview/>
       <FAQ id="faq"/>
     </div>
-    <div class="sidebar-layout">
-      <ScrollToTopButton/>
+    <ScrollToTopButton/>
+    <div class="bottom-bar">
+      <span class="text">만성질환관리의 정답, 아임파인과 함께</span>
+      <div class="button-container">
+        <SolidButton preset="blue" text="일만사업 시작하기"/>
+        <img
+            class="cursor-image"
+            src="/svgs/icons/icon-cursor-click-01.svg"
+            alt="cursor"
+        />
+      </div>
     </div>
-
-
   </div>
 
 
@@ -42,4 +50,51 @@ import Explanation from "~/src/2_view/introduction/page/Explanation.vue";
   scroll-behavior: smooth;
 }
 
+
+.bottom-bar {
+  position: fixed;
+  bottom: 48px; /* 화면 아래에서 48px */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333; /* 바 배경색 */
+  color: white; /* 텍스트 색상 */
+  display: flex;
+  align-items: center;
+  padding: 12px 24px; /* 상하/좌우 패딩 */
+  border-radius: 100px; /* 둥근 모서리 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 그림자 */
+  z-index: 1000; /* 항상 위에 표시되도록 */
+}
+
+.text {
+  margin-right: 16px; /* 버튼과 텍스트 간격 */
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.button-container {
+  position: relative; /* 버튼 위에 커서를 올리기 위한 기준 */
+}
+
+.button-container:hover .cursor-image {
+  top: 16px; /* 버튼 위로 조금 띄움 */
+  right: 45px; /* 버튼 오른쪽으로 위치 조정 */
+  transform: scale(1.2); /* 커서 이미지 확대 */
+}
+
+.cursor-image {
+  position: absolute;
+  top: 0; /* 버튼 위로 조금 띄움 */
+  right: -25px; /* 버튼 오른쪽으로 위치 조정 */
+  width: 48px; /* 커서 이미지 크기 */
+  height: 48px;
+  pointer-events: none; /* 커서 이미지가 클릭을 방해하지 않도록 */
+  transition: transform 0.3s ease 0s, top 0.3s ease 0s, right 0.3s ease 0s; /* 부드러운 전환 */
+}
+
+@media (max-width: 768px) {
+  .bottom-bar {
+    display: none;
+  }
+}
 </style>
