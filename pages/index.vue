@@ -9,6 +9,34 @@ import ScrollToTopButton from "~/src/2_view/0_components/button/ScrollToTopButto
 import Explanation from "~/src/2_view/introduction/page/Explanation.vue";
 import SolidButton from "~/src/2_view/0_components/button/SolidButton.vue";
 
+const isVisible = ref(false);
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll);
+});
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll);
+});
+
+const handleScroll = () => {
+  const scrollY = window.scrollY;
+
+  // 기기의 뷰포트 높이
+  const viewportHeight = window.innerHeight;
+
+  // 기기 높이의 2배 이상 스크롤하면 표시
+  isVisible.value = scrollY > viewportHeight;
+};
+
+const router = useRouter();
+
+const handleContact = () => {
+//   #contact로 스크롤 이동
+  router.push('/contact');
+};
+
+
 </script>
 
 <template>
@@ -23,11 +51,13 @@ import SolidButton from "~/src/2_view/0_components/button/SolidButton.vue";
       <DoctorInterview/>
       <FAQ id="faq"/>
     </div>
-    <ScrollToTopButton/>
-    <div class="bottom-bar">
+<!--    <ScrollToTopButton/>-->
+    <div class="bottom-bar"
+         :class="{ 'visible': isVisible }"
+    >
       <span class="text">만성질환관리의 정답, 아임파인과 함께</span>
       <div class="button-container">
-        <SolidButton preset="blue" text="일만사업 시작하기"/>
+        <SolidButton preset="blue" text="일만사업 시작하기" @click="handleContact"/>
         <img
             class="cursor-image"
             src="/svgs/icons/icon-cursor-click-01.svg"
@@ -55,15 +85,21 @@ import SolidButton from "~/src/2_view/0_components/button/SolidButton.vue";
   position: fixed;
   bottom: 48px; /* 화면 아래에서 48px */
   left: 50%;
-  transform: translateX(-50%);
   background-color: #333; /* 바 배경색 */
   color: white; /* 텍스트 색상 */
   display: flex;
   align-items: center;
   padding: 12px 24px; /* 상하/좌우 패딩 */
   border-radius: 100px; /* 둥근 모서리 */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 그림자 */
   z-index: 1000; /* 항상 위에 표시되도록 */
+  opacity: 0; /* 초기 상태: 투명 */
+  transform: translateX(-50%) translateY(20px); /* 아래쪽으로 약간 이동 */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.bottom-bar.visible {
+  opacity: 1; /* 보이게 설정 */
+  transform: translateX(-50%) translateY(0); /* 위치 이동 */
 }
 
 .text {
