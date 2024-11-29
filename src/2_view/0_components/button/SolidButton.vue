@@ -1,14 +1,3 @@
-<template>
-  <button
-      :class="[buttonClass, { disabled }]"
-      :style="{ borderRadius, width }"
-      :disabled="disabled"
-  >
-    {{ text }}
-  </button>
-</template>
-
-
 <script setup lang="ts">
 import { computed } from 'vue';
 import {buttonClassMap, type ButtonPreset} from "~/src/style/button/ButtonColorPreset";
@@ -19,6 +8,7 @@ const props = defineProps<{
   preset: ButtonPreset; // primary 또는 secondary
   text: string; // 버튼 텍스트
   borderRadius?: string; // 테두리 둥글기 (기본값 제공 가능)
+  padding?: string; // 패딩
   disabled?: boolean; // 비활성화 여부
 }>();
 
@@ -26,10 +16,25 @@ const props = defineProps<{
 const buttonClass = computed(() => buttonClassMap[props.preset]);
 
 // 기본 border-radius 값 설정
-const borderRadius = computed(() => props.borderRadius || '4px');
+const borderRadius = computed(() => props.borderRadius || '16px');
+
+const padding = computed(() => props.padding || '16px 32px');
 
 const width = computed(() => props.width || 'auto');
 </script>
+
+<template>
+  <button
+      :class="[buttonClass, { disabled }]"
+      :style="{ borderRadius, width, padding }"
+      :disabled="disabled"
+  >
+    {{ text }}
+  </button>
+</template>
+
+
+
 
 
 <style scoped>

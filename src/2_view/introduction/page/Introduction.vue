@@ -58,16 +58,14 @@ const images = [
 
       <div class="button-list spt-48">
         <SolidButton
-            width="150px"
+            width="156px"
             preset="blueOutline"
-            borderRadius="8px"
             text="더 알아보기"
             @click="handleMoreFeature"
         />
         <SolidButton
-            width="150px"
+            width="156px"
             preset="blue"
-            borderRadius="8px"
             text="문의하기"
             @click="handleContact"
         />
@@ -100,7 +98,6 @@ const images = [
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 16px;
   padding: var(--spacing-64);
 }
 
