@@ -166,7 +166,7 @@ const 손해 = computed(() => {
 <style scoped>
 .layout {
   display: flex;
-  padding-top: var(--desktop-section-top);
+  padding: var(--desktop-section-spacing) 0;
   width: 100%;
   justify-content: center; /* 자식 요소의 너비를 부모에 맞춤 */
   align-items: center; /* 자식 요소의 높이를 부모에 맞춤 */
@@ -264,7 +264,7 @@ const 손해 = computed(() => {
 
 @media (max-width: 768px) {
   .layout {
-    padding-top: var(--mobile-section-top);
+    padding: var(--mobile-section-spacing) 0;
   }
 }
 </style>

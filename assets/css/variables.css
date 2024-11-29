@@ -8,8 +8,8 @@
     --app-bar-height-desktop: 64px;
     --app-bar-height-mobile: 56px;
     --desktop-max-width: 1128px;
-    --desktop-section-top: 340px;
-    --mobile-section-top: 112px;
+    --desktop-section-spacing: 170px;
+    --mobile-section-spacing: 56px;
 
     --profit-calculator-max-width: 820px;
 

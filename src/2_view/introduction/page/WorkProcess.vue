@@ -118,7 +118,7 @@ onMounted(() => {
   display: flex;
   width: 100%;
   max-width: 100%;
-  padding-top: var(--desktop-section-top);
+  padding: var(--desktop-section-spacing) 0;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -168,7 +168,7 @@ onMounted(() => {
 
 @media (max-width: 768px) {
   .layout {
-    padding-top: var(--mobile-section-top);
+    padding: var(--mobile-section-spacing) 0;
   }
 
   .process-outer {

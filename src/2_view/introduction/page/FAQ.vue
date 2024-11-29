@@ -159,7 +159,7 @@ const toggleFAQ = (index: number) => {
   align-items: center;
   width: 100%;
   font-family: 'Noto Sans KR', sans-serif;
-  padding-top: var(--desktop-section-top);
+  padding: var(--desktop-section-spacing) 0;
   padding-bottom: 128px;
 }
 
@@ -221,7 +221,7 @@ const toggleFAQ = (index: number) => {
 
 @media (max-width: 768px) {
   .layout {
-    padding-top: var(--mobile-section-top);
+    padding: var(--mobile-section-spacing) 0;
   }
 
   .sm-spl-12 {

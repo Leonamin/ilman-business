@@ -74,13 +74,13 @@ const interviews: InterviewModel[] = [
   justify-content: center;
   align-items: center;
   max-width: var(--desktop-max-width);
-  padding-top: var(--desktop-section-top);
+  padding: var(--desktop-section-spacing) 0;
   gap: 400px;
 }
 
 @media (max-width: 768px) {
   .content {
-    padding-top: var(--mobile-section-top);
+    padding: var(--mobile-section-spacing) 0;
     gap: 40px;
   }
 }
