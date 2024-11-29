@@ -35,6 +35,7 @@ const hasDescription = computed(() => props.description.length > 0);
     <a-input
         v-model:value="localValue"
         :placeholder="props.placeholder"
+        style="padding: 10px 12px"
     />
   </div>
 </template>

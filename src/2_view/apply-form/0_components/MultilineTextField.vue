@@ -42,6 +42,8 @@ const minLine = computed(() => props.minLine || 4);
         :placeholder="props.placeholder"
         :maxlength="maxLength"
         :rows="minLine"
+        style="padding: 10px 12px"
+
     />
   </div>
 </template>

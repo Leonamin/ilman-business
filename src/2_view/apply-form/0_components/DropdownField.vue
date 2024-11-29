@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { DownOutlined } from '@ant-design/icons-vue';
 import { computed } from "vue";
+import ChevronDown from "~/src/2_view/0_components/icons/ChevronDown.vue";
 
 const props = defineProps<{
   modelValue: string;
@@ -49,9 +50,12 @@ const handleSelect = (value: string) => {
           </a-menu-item>
         </a-menu>
       </template>
-      <a-button>
+      <a-button
+          style="padding: 20px 12px"
+
+      >
         {{ props.modelValue || '선택' }}
-        <DownOutlined />
+        <ChevronDown color="black" size="20"/>
       </a-button>
     </a-dropdown>
   </div>
