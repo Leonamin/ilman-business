@@ -231,7 +231,7 @@ const isLoading = ref<boolean>(false);
   justify-content: center;
   background-color: var(--color-bg-primary);
   scroll-behavior: smooth;
-  max-width: 70%;
+  max-width: var(--desktop-max-width);
   margin: 0 auto;
   padding: 128px 0;
 }
