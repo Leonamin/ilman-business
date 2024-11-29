@@ -220,6 +220,10 @@ const toggleFAQ = (index: number) => {
 }
 
 @media (max-width: 768px) {
+  .layout {
+    padding-top: var(--mobile-section-top);
+  }
+
   .sm-spl-12 {
     margin-left: 12px;
   }

@@ -53,7 +53,7 @@ const images = [
 <template>
   <div class="layout">
     <div class="main-content animate-content">
-      <p class="text-h1 text-bold line-height-64 spt-64 text-center">진료는 그대로<br>매출은 최대로<br>아임파인 일만사업</p>
+      <p class="text-h1 text-bold line-height-64 text-center">진료는 그대로<br>매출은 최대로<br>아임파인 일만사업</p>
       <p class="text-h5 text-semi-bold text-center line-height-24 spt-24">일차의료 만성질환관리의 정답, 아임파인 일만사업</p>
 
       <div class="button-list spt-48">
@@ -87,6 +87,7 @@ const images = [
   justify-content: start;
   align-items: center;
   width: 100%;
+  padding-top: 128px;
 
   scroll-behavior: smooth;
 }

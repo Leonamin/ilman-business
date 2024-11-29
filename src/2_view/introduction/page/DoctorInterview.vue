@@ -80,7 +80,7 @@ const interviews: InterviewModel[] = [
 
 @media (max-width: 768px) {
   .content {
-    padding: 128px 0;
+    padding-top: var(--mobile-section-top);
     gap: 40px;
   }
 }

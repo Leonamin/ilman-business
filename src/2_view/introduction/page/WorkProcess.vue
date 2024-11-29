@@ -167,6 +167,10 @@ onMounted(() => {
 
 
 @media (max-width: 768px) {
+  .layout {
+    padding-top: var(--mobile-section-top);
+  }
+
   .process-outer {
     padding-inline: var(--spacing-16);
   }
