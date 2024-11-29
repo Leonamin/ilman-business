@@ -73,7 +73,7 @@ const images = [
         />
       </div>
     </div>
-    <Vue3Marquee>
+    <Vue3Marquee :clone="true">
       <img :src="item.src" :alt="item.alt" v-for="(item, index) in images" :key="index" class="slider-item"/>
     </Vue3Marquee>
   </div>

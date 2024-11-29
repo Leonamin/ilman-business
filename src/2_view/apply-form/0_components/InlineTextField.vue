@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import AntInput from 'ant-design-vue/es/input';
 
 const props = defineProps<{
   title: string;
@@ -33,7 +32,7 @@ const hasDescription = computed(() => props.description.length > 0);
     </p>
 
     <!-- Ant Input -->
-    <AntInput
+    <a-input
         v-model:value="localValue"
         :placeholder="props.placeholder"
     />
