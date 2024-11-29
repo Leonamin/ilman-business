@@ -72,6 +72,7 @@ const description = () => {
 .layout {
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 100%;
   min-height: 100dvh;
   font-family: 'Noto Sans KR', sans-serif;
@@ -81,12 +82,10 @@ const description = () => {
   display: flex;
   width: 100%;
   flex: 1;
-  align-self: stretch;
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
   max-width: var(--desktop-max-width);
-
 }
 
 .text-box {
