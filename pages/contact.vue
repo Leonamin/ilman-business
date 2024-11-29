@@ -75,7 +75,6 @@ const description = () => {
   align-items: center;
   width: 100%;
   min-height: 100dvh;
-  font-family: 'Noto Sans KR', sans-serif;
 }
 
 .content {

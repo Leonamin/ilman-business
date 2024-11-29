@@ -47,6 +47,5 @@ const hasDescription = computed(() => props.description.length > 0);
   align-items: flex-start;
   justify-content: center;
   width: 100%;
-  font-family: 'Noto Sans KR', sans-serif;
 }
 </style>

@@ -68,7 +68,6 @@ const handleSelect = (value: string) => {
   align-items: flex-start;
   justify-content: center;
   width: 100%;
-  font-family: 'Noto Sans KR', sans-serif;
 }
 
 .dropdown-container {
