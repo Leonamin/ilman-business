@@ -30,9 +30,8 @@ export default defineNuxtConfig({
 
     plugins: [
         '@/plugins/Vue3Marquee.client.ts',
+        '@/plugins/ant-design.ts'
     ],
-
-    modules: ['@ant-design-vue/nuxt'],
     app: {
         head: {
             link: [
