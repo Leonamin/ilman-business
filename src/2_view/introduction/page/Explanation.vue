@@ -12,7 +12,7 @@ import AnimatedElement from "~/src/2_view/0_components/animation/AnimatedElement
             class="text-h4 text-semi-bold text-tertiary line-height-48 text-center
             sm-line-height-34">
           일차의료 만성질환 관리제도(이하 일만사업)는<br>고혈압이나
-          당뇨병을 앓는 만성질환 환자들의<br>건강 수명 증진을 위한 국민건강보험 공단의 시범사업입니다.</p>
+          당뇨병을 앓는 만성질환 환자들의<br>건강 수명 증진을 위한 국민건강보험 공단의 본사업입니다.</p>
       </div>
     </AnimatedElement>
   </div>
