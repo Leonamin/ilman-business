@@ -1,22 +1,30 @@
 <script setup lang="ts">
+
+const navItem = {
+  소개: '/#intro',
+  설명: '/#explanation',
+  혜택: '/#feature',
+  '예상 매출 계산': '/#profit-calculator',
+  '일만사업 절차': '/#process',
+  FAQ: '/#faq',
+}
+
 </script>
 
 <template>
   <div class="header">
     <header class="header-container">
       <div class="header-inner">
-        <a href="/">
+        <div href="/">
           <div class="logo-container">
             <img class="logo-1" src="/svgs/logo.svg" alt="Logo 1">
             <img class="logo-2" src="~/assets/svgs/shm_black_logo.svg" alt="Logo 2">
           </div>
-        </a>
-        <nav class="header-nav-item">
-          <a class="text-h7 text-semi-bold" href="/#intro">소개</a>
-          <a class="text-h7 text-semi-bold" href="/#feature">기능</a>
-          <a class="text-h7 text-semi-bold" href="/#profit-calculator">매출 계산기</a>
-          <a class="text-h7 text-semi-bold" href="/#process">일만사업 절차</a>
-          <a class="text-h7 text-semi-bold" href="/#faq">FAQ</a>
+        </div>
+        <nav class="header-nav-item text-body1 text-semi-bold">
+          <div class="nav-item" v-for="(link, name) in navItem">
+            <a :href="link" :key="name" class="header-nav-item">{{ name }}</a>
+          </div>
         </nav>
       </div>
     </header>
@@ -41,6 +49,13 @@
   align-items: center;
   width: 100%;
   height: 100%;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 24px;
 }
 
 .header-inner {
@@ -69,7 +84,6 @@
 .header-nav-item {
   display: flex;
   align-items: center;
-  gap: 24px;
 }
 
 .header-nav-item a {
