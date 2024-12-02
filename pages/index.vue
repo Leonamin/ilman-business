@@ -22,6 +22,20 @@ definePageMeta({
   ]
 });
 
+useHead({
+  title: '아임파인 일만사업',
+  meta: [
+    {
+      name: 'description',
+      content: '진료는 그대로\n' +
+          '매출은 최대로\n' +
+          '아임파인 일만사업\n' +
+          '일차의료 만성질환관리의 정답, 아임파인 일만사업',
+    }
+  ]
+});
+
+
 const isVisible = ref(false);
 
 onMounted(() => {
