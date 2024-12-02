@@ -7,9 +7,10 @@ defineProps<{
 </script>
 
 <template>
-  <svg :fill="color" :width="size" height="size" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.00009 13.4142C8.21904 12.6332 8.21904 11.3668 9.00009 10.5858L14.293 5.29289C14.6835 4.90237 15.3167 4.90237 15.7072 5.29289C16.0977 5.68342 16.0977 6.31658 15.7072 6.70711L10.4143 12L15.7072 17.2929C16.0977 17.6834 16.0977 18.3166 15.7072 18.7071C15.3167 19.0976 14.6835 19.0976 14.293 18.7071L9.00009 13.4142Z" fill="#111827"/>
+  <svg :width="size" :height="size" viewBox="0 0 24 24" :fill="color" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M14.4706 19.5294L6.94026 11.9991L14.4706 4.46875L15.5312 5.52941L9.06158 11.9991L15.5313 18.4688L14.4706 19.5294Z" :fill="color"/>
   </svg>
+
 </template>
 
 <style scoped>

@@ -123,12 +123,12 @@ const toggleFAQ = (index: number) => {
           </div>
           <ChevronDown
               v-if="activeIndex !== index"
-              color="black"
+              color="var(--color-text-secondary)"
               size="24"
           />
           <ChevronUp
               v-else
-              color="var(--color-primary)"
+              color="var(--color-text-secondary)"
               size="24"
           />
         </div>
