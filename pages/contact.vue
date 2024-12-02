@@ -33,7 +33,7 @@ const methods = [
     title: '전화 문의',
     description: "02-6952-3078\n" + "(평일 오전 10시 ~ 오후 7시)",
     onClick: () => {
-      window.location.href = 'tel:010-1234-5678';
+      window.location.href = 'tel:02-6952-3078';
     },
     imageSrc: '/svgs/icons/icon_human_question.svg',
   },
