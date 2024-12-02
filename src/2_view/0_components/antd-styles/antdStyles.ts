@@ -1,4 +1,4 @@
-export const sliderStyle = {
+export const antdSliderStyle = {
     handleLineWidth: 0,
     handleLineWidthHover: 0,
     handleSize: 28,
@@ -16,3 +16,9 @@ export const sliderStyle = {
         trackHoverBg: '#3B82F6',
     },
 };
+
+export const antdSwitchStyle = {
+    colorPrimary: '#3B82F6',
+    colorTextQuaternary: '#757575',
+    colorTextTertiary: '#757575',
+}

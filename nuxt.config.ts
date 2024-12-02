@@ -25,7 +25,6 @@ export default defineNuxtConfig({
         '@/assets/css/styles.css',
         '@/assets/css/card.css',
         '@/assets/css/presets/badge.css',
-        'ant-design-vue/dist/reset.css',
     ],
 
     plugins: [

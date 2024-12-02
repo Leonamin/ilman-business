@@ -5,20 +5,12 @@ import AntSlider from 'ant-design-vue/es/slider';
 import AntConfigProvider from 'ant-design-vue/es/config-provider';
 import {useProfitCalculator} from "~/src/composables/useProfitCalculator";
 import Badge from "~/src/2_view/0_components/badge/Badge.vue";
-import {sliderStyle} from "~/src/2_view/0_components/antd-styles/slider-style";
+import {antdSwitchStyle, antdSliderStyle} from "~/src/2_view/0_components/antd-styles/antdStyles";
 
 const useImFine = ref(true);
 const onChangeImFine = () => {
   useImFine.value = !useImFine.value;
 };
-
-const category = [
-  "초기평가",
-  "계획수립",
-  "점검평가료",
-  "환자관리료",
-  "교육상담료",
-]
 
 // 가격 설정
 const 가격 = {
@@ -118,12 +110,20 @@ const 손해 = computed(() => {
 </script>
 
 <template>
+  <AntConfigProvider :theme="{
+          components: {
+          Slider: antdSliderStyle,
+          Switch: antdSwitchStyle,
+        },
+      }"/>
   <div class="layout">
     <div class="content">
-      <div class="main-content">
+
+      <div class=" main-content
+      ">
         <p class="text-h1 text-center spb-64">예상 매출 계산</p>
         <div class="selector-container spb-48">
-          <p class="text-body1 text-semi-bold ">아임파인과 함께</p>
+          <span class="text-body1 text-semi-bold ">아임파인과 함께</span>
           <AntSwitch :checked="useImFine" @click="onChangeImFine"/>
         </div>
 
@@ -144,15 +144,7 @@ const 손해 = computed(() => {
         </div>
 
         <div class="slide-container">
-          <AntConfigProvider
-              :theme="{
-                components: {
-                  Slider: sliderStyle,
-                }
-    }">
-            <AntSlider v-model:value="환자수" :min="MIN_환자수" :max="MAX_환자수" :tooltipOpen=false :step=10></AntSlider>
-
-          </AntConfigProvider>
+          <AntSlider v-model:value="환자수" :min="MIN_환자수" :max="MAX_환자수" :tooltipOpen=false :step=10></AntSlider>
         </div>
         <div class="profit-container">
           <div class="profit-item" v-for="(value, key) in 표시되는_수익" :key="key">
