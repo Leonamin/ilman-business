@@ -9,6 +9,20 @@ import {FormService} from "~/src/1_service/AirtableService";
 import {Airtable_Select_EMR, Airtable_Select_연락수단} from "~/src/0_models/types/AirtableType";
 import DropdownField from "~/src/2_view/apply-form/0_components/DropdownField.vue";
 import MultilineTextField from "~/src/2_view/apply-form/0_components/MultilineTextField.vue";
+import {definePageMeta} from "#imports";
+
+definePageMeta({
+  title: '아임파인 일만사업 도입 신청서',
+  meta: [
+    {
+      name: 'description',
+      content: '도입 신청서\n' +
+          '\n' +
+          '소중한 시간 내어주셔서 감사합니다. 저희와 함께하시면 어려울게 없습니다.\n' +
+          '영업일 기준 1일내 응답 드리겠습니다.'
+    }
+  ]
+});
 
 const forms: ApplyFormModelBase[] = [
   createApplyFormModel(

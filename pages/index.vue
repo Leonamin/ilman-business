@@ -9,6 +9,19 @@ import Explanation from "~/src/2_view/introduction/page/Explanation.vue";
 import SolidButton from "~/src/2_view/0_components/button/SolidButton.vue";
 import FixedContactButton from "~/src/2_view/1_index/0_component/FixedContactButton.vue";
 
+definePageMeta({
+  title: '아임파인 일만사업',
+  meta: [
+    {
+      name: 'description',
+      content: '진료는 그대로\n' +
+          '매출은 최대로\n' +
+          '아임파인 일만사업\n' +
+          '일차의료 만성질환관리의 정답, 아임파인 일만사업',
+    }
+  ]
+});
+
 const isVisible = ref(false);
 
 onMounted(() => {
