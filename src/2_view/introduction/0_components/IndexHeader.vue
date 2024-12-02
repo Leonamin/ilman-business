@@ -4,7 +4,7 @@ const navItem = {
   '소개 및 설명': '/#intro',
   // 설명: '/#explanation',
   // 혜택: '/#feature',
-  // '예상 매출 계산': '/#profit-calculator',
+  '예상 매출 계산': '/#profit-calculator',
   '일만사업 절차': '/#process',
   '고객 성공 사례': '/#interview',
   FAQ: '/#faq',
