@@ -29,16 +29,23 @@ export const useProfitCalculator = (
     };
 
     const formatTo만원단위 = (value: number): string => {
-        if (value >= 100000000) {
-            const 억단위 = Math.floor(value / 100000000);
-            const 억이하 = value % 100000000;
-            return `${억단위}억 ${Math.round(억이하 / 10000)}만원`;
-        } else if (value >= 100000) {
-            return `${(value / 10000).toFixed(0)}만원`;
-        } else {
-            return `${value.toLocaleString()}원`;
+        const 억 = 100000000;
+        const 만 = 10000;
+
+        if (value >= 억) {
+            const 억단위 = Math.floor(value / 억);
+            const 나머지만원 = Math.round((value % 억) / 만);
+            return `${억단위}억 ${나머지만원.toLocaleString()}만원`;
         }
+
+        if (value >= 만) {
+            const 만단위 = Math.round(value / 만);
+            return `${만단위.toLocaleString()}만원`;
+        }
+
+        return `${value.toLocaleString()}원`;
     };
+
 
     return {
         calculateProfit,
