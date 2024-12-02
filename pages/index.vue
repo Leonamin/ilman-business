@@ -75,7 +75,7 @@ const handleContact = () => {
       <Feature id="feature"/>
       <ProfitCalculator id="profit-calculator"/>
       <WorkProcess id="process"/>
-      <DoctorInterview/>
+      <DoctorInterview id="interview"/>
       <FAQ id="faq"/>
     </div>
     <!--    <ScrollToTopButton/>-->

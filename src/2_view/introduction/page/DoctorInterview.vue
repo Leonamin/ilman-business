@@ -88,7 +88,7 @@ const interviews: InterviewModel[] = [
 .interview-card-container {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 64px;
 }
 
 @media (max-width: 768px) {
