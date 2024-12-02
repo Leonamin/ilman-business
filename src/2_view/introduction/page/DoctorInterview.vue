@@ -51,13 +51,15 @@ const interviews: InterviewModel[] = [
     <div class="content">
 
       <h2 class="title text-h2 text-semi-bold text-secondary text-center">고객 성공 사례</h2>
-      <InterviewCard
-          class="interview-card"
-          v-for="(interview, index) in interviews"
-          :key="index"
-          :interview="interview"
-          :direction="index % 2 === 0 ? Direction.Right : Direction.Left"
-      />
+      <div class="interview-card-container">
+        <InterviewCard
+            class="interview-card"
+            v-for="(interview, index) in interviews"
+            :key="index"
+            :interview="interview"
+            :direction="index % 2 === 0 ? Direction.Right : Direction.Left"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -79,11 +81,14 @@ const interviews: InterviewModel[] = [
   padding: var(--desktop-section-spacing) 0;
 }
 
-.interview-card {
-  height: 100dvh;
+.title {
+  margin-bottom: var(--title-spacing);
 }
 
-.title {
+.interview-card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
 @media (max-width: 768px) {

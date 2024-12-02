@@ -110,26 +110,23 @@ const 손해 = computed(() => {
 </script>
 
 <template>
-  <AntConfigProvider :theme="{
+  <div class="layout">
+    <AntConfigProvider :theme="{
           components: {
           Slider: antdSliderStyle,
           Switch: antdSwitchStyle,
         },
       }"/>
-  <div class="layout">
     <div class="content">
 
-      <div class=" main-content
-      ">
+      <div class="main-content">
         <p class="text-h1 text-center spb-64">예상 매출 계산</p>
-        <div class="selector-container spb-48">
+        <div class="selector-container spb-24">
           <span class="text-body1 text-semi-bold ">아임파인과 함께</span>
           <AntSwitch :checked="useImFine" @click="onChangeImFine"/>
         </div>
 
-        <div class="center-row">
-          <p class="text-h2 text-bold text-center line-height-64"> {{ 총합_라운딩 }} </p>
-        </div>
+        <p class="text-h2 text-bold text-center subtitle-summary"> {{ 총합_라운딩 }} </p>
         <div class="center-column text-h6 line-height-28 text-semi-bold spb-24">
           <p>아임파인을 사용하지 않는다면</p>
           <div class="row-start">
@@ -149,8 +146,8 @@ const 손해 = computed(() => {
         <div class="profit-container">
           <div class="profit-item" v-for="(value, key) in 표시되는_수익" :key="key">
             <div class="row-space-between">
-              <p class="text-body1 text-semi-bold line-height-24">{{ key }}</p>
-              <p class="text-body2 text-medium line-height-24">{{ value.value.toLocaleString() }}원</p>
+              <p class="text-body1 text-semi-bold">{{ key }}</p>
+              <p class="text-body2 text-medium">{{ value.value.toLocaleString() }}원</p>
             </div>
             <Badge
                 :class="['badge-item', {'badge-visible' : !useImFine && 손해목록[key].value != 0}]" colorPreset="red"
@@ -212,17 +209,13 @@ const 손해 = computed(() => {
   border-radius: 24px;
   border: solid 1px var(--color-border-primary);
   margin: 16px;
+  padding: 36px;
+  gap: 8px;
 }
 
 .profit-item {
   display: flex;
   flex-direction: column;
-  margin-top: 36px;
-  margin-inline: 36px;
-}
-
-.profit-item:last-child {
-  margin-bottom: 36px;
 }
 
 .badge-item {
@@ -241,9 +234,17 @@ const 손해 = computed(() => {
   opacity: 1;
 }
 
+.subtitle-summary {
+  line-height: 64px;
+}
+
 @media (max-width: 768px) {
   .layout {
     padding: var(--mobile-section-spacing) 0;
+  }
+
+  .subtitle-summary {
+    line-height: 48px;
   }
 }
 </style>

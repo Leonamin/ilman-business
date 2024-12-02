@@ -106,7 +106,7 @@ const toggleFAQ = (index: number) => {
 <template>
   <div class="layout">
     <div class="content">
-      <h2 class="text-h2 text-bold text-center spb-32">자주 묻는 질문</h2>
+      <h2 class="title text-h2 text-bold text-center">자주 묻는 질문</h2>
       <div
           v-for="(item, index) in faqList"
           :key="index"
@@ -170,6 +170,10 @@ const toggleFAQ = (index: number) => {
   justify-content: center;
   align-items: center;
   max-width: var(--desktop-max-width);
+}
+
+.title {
+  margin-bottom: var(--title-spacing);
 }
 
 .faq-item {

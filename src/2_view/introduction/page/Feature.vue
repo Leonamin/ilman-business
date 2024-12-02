@@ -51,7 +51,6 @@ const features: FeatureModel[] = [
 
 .layout {
   display: flex;
-  padding-top: 128px;
   justify-content: center;
   align-items: center;
   width: 100%;
