@@ -49,7 +49,10 @@ const interviews: InterviewModel[] = [
 <template>
   <div class="layout">
     <div class="content">
+
+      <h2 class="title text-h2 text-semi-bold text-secondary text-center">고객 성공 사례</h2>
       <InterviewCard
+          class="interview-card"
           v-for="(interview, index) in interviews"
           :key="index"
           :interview="interview"
@@ -74,13 +77,27 @@ const interviews: InterviewModel[] = [
   align-items: center;
   max-width: var(--desktop-max-width);
   padding: var(--desktop-section-spacing) 0;
-  gap: 400px;
+}
+
+.interview-card {
+  height: 100dvh;
+}
+
+.title {
 }
 
 @media (max-width: 768px) {
   .content {
     padding: var(--mobile-section-spacing) 0;
     gap: 40px;
+  }
+
+  .interview-card {
+    height: auto;
+  }
+
+  .title {
+    margin-bottom: 16px;
   }
 }
 

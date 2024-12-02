@@ -55,6 +55,7 @@ const features: FeatureModel[] = [
   justify-content: center;
   align-items: center;
   width: 100%;
+  height: 100dvh;
 }
 
 .content {
@@ -78,6 +79,7 @@ const features: FeatureModel[] = [
 @media (max-width: 768px) {
   .layout {
     flex-direction: column;
+    height: auto;
   }
 
   .content {
