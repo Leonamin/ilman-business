@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { DownOutlined } from '@ant-design/icons-vue';
 import { computed } from "vue";
 import ChevronDown from "~/src/2_view/0_components/icons/ChevronDown.vue";
 
