@@ -1,20 +1,33 @@
 <script setup lang="ts">
-import {badgePresets, type BadgePreset} from "~/src/style/BadgePreset";
+import {
+  badgeColorPresets,
+  type BadgeColorPreset,
+  type BadgeSizePreset,
+  badgeSizePresets
+} from "~/src/style/badge/BadgeColorPreset";
 
 const props = defineProps<{
-  preset: BadgePreset;
+  colorPreset?: BadgeColorPreset;
+  sizePreset?: BadgeSizePreset;
   text: string;
   borderRadius?: string;
   textClass?: string;
-  padding?: string;
 }>();
 
-const badgeClass = badgePresets[props.preset];
+const badgeColor = badgeColorPresets[props.colorPreset || 'red'];
+const badgeSize = badgeSizePresets[props.sizePreset || 'tiny'];
+const computedStyle = computed(() => {
+  return {
+    borderRadius: props.borderRadius || '2px',
+    textClass: props.textClass || '',
+  }
+});
 
 </script>
 
 <template>
-  <p :class="['content', padding, textClass, badgeClass]">
+  <p :class="['content', textClass, badgeColor, badgeSize]"
+      :style="computedStyle">
     {{ text }}
   </p>
 </template>

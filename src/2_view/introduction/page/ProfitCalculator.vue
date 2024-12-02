@@ -151,7 +151,7 @@ const 손해 = computed(() => {
               <p class="text-body2 text-medium line-height-24">{{ value.value.toLocaleString() }}원</p>
             </div>
             <Badge
-                :class="['badge-item', {'badge-visible' : !useImFine && 손해목록[key].value != 0}]" preset="red"
+                :class="['badge-item', {'badge-visible' : !useImFine && 손해목록[key].value != 0}]" colorPreset="red"
                 :text="손해목록[key].value.toLocaleString() + '원'"
                 text-class="text-caption1 line-height-16"
             />

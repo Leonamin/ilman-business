@@ -2,3 +2,7 @@
     background-color: var(--color-bg-red-light);
     color: var(--color-text-red);
 }
+
+.badge-tiny {
+    padding: 2px 4px;
+}
