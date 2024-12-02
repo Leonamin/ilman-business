@@ -2,8 +2,10 @@
 import {ref, computed} from 'vue';
 import AntSwitch from 'ant-design-vue/es/switch';
 import AntSlider from 'ant-design-vue/es/slider';
+import AntConfigProvider from 'ant-design-vue/es/config-provider';
 import {useProfitCalculator} from "~/src/composables/useProfitCalculator";
 import Badge from "~/src/2_view/0_components/badge/Badge.vue";
+import {sliderStyle} from "~/src/2_view/0_components/antd-styles/slider-style";
 
 const useImFine = ref(true);
 const onChangeImFine = () => {
@@ -121,7 +123,7 @@ const 손해 = computed(() => {
       <div class="main-content">
         <p class="text-h1 text-center spb-64">예상 매출 계산</p>
         <div class="selector-container spb-48">
-          <p class="text-body1 text-semi-bold line-height-18">아임파인과 함께</p>
+          <p class="text-body1 text-semi-bold ">아임파인과 함께</p>
           <AntSwitch :checked="useImFine" @click="onChangeImFine"/>
         </div>
 
@@ -142,7 +144,15 @@ const 손해 = computed(() => {
         </div>
 
         <div class="slide-container">
-          <AntSlider v-model:value="환자수" :min="MIN_환자수" :max="MAX_환자수" :tooltipOpen=false :step=10></AntSlider>
+          <AntConfigProvider
+              :theme="{
+                components: {
+                  Slider: sliderStyle,
+                }
+    }">
+            <AntSlider v-model:value="환자수" :min="MIN_환자수" :max="MAX_환자수" :tooltipOpen=false :step=10></AntSlider>
+
+          </AntConfigProvider>
         </div>
         <div class="profit-container">
           <div class="profit-item" v-for="(value, key) in 표시되는_수익" :key="key">
@@ -184,8 +194,8 @@ const 손해 = computed(() => {
 .selector-container {
   display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   gap: 32px;
 }
 
@@ -198,29 +208,6 @@ const 손해 = computed(() => {
 /* 슬라이더 스타일 */
 
 /* 슬라이더의 채워진 영역 (Track) */
-::v-deep(.ant-slider-track) {
-  background-color: var(--color-bg-blue);
-}
-
-::v-deep(.ant-slider-track) {
-  background-color: var(--color-bg-blue);
-}
-
-/* 슬라이더의 채워지지 않은 영역 (Rail) */
-::v-deep(.ant-slider-rail) {
-  background-color: var(--color-bg-tertiary);
-}
-
-/* 슬라이더 핸들 버튼 (Handle) */
-::v-deep(.ant-slider-handle) {
-  background-color: var(--color-bg-blue);
-  border: none; /* 아웃라인 제거 */
-  box-shadow: none; /* 기본 그림자 제거 */
-}
-
-::v-deep(.ant-slider) {
-  width: 100%; /* 부모 요소의 전체 너비 */
-}
 
 .slide-container {
   margin-inline: 36px;
