@@ -107,6 +107,18 @@ const 손해 = computed(() => {
   return calculateTotalProfit(아임파인_사용한_경우_수익).value - calculateTotalProfit(스스로한_경우_수익).value;
 });
 
+const badgeColorPreset = computed(() => {
+  return useImFine.value ? 'blue' : 'red';
+});
+
+const 손해_절댓값 = (손해: number): number => {
+  return Math.abs(손해);
+}
+
+const 손해_표시 = (손해: number): string => {
+  return (useImFine.value ? '+' : '-') + 손해_절댓값(손해).toLocaleString() + '원';
+}
+
 </script>
 
 <template>
@@ -150,8 +162,9 @@ const 손해 = computed(() => {
               <p class="text-body2 text-medium">{{ value.value.toLocaleString() }}원</p>
             </div>
             <Badge
-                :class="['badge-item', {'badge-visible' : !useImFine && 손해목록[key].value != 0}]" colorPreset="red"
-                :text="손해목록[key].value.toLocaleString() + '원'"
+                :key="badgeColorPreset + useImFine + 손해목록[key]"
+                :class="['badge-item', {'badge-visible' : 손해목록[key].value != 0}]" :colorPreset='badgeColorPreset'
+                :text="손해_표시(손해목록[key].value)"
                 text-class="text-caption1 line-height-16"
             />
           </div>

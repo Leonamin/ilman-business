@@ -3,6 +3,11 @@
     color: var(--color-text-red);
 }
 
+.badge-blue {
+    background-color: var(--color-bg-blue-light);
+    color: var(--color-text-blue);
+}
+
 .badge-tiny {
     padding: 2px 4px;
 }
