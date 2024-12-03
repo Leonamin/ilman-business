@@ -27,14 +27,16 @@ const directionClass = computed(() => {
 
 <template>
   <div class="layout">
-    <div class="content"  :class="directionClass">
+    <div class="content" :class="directionClass">
       <div class="text-container">
-        <div class="column-start">
-          <span class="text-hospital gap-hos-title">
+        <div class="column-start text-common">
+          <span class="text-hospital">
             {{ props.interview.hospital }}
           </span>
-          <span class="text-title gap-title-desc">
+          <div class="sp-hos-title"/>
+          <span class="title">
             {{ props.interview.title }}
+          <div class="sp-title-desc"/>
           </span>
           <p class="text-description">
             {{ props.interview.description }}
@@ -62,7 +64,6 @@ const directionClass = computed(() => {
   justify-content: center;
   align-items: flex-end;
   max-width: var(--desktop-max-width);
-  gap: 54px;
 }
 
 .content.column-start .text-container {
@@ -71,6 +72,7 @@ const directionClass = computed(() => {
 
 .content.column-start .image-container {
   order: 2;
+  padding-left: 54px;
 }
 
 .content.column-end .text-container {
@@ -79,13 +81,15 @@ const directionClass = computed(() => {
 
 .content.column-end .image-container {
   order: 1;
+  padding-right: 54px;
 }
 
 .text-container {
-
+  flex: 0 0 50%;
 }
 
 .image-container {
+  flex: 1;
 }
 
 .image-card {
@@ -102,7 +106,7 @@ const directionClass = computed(() => {
   line-height: 28px; /* 140% */
 }
 
-.text-title {
+.title {
   align-self: stretch;
   color: #000;
   /* heading/32 */
@@ -121,11 +125,11 @@ const directionClass = computed(() => {
   line-height: 160%; /* 28.8px */
 }
 
-.gap-hos-title {
+.sp-hos-title {
   margin-bottom: 16px;
 }
 
-.gap-title-desc {
+.sp-title-desc {
   margin-bottom: 40px;
 }
 
@@ -138,19 +142,24 @@ const directionClass = computed(() => {
     gap: 24px;
     flex-direction: column;
     align-items: flex-start;
+    padding-inline: 16px;
   }
 
-  .content .text-container,
+  .content .text-container {
+    order: unset;
+  }
   .content .image-container {
     order: unset;
   }
 
-  .text-container {
-    padding-inline: 16px;
+  .content.column-start .image-container,
+  .content.column-end .image-container {
+    padding-inline: 0;
   }
 
+  .text-container,
   .image-container {
-    padding-inline: 16px;
+    flex: 1;
   }
 
   .text-hospital {
@@ -158,7 +167,7 @@ const directionClass = computed(() => {
     line-height: 26px; /* 144.444% */
   }
 
-  .text-title {
+  .title {
     font-size: 24px;
     line-height: 34px; /* 141.667% */
   }
@@ -168,11 +177,11 @@ const directionClass = computed(() => {
     line-height: 24px; /* 150% */
   }
 
-  .gap-hos-title {
+  .sp-hos-title {
     margin-bottom: 12px;
   }
 
-  .gap-title-desc {
+  .sp-title-desc {
     margin-bottom: 16px;
   }
 }
