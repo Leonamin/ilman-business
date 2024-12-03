@@ -53,10 +53,14 @@ const images = [
 <template>
   <div class="layout">
     <div class="main-content animate-content">
-      <p class="text-h1 text-bold line-height-64 text-center">진료는 그대로<br>매출은 최대로<br>아임파인 일만사업</p>
-      <p class="text-h5 text-semi-bold text-center line-height-24 spt-24">일차의료 만성질환관리의 정답, 아임파인 일만사업</p>
+      <container-catchphrase>
+        <p class="text-common text-catchphrase">진료는 그대로<br>매출은 최대로<br>아임파인 일만사업</p>
+        <p class="text-common text-small-catchphrase sp-catchphrase">일차의료 만성질환관리의 정답,
+          <span class="mobile-break">아임파인 일만사업</span>
+          </p>
+      </container-catchphrase>
 
-      <div class="button-list spt-48">
+      <div class="button-list sp-cp-button">
         <SolidButton
             width="156px"
             preset="blueOutline"
@@ -71,7 +75,7 @@ const images = [
         />
       </div>
     </div>
-    <Vue3Marquee :clone="true">
+    <Vue3Marquee class="sp-button-slider" :clone="true">
       <img :src="item.src" :alt="item.alt" v-for="(item, index) in images" :key="index" class="slider-item"/>
     </Vue3Marquee>
   </div>
@@ -85,20 +89,17 @@ const images = [
   justify-content: start;
   align-items: center;
   width: 100%;
-  padding-top: 128px;
-
   scroll-behavior: smooth;
 }
 
 
 /* 메인 컨텐츠 */
 .main-content {
-  position: relative; /* z-1_index 적용을 위해 설정 */
-  z-index: 1; /* 배경 이미지 위에 표시 */
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: var(--spacing-64);
+  padding-top: 120px;
+
 }
 
 /* 애니메이션 초기 상태 */
@@ -120,6 +121,39 @@ const images = [
   }
 }
 
+/* 캐치프레이즈 */
+
+.container-catchphrase {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-inline: 16px;
+}
+
+.text-catchphrase {
+  color: var(--color-text-secondary, #1C1C1C);
+  text-align: center;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 64px; /* 133.333% */
+}
+
+.text-small-catchphrase {
+  color: var(--color-text-secondary, #1C1C1C);
+  text-align: center;
+
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 34px; /* 141.667% */
+}
+
+.sp-catchphrase {
+  margin-top: 24px;
+}
+
 /* 버튼 리스트 */
 .button-list {
   display: flex;
@@ -129,18 +163,40 @@ const images = [
   gap: 16px;
 }
 
+.sp-cp-button {
+  margin-top: 48px;
+}
+
 .slider-item {
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
   object-fit: cover;
   border-radius: 8px;
   margin-right: 36px;
 }
 
+.sp-button-slider {
+  margin-top: 64px;
+}
+
 /* 반응형 디자인 */
 @media (max-width: 768px) {
   .main-content {
-    padding-top: 40px;
+    padding-top: 120px;
+  }
+
+  .text-catchphrase {
+    font-size: 32px;
+    line-height: 46px;
+  }
+
+  .text-small-catchphrase{
+    font-size: 20px;
+    line-height: 28px; /* 140% */
+  }
+
+  .sp-catchphrase {
+    margin-top: 16px;
   }
 
   .button-list {
@@ -148,13 +204,21 @@ const images = [
     gap: 12px;
   }
 
+  .sp-cp-button {
+    margin-top: 32px;
+  }
+
   .slider-item {
     width: 240px;
     height: 240px;
   }
 
-  .text-h1 {
-    line-height: 40px;
+  .mobile-break {
+    display: block;
+  }
+
+  .sp-button-slider {
+    margin-top: 56px;
   }
 }
 </style>
