@@ -9,34 +9,33 @@ import ProcessCard from "~/src/2_view/1_index/0_component/ProcessCard.vue";
 const process: WorkProcessStepModel[] = [
   {
     title: '환자 등록 관리',
-    description: '아임파인이 8개의\n작업을 처리합니다.',
+    description: '아임파인이 8개의 작업을 처리합니다.',
     imageSrc: '/svgs/icons/icon_monitor.svg'
   },
   {
     title: '진료',
-    description: '아임파인이 6개의\n작업을 처리합니다.',
+    description: '아임파인이 6개의 작업을 처리합니다.',
     imageSrc: '/svgs/icons/icon_medical_bag.svg'
   },
   {
     title: '포괄 평가',
-    description: '아임파인이 4개의\n작업을 처리합니다.',
+    description: '아임파인이 4개의 작업을 처리합니다.',
     imageSrc: '/svgs/icons/icon_book.svg'
   },
   {
     title: '교육 상담',
-    description: '아임파인이 5개의\n작업을 처리합니다.',
+    description: '아임파인이 5개의 작업을 처리합니다.',
     imageSrc: '/svgs/icons/icon_edu_hat.svg'
   },
   {
     title: '환자 관리',
-    description: '아임파인이 모두\n처리합니다.',
+    description: '아임파인이 모두 처리합니다.',
     imageSrc: '/svgs/icons/icon_people.svg',
   },
   {
     title: '중간 점검',
-    description: '아임파인이 5개의\n작업을 처리합니다.',
+    description: '아임파인이 5개의 작업을 처리합니다.',
     imageSrc: '/svgs/icons/icon_monitor_log.svg',
-
   },
 ]
 
@@ -57,7 +56,8 @@ onMounted(() => {
   <div class="layout">
     <div class="content">
 
-      <h2 class="text-h2 text-semi-bold center-row spb-32">아임파인의 일만사업 절차</h2>
+      <h2 class="text-title">아임파인의 일만사업 절차</h2>
+      <div class="sp-title-card"/>
       <div class="process-list" v-if="isMobile">
         <div class="center-column" v-for="(item, index) in process" :key="item.title">
           <ProcessCard :process="item"/>
@@ -133,6 +133,21 @@ onMounted(() => {
   max-width: var(--desktop-max-width);
 }
 
+.text-title {
+  color: var(--color-text-secondary, #1C1C1C);
+  text-align: center;
+
+  /* heading/40 */
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 56px; /* 140% */
+}
+
+.sp-title-card {
+  margin-top: 64px;
+}
+
 .process-list {
   display: flex;
   flex-direction: column;
@@ -169,6 +184,15 @@ onMounted(() => {
 @media (max-width: 768px) {
   .layout {
     padding: var(--mobile-section-spacing) 0;
+  }
+
+  .text-title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .sp-title-card {
+    margin-top: 32px;
   }
 
   .process-outer {
