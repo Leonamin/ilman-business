@@ -75,8 +75,8 @@ const forms: ApplyFormModelBase[] = [
   createApplyFormModel(
       {
         fieldName: 'emr',
-        title: '사용중인 EMR',
-        description: '사용중인 EMR을 선택해주세요\n\n지원가능 EMR: 의사랑, 닥터비트, 다솜 메디케어, 이지스, 전능 IT\n지원불가능: 아담스NC, 병원과컴퓨터\n\n아임파인은 계속발전해나가고 있으며 추후 지원 가능한 EMR이 추가될 예정입니다.',
+        title: '사용중인 전자차트(EMR)',
+        description: '사용중인 전자차트(EMR)을 선택해주세요',
         required: true,
         type: 'drop-down',
         formObject: {
@@ -108,10 +108,32 @@ const forms: ApplyFormModelBase[] = [
   ),
 ]
 
+const etcForm: ApplyFormModelBase =
+  createApplyFormModel(
+      {
+        fieldName: 'etcEmr',
+        title: '기타 전차차트(EMR)',
+        hintText: '기타 전자차트(EMR)를 입력해주세요',
+        required: false,
+      },
+  )
+
+
 const refValue: Record<string, Ref<string, string>> = forms.reduce((acc, form) => {
   acc[form.fieldName] = ref<string>(form.initialValue || ''); // fieldName을 키로, 초기값 '' 설정
   return acc;
 }, {} as Record<string, Ref<string, string>>);
+
+refValue.etcEmr = ref<string>('');
+
+const showEtcInlineTextEmr = ref<boolean>(false);
+
+watch(
+    () => refValue.emr.value,
+    (newValue) => {
+      showEtcInlineTextEmr.value = newValue === '기타';
+    }
+)
 
 const reset = () => {
   for (const form of forms) {
@@ -156,6 +178,7 @@ const makeAirtableRecord = () => {
       지역명: refValue.region.value,
       전화번호: refValue.phone.value,
       사용중인EMR: refValue.emr.value,
+      기타EMR: refValue.etcEmr.value,
       연락수단: refValue.contactMethod.value,
       기타: refValue.question.value,
     }
@@ -165,15 +188,22 @@ const makeAirtableRecord = () => {
 const submitForm = async () => {
   const record = makeAirtableRecord();
   isLoading.value = true;
-  const response = await formService.submitFormData(record.fields);
-  console.log(response);
-  if (response) {
-    alert('제출이 완료되었습니다.');
-    reset();
-  } else {
+  try {
+    const response = await formService.submitFormData(record.fields);
+    console.log(response);
+    if (response) {
+      alert('제출이 완료되었습니다.');
+      reset();
+    } else {
+      alert('제출에 실패했습니다. 다시 시도해주세요.');
+    }
+  } catch (e) {
     alert('제출에 실패했습니다. 다시 시도해주세요.');
+  } finally {
+    isLoading.value = false;
+
   }
-  isLoading.value = false;
+
 }
 
 const isLoading = ref<boolean>(false);
@@ -199,36 +229,90 @@ const isLoading = ref<boolean>(false);
 
     </div>
     <div class="form-container">
-      <div
-          v-for="form in forms"
-          :key="form.fieldName"
-      >
-        <InlineTextField
-            v-if="form.type === 'text'"
-            :title="form.title"
-            :description="form.description || ''"
-            :placeholder="form.hintText"
-            :is-important="form.required || false"
-            v-model="refValue[form.fieldName].value"
-        />
-        <DropdownField
-            v-if="form.type === 'drop-down'"
-            :title="form.title"
-            :description="form.description || ''"
-            :is-required="form.required || false"
-            :options="form.formObject.options"
-            v-model="refValue[form.fieldName].value"
-        />
-        <MultilineTextField
-            v-if="form.type === 'multi-line'"
-            :title="form.title"
-            :placeholder="form.hintText"
-            :is-required="form.required || false"
-            v-model="refValue[form.fieldName].value"
-        />
-      </div>
-
-
+      <InlineTextField
+          :title="forms[0].title"
+          :description="forms[0].description || ''"
+          :is-important="forms[0].required || false"
+          :placeholder="forms[0].hintText"
+          v-model="refValue[forms[0].fieldName].value"
+      />
+      <InlineTextField
+          :title="forms[1].title"
+          :description="forms[1].description || ''"
+          :is-important="forms[1].required || false"
+          :placeholder="forms[1].hintText"
+          v-model="refValue[forms[1].fieldName].value"
+      />
+      <InlineTextField
+          :title="forms[2].title"
+          :description="forms[2].description || ''"
+          :is-important="forms[2].required || false"
+          :placeholder="forms[2].hintText"
+          v-model="refValue[forms[2].fieldName].value"
+      />
+      <InlineTextField
+          :title="forms[3].title"
+          :description="forms[3].description || ''"
+          :is-important="forms[3].required || false"
+          :placeholder="forms[3].hintText"
+          v-model="refValue[forms[3].fieldName].value"
+      />
+      <DropdownField
+          :title="forms[4].title"
+          :description="forms[4].description || ''"
+          :is-required="forms[4].required || false"
+          :options="forms[4].formObject.options"
+          v-model="refValue[forms[4].fieldName].value"
+      />
+      <InlineTextField
+          v-if="showEtcInlineTextEmr"
+          :title="etcForm.title"
+          :description="etcForm.description || ''"
+          :is-important="etcForm.required || false"
+          :placeholder="etcForm.hintText"
+          v-model="refValue[etcForm.fieldName].value"
+      />
+      <DropdownField
+          :title="forms[5].title"
+          :description="forms[5].description || ''"
+          :is-required="forms[5].required || false"
+          :options="forms[5].formObject.options"
+          v-model="refValue[forms[5].fieldName].value"
+      />
+      <MultilineTextField
+          :title="forms[6].title"
+          :placeholder="forms[6].hintText"
+          :is-required="forms[6].required || false"
+          v-model="refValue[forms[6].fieldName].value"
+      />
+      <!--      <div-->
+      <!--          v-for="form in forms"-->
+      <!--          :key="form.fieldName"-->
+      <!--      >-->
+      <!--        <InlineTextField-->
+      <!--            v-if="form.type === 'text'"-->
+      <!--            :title="form.title"-->
+      <!--            :description="form.description || ''"-->
+      <!--            :placeholder="form.hintText"-->
+      <!--            :is-important="form.required || false"-->
+      <!--            v-model="refValue[form.fieldName].value"-->
+      <!--        />-->
+      <!--        <DropdownField-->
+      <!--            v-if="form.type === 'drop-down'"-->
+      <!--            :title="form.title"-->
+      <!--            :description="form.description || ''"-->
+      <!--            :is-required="form.required || false"-->
+      <!--            :options="form.formObject.options"-->
+      <!--            v-model="refValue[form.fieldName].value"-->
+      <!--        />-->
+      <!--        <MultilineTextField-->
+      <!--            v-if="form.type === 'multi-line'"-->
+      <!--            :title="form.title"-->
+      <!--            :placeholder="form.hintText"-->
+      <!--            :is-required="form.required || false"-->
+      <!--            v-model="refValue[form.fieldName].value"-->
+      <!--        />-->
+      <!--      </div>-->
     </div>
     <div class="spb-24"/>
     <div class="button-container">
