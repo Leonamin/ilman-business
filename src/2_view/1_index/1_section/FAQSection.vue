@@ -94,6 +94,16 @@ const toggleFAQ = (index: number) => {
   }
 }
 
+const isMobile = ref(false);
+onMounted(() => {
+  window.addEventListener("resize", () => {
+    isMobile.value = window.innerWidth <= 768;
+  });
+  isMobile.value = window.innerWidth <= 768;
+});
+
+const iconSizeChevron = computed(() => isMobile.value ? '24px' : '32px');
+
 </script>
 
 <template>
@@ -107,30 +117,29 @@ const toggleFAQ = (index: number) => {
       >
         <div class="question-container" @click="toggleFAQ(index)">
           <div class="question">
-            <img class="faq-icon" alt="질문 아이콘" src="/svgs/icons/icon_question.svg"
-                 width="24" height="24">
-            <div class="spl-24 sm-spl-12"/>
-            <p class="text-h5 text-semi-bold text-left line-height-34 sm-line-height-24 padding-vertical-large">
+            <img class="faq-icon" alt="질문 아이콘" src="/svgs/icons/icon_question.svg">
+            <div class="sp-icon-text"/>
+            <p class="text-question text-common">
               {{ item.question }}
             </p>
           </div>
+          <div class="sp-icon-text"/>
           <ChevronDown
               v-if="activeIndex !== index"
               color="var(--color-text-secondary)"
-              size="24"
+              :size="iconSizeChevron"
           />
           <ChevronUp
               v-else
               color="var(--color-text-secondary)"
-              size="24"
+              :size="iconSizeChevron"
           />
         </div>
         <div v-if="activeIndex === index" class="answer-container">
-          <img class="faq-icon" alt="답변 아이콘" src="/svgs/icons/icon_answer.svg"
-               width="24" height="24">
+          <img class="faq-icon" alt="답변 아이콘" src="/svgs/icons/icon_answer.svg">
           <div class="spl-24 sm-spl-12"/>
           <div>
-            <p class="text-body1 text-left text-tertiary line-height-24 text-line-break">
+            <p class="text-answer text-common">
               {{ item.answer }}
             </p>
             <div class="faq-additional spt-16" v-if="item.additional">
@@ -216,17 +225,32 @@ const toggleFAQ = (index: number) => {
   align-self: flex-start;
 }
 
+.text-question {
+  color: var(--color-text-secondary, #1C1C1C);
+  text-align: start;
+
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 34px; /* 141.667% */
+}
+
+.text-answer {
+  color: var(--color-text-tertiary, #575757);
+
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+}
+
+.sp-icon-text {
+  margin-left: 24px;
+}
+
 @media (max-width: 768px) {
   .layout {
     padding: var(--mobile-section-spacing) 0;
-  }
-
-  .sm-spl-12 {
-    margin-left: 12px;
-  }
-
-  .sm-line-height-24 {
-    line-height: 24px;
   }
 
   .faq-icon {
@@ -242,8 +266,22 @@ const toggleFAQ = (index: number) => {
     padding: 26px 12px;
   }
 
+  .text-question {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
   .answer-container {
     padding: 26px 12px;
+  }
+
+  .text-answer {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .sp-icon-text {
+    margin-left: 12px;
   }
 }
 </style>
