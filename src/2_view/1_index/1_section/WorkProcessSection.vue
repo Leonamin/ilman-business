@@ -29,7 +29,7 @@ const process: WorkProcessStepModel[] = [
   },
   {
     title: '환자 관리',
-    description: '아임파인이 모두 처리합니다.',
+    description: '아임파인이 전과정 보조합니다.',
     imageSrc: '/svgs/icons/icon_people.svg',
   },
   {

@@ -345,7 +345,7 @@ const isLoading = ref<boolean>(false);
   scroll-behavior: smooth;
   max-width: var(--desktop-max-width);
   margin: 0 auto;
-  padding: 128px 0;
+  padding: 80px 0;
 }
 
 .text-container {
