@@ -16,16 +16,14 @@ const navItem = {
   <div class="header">
     <header class="header-container">
       <div class="header-inner">
-        <div href="/">
-          <div class="logo-container">
+        <a class="clickable" href="/">
+          <div class="logo-row">
             <img class="logo-1" src="/svgs/logo.svg" alt="Logo 1">
             <img class="logo-2" src="~/assets/svgs/shm_black_logo.svg" alt="Logo 2">
           </div>
-        </div>
+        </a>
         <nav class="header-nav-item text-body1 text-semi-bold">
-          <div class="nav-item" v-for="(link, name) in navItem">
-            <a :href="link" :key="name" class="header-nav-item">{{ name }}</a>
-          </div>
+          <a v-for="(link, name) in navItem" :href="link" :key="name" class="header-nav-item clickable">{{ name }}</a>
         </nav>
       </div>
     </header>
@@ -52,13 +50,6 @@ const navItem = {
   height: 100%;
 }
 
-.nav-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 24px;
-}
-
 .header-inner {
   display: flex;
   justify-content: space-between;
@@ -68,7 +59,11 @@ const navItem = {
   padding: 0 16px; /* 좌우 여백 추가 */
 }
 
-.logo-container {
+.clickable:active {
+  outline: solid 2px var(--color-text-secondary);
+}
+
+.logo-row {
   display: flex;
   align-items: center;
   gap: 4px;
@@ -85,14 +80,12 @@ const navItem = {
 .header-nav-item {
   display: flex;
   align-items: center;
+  justify-content: center;
+  margin: 24px;
 }
 
 .header-nav-item a {
   text-decoration: none;
-}
-
-.header-nav-item a:hover {
-  color: var(--color-primary);
 }
 
 .header-nav-item a:visited {
