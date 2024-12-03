@@ -60,6 +60,12 @@
   gap: 8px;
 }
 
+@media (max-width: 768px) {
+  .content {
+    padding: 46px 16px;
+  }
+}
+
 </style>
 <script setup lang="ts">
 </script>
