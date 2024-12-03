@@ -19,7 +19,7 @@ const features: FeatureModel[] = [
     description: "일만사업에 참여하면 필요한 자료를 저희가 이미 준비를 끝내놓았습니다.\n\n아임파인은 일만사업에 참여하는 병원들을 위해 필요한 자료를 제공합니다.",
     image: "/images/background/feature/image-feature-b3.png"
   }
-]
+];
 </script>
 
 <template>
@@ -32,8 +32,10 @@ const features: FeatureModel[] = [
       <AnimatedElement :threshold=0.1>
         <div class="card-container">
           <FeatureCard
-              :feature="feature" class="flex-equal" v-for="feature in features"
-              :key="feature.title"/>
+              class="card"
+              :feature="feature" v-for="feature in features"
+              :key="feature.title"
+          />
         </div>
       </AnimatedElement>
 
@@ -67,12 +69,15 @@ const features: FeatureModel[] = [
 
 /* 일만사업 기능 스타일링 */
 .card-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: stretch;
-  width: 100%;
+  display: grid;
   gap: var(--spacing-24);
+
+  grid-template-columns: repeat(3, 1fr); /* 세 개의 열 */
+  grid-auto-rows: 1fr; /* 모든 행 높이를 동일하게 */
+  /* 부모 요소가 자식 크기에 맞게 확장되도록 */
+  align-items: stretch;
+
+  width: 100%;
 }
 
 @media (max-width: 768px) {
@@ -86,7 +91,8 @@ const features: FeatureModel[] = [
   }
 
   .card-container {
-    flex-direction: column;
+    grid-template-columns: 1fr; /* 하나의 열 */
+    grid-auto-rows: 1fr; /* 모든 행 높이를 동일하게 */
   }
 }
 

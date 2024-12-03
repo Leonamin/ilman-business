@@ -9,7 +9,6 @@
       <p class="description text-medium text-left text-tertiary text-line-break line-height-20">
         {{ props.feature.description }}</p>
     </div>
-    <div class="spacer"></div>
   </div>
 </template>
 
@@ -22,15 +21,10 @@ const props = defineProps<{
 </script>
 
 <style scoped>
-.spacer {
-  flex: 1;
-}
-
 .card {
   position: relative;
   padding: var(--spacing-32);
   border-radius: 16px;
-  aspect-ratio: 1.23;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -71,9 +65,6 @@ const props = defineProps<{
 
 .title {
   font-size: var(--font-size-h24);
-  white-space: pre-line;
-  word-break: keep-all;
-  word-wrap: break-word;
   transition: font-size 0.5s, line-height 0.5s;
 }
 
@@ -113,12 +104,6 @@ const props = defineProps<{
   transform: scale(0);
 }
 
-@media (max-width: 768px) {
-  .card {
-    aspect-ratio: 1.0;
-  }
-}
-
 @media (pointer: coarse) {
   /* 모바일에서는 그냥 표시 */
   .card .title {
@@ -140,29 +125,6 @@ const props = defineProps<{
     visibility: hidden;
     transform: scale(0);
   }
-
-  /*
-  .card:hover .title {
-    font-size: var(--font-size-h24);
-    line-height: 34px;
-  }
-
-  .card:hover .description {
-    opacity: 0;
-  }
-
-  .card:hover .backdrop {
-    opacity: 0;
-    visibility: hidden;
-  }
-
-  .card:hover .expand-icon {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-  }
-  */
-
 }
 
 </style>
