@@ -26,8 +26,8 @@ const features: FeatureModel[] = [
   <div class="layout">
     <div class="content">
       <AnimatedElement>
-        <h2 class="text-h2 text-semi-bold text-secondary text-center">아임파인으로<br>일만사업에 참여한다면?</h2>
-        <div class="spt-64"></div>
+        <h2 class="text-common text-title">아임파인으로<br>일만사업에 참여한다면?</h2>
+        <div class="sp-title-card"></div>
       </AnimatedElement>
       <AnimatedElement :threshold=0.1>
         <div class="card-container">
@@ -44,13 +44,6 @@ const features: FeatureModel[] = [
 </template>
 
 <style scoped>
-
-
-.flex-equal {
-  display: flex;
-  flex: 1;
-}
-
 .layout {
   display: flex;
   justify-content: center;
@@ -67,10 +60,21 @@ const features: FeatureModel[] = [
   max-width: var(--desktop-max-width);
 }
 
+.text-title {
+  color: var(--color-text-secondary, #1C1C1C);
+  text-align: center;
+
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 56px; /* 140% */
+}
+
+
 /* 일만사업 기능 스타일링 */
 .card-container {
   display: grid;
-  gap: var(--spacing-24);
+  gap: 24px;
 
   grid-template-columns: repeat(3, 1fr); /* 세 개의 열 */
   grid-auto-rows: 1fr; /* 모든 행 높이를 동일하게 */
@@ -80,19 +84,35 @@ const features: FeatureModel[] = [
   width: 100%;
 }
 
+.sp-title-card {
+  margin-top: 64px;
+}
+
 @media (max-width: 768px) {
   .layout {
     flex-direction: column;
     height: auto;
+    margin-top: 68px;
+    margin-bottom: 42px;
   }
 
   .content {
     padding: 0 var(--spacing-16);
   }
 
+  .text-title {
+    font-size: 24px;
+    line-height: 34px; /* 141.667% */
+  }
+
   .card-container {
     grid-template-columns: 1fr; /* 하나의 열 */
     grid-auto-rows: 1fr; /* 모든 행 높이를 동일하게 */
+    gap: 12px;
+  }
+
+  .sp-title-card {
+    margin-top: 32px;
   }
 }
 
