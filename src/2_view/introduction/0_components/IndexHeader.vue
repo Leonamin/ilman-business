@@ -22,7 +22,7 @@ const navItem = {
             <img class="logo-2" src="~/assets/svgs/shm_black_logo.svg" alt="Logo 2">
           </div>
         </a>
-        <nav class="header-nav-item text-body1 text-semi-bold">
+        <nav class="center-row text-body1 text-semi-bold">
           <a v-for="(link, name) in navItem" :href="link" :key="name" class="header-nav-item clickable">{{ name }}</a>
         </nav>
       </div>
