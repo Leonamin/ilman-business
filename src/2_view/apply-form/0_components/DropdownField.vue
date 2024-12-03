@@ -29,13 +29,13 @@ const handleSelect = (value: string) => {
 <template>
   <div class="container">
     <!-- 타이틀과 중요 표시 -->
-    <div class="row-start text-body1 text-bold text-semi-bold line-height-24 spb-4">
+    <div class="row-start text-body1 text-bold text-semi-bold">
       <p>{{ title }}</p>
       <p v-if="isRequired" class="text-red">*</p>
     </div>
 
     <!-- 설명 -->
-    <p v-if="hasDescription" class="text-body1 row-start text-tertiary line-height-20 spb-4">
+    <p v-if="hasDescription" class="text-body1 row-start text-tertiary">
       {{ description }}
     </p>
 
@@ -67,6 +67,7 @@ const handleSelect = (value: string) => {
   align-items: flex-start;
   justify-content: center;
   width: 100%;
+  gap: 8px;
 }
 
 .dropdown-container {
