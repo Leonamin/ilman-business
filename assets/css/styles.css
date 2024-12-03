@@ -214,6 +214,13 @@
     color: var(--color-text-primary);
 }
 
+.text-common {
+    word-break: keep-all;
+    white-space: pre-line;
+    word-wrap: break-word;
+    color: var(--color-text-primary);
+}
+
 .text-h1 {
     font-size: var(--font-size-h48);
     font-weight: 700;

@@ -30,13 +30,13 @@ const directionClass = computed(() => {
     <div class="content"  :class="directionClass">
       <div class="text-container">
         <div class="column-start">
-          <p class="text-h7 text-semi-bold line-height-28 spb-16 spb-12--mobile">
+          <span class="text-hospital gap-hos-title">
             {{ props.interview.hospital }}
-          </p>
-          <p class="text-h3 text-semi-bold line-height-48 sm-line-height-34 spb-40 spb-16--mobile">
+          </span>
+          <span class="text-title gap-title-desc">
             {{ props.interview.title }}
-          </p>
-          <p class="text-h7 text-tertiary line-height-28 sm-line-height-24">
+          </span>
+          <p class="text-description">
             {{ props.interview.description }}
           </p>
         </div>
@@ -82,16 +82,51 @@ const directionClass = computed(() => {
 }
 
 .text-container {
-  flex: 1.2;
+
 }
 
 .image-container {
-  flex: 0.8;
 }
 
 .image-card {
   border-radius: 40px;
   object-fit: cover;
+}
+
+.text-hospital {
+  align-self: stretch;
+  color: #000;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px; /* 140% */
+}
+
+.text-title {
+  align-self: stretch;
+  color: #000;
+  /* heading/32 */
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 46px; /* 143.75% */
+}
+
+.text-description {
+  align-self: stretch;
+  color: var(--color-text-tertiary, #575757);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%; /* 28.8px */
+}
+
+.gap-hos-title {
+  margin-bottom: 16px;
+}
+
+.gap-title-desc {
+  margin-bottom: 40px;
 }
 
 @media (max-width: 768px) {
@@ -118,19 +153,26 @@ const directionClass = computed(() => {
     padding-inline: 16px;
   }
 
-  .sm-line-height-24 {
-    line-height: 24px;
+  .text-hospital {
+    font-size: 18px;
+    line-height: 26px; /* 144.444% */
   }
 
-  .sm-line-height-34 {
-    line-height: 34px;
+  .text-title {
+    font-size: 24px;
+    line-height: 34px; /* 141.667% */
   }
 
-  .spb-12--mobile {
+  .text-description {
+    font-size: 16px;
+    line-height: 24px; /* 150% */
+  }
+
+  .gap-hos-title {
     margin-bottom: 12px;
   }
 
-  .spb-16--mobile {
+  .gap-title-desc {
     margin-bottom: 16px;
   }
 }

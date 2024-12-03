@@ -49,7 +49,6 @@ const interviews: InterviewModel[] = [
 <template>
   <div class="layout">
     <div class="content">
-
       <h2 class="title text-h2 text-semi-bold text-secondary text-center">고객 성공 사례</h2>
       <div class="interview-card-container">
         <InterviewCard
@@ -77,6 +76,7 @@ const interviews: InterviewModel[] = [
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-width: 100%;
   max-width: var(--desktop-max-width);
   padding: var(--desktop-section-spacing) 0;
 }
@@ -105,5 +105,6 @@ const interviews: InterviewModel[] = [
     margin-bottom: 16px;
   }
 }
+
 
 </style>
