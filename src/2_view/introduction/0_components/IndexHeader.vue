@@ -55,8 +55,26 @@ const navItem = {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: var(--desktop-max-width); /* 중앙 정렬 및 최대 너비 제한 */
-  padding: 0 16px; /* 좌우 여백 추가 */
+  max-width: var(--desktop-max-width);
+  padding: 0 16px;
+}
+
+.logo-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.logo-1 {
+  max-width: 58px;
+}
+
+.logo-2 {
+  max-width: 167px;
+}
+
+.header-nav-item {
+  margin: 24px;
 }
 
 .clickable:active {
@@ -78,9 +96,6 @@ const navItem = {
 }
 
 .header-nav-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   margin: 24px;
 }
 
