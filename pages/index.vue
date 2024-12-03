@@ -79,20 +79,20 @@ const handleContact = () => {
       <FAQ id="faq"/>
     </div>
     <!--    <ScrollToTopButton/>-->
-    <div class="bottom-bar"
-         :class="{ 'visible': isVisible }"
-    >
-      <span class="text">만성질환관리의 정답, 아임파인과 함께</span>
-      <div class="button-container">
-        <SolidButton preset="blue" text="일만사업 시작하기" @click="handleContact"/>
-        <img
-            class="cursor-image"
-            src="/svgs/icons/icon-cursor-click-01.svg"
-            alt="cursor"
-        />
-      </div>
-    </div>
-    <FixedContactButton class="contact-button" :class="{ 'visible': isVisible }"/>
+    <!--    <div class="bottom-bar"-->
+    <!--         :class="{ 'visible': isVisible }"-->
+    <!--    >-->
+    <!--      <span class="text">만성질환관리의 정답, 아임파인과 함께</span>-->
+    <!--      <div class="button-container">-->
+    <!--        <SolidButton preset="blue" text="일만사업 시작하기" @click="handleContact"/>-->
+    <!--        <img-->
+    <!--            class="cursor-image"-->
+    <!--            src="/svgs/icons/icon-cursor-click-01.svg"-->
+    <!--            alt="cursor"-->
+    <!--        />-->
+    <!--      </div>-->
+    <!--    </div>-->
+    <FixedContactButton class="contact-button" :class="{ 'visible': true }"/>
   </div>
 
 
@@ -157,7 +157,7 @@ const handleContact = () => {
 }
 
 .contact-button {
-  display: none;
+  display: block;
   opacity: 0;
   transition: opacity 0.3s ease;
 }

@@ -198,7 +198,7 @@ const 손해_표시 = (손해: number): string => {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 32px;
+  gap: 8px;
 }
 
 .main-content {
