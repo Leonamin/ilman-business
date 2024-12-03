@@ -37,7 +37,7 @@
 
     /* 색상 변수 텍스트 */
 
-    --color-text-priamry: #333;
+    --color-text-primary: #333;
     --color-text-secondary: #1C1C1C;
     --color-text-secondary-hover: #000;
     --color-text-tertiary: #575757;
@@ -80,7 +80,7 @@
 
     /* 색상 변수 텍스트 */
 
-    --color-text-priamry: #fff;
+    --color-text-primary: #fff;
     --color-text-secondary: #ccc;
     --color-text-tertiary: #999;
 
