@@ -16,7 +16,7 @@ const navItem = {
   <div class="header">
     <header class="header-container">
       <div class="header-inner">
-        <a class="clickable" href="/">
+        <a class="clickable" href="/public">
           <div class="logo-row">
             <img class="logo-1" src="/svgs/logo.svg" alt="Logo 1">
             <img class="logo-2" src="~/assets/svgs/shm_black_logo.svg" alt="Logo 2">

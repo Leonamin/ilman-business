@@ -4,7 +4,7 @@ import type {WorkProcessStepModel} from "~/src/0_models/WorkProcessStepModel";
 import ChevronRight from "~/src/2_view/0_components/icons/ChevronRight.vue";
 import ChevronDown from "~/src/2_view/0_components/icons/ChevronDown.vue";
 import ChevronLeft from "~/src/2_view/0_components/icons/ChevronLeft.vue";
-import ProcessCard from "~/src/2_view/introduction/0_components/ProcessCard.vue";
+import ProcessCard from "~/src/2_view/1_index/0_component/ProcessCard.vue";
 
 const process: WorkProcessStepModel[] = [
   {

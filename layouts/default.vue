@@ -10,7 +10,7 @@
 
 <script setup>
 import Footer from "~/src/2_view/0_components/Footer.vue";
-import IndexHeader from "~/src/2_view/introduction/0_components/IndexHeader.vue";
+import IndexHeader from "~/src/2_view/1_index/0_component/IndexHeader.vue";
 </script>
 
 <style scoped>

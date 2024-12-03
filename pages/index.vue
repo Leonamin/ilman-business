@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import Introduction from "~/src/2_view/introduction/page/Introduction.vue";
-import Feature from "~/src/2_view/introduction/page/Feature.vue";
-import WorkProcess from "~/src/2_view/introduction/page/WorkProcess.vue";
-import FAQ from "~/src/2_view/introduction/page/FAQ.vue";
-import DoctorInterview from "~/src/2_view/introduction/page/DoctorInterview.vue";
-import ProfitCalculator from "~/src/2_view/introduction/page/ProfitCalculator.vue";
-import Explanation from "~/src/2_view/introduction/page/Explanation.vue";
+import Introduction from "~/src/2_view/1_index/1_section/IntroductionSection.vue";
+import Feature from "~/src/2_view/1_index/1_section/FeatureSection.vue";
+import WorkProcess from "~/src/2_view/1_index/1_section/WorkProcessSection.vue";
+import FAQ from "~/src/2_view/1_index/1_section/FAQSection.vue";
+import DoctorInterview from "~/src/2_view/1_index/1_section/DoctorInterviewSection.vue";
+import ProfitCalculator from "~/src/2_view/1_index/1_section/ProfitCalculatorSection.vue";
+import Explanation from "~/src/2_view/1_index/1_section/ExplanationSection.vue";
 import SolidButton from "~/src/2_view/0_components/button/SolidButton.vue";
 import FixedContactButton from "~/src/2_view/1_index/0_component/FixedContactButton.vue";
 
