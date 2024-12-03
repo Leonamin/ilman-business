@@ -3,19 +3,21 @@ export default defineNuxtConfig({
     compatibilityDate: '2024-04-03',
 
     build: {
-        transpile: ['ant-design-vue', 'lodash-es'],
+        // transpile: ['ant-design-vue', 'lodash-es'],
     },
 
     devtools: {enabled: true},
 
-    vite: {
-        resolve: {
-            alias: {
-                'lodash-es': 'lodash-es',
-            },
-        },
-    },
-
+    // vite: {
+    //     resolve: {
+    //         alias: {
+    //             'lodash-es': 'lodash-es',
+    //         },
+    //     },
+    // },
+    modules: [
+        '@ant-design-vue/nuxt'
+    ],
     css: [
         '@/assets/css/global.css',
         '@/assets/css/reset.css',
@@ -29,7 +31,6 @@ export default defineNuxtConfig({
 
     plugins: [
         '@/plugins/Vue3Marquee.client.ts',
-        '@/plugins/ant-design.ts'
     ],
     app: {
         head: {
