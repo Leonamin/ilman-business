@@ -4,7 +4,7 @@
       <div class="footer-top">
         <div class="terms">
           <a class="text-body1 text-semi-bold" href="https://caresquare.notion.site/150a1c7601908099aba3c688b9235c17?pvs=4">개인정보처리방침</a>
-          <span class="text-h7 text-bold text-secondary">주식회사 케어스퀘어</span>
+          <span class="text-subtitle3 text-bold text-secondary">주식회사 케어스퀘어</span>
         </div>
         <div class="row-start text-line-break">
           <a class="text-body1 text-semi-bold" href="tel:02-6952-3078">문의하기 02-6952-3078</a>

@@ -9,7 +9,7 @@ defineProps<{
 <template>
   <div class="card container">
     <div>
-      <p class="text-h5 text-semi-bold text-left spb-8 text-line-break text-line-height-small">
+      <p class="text-subtitle1 text-semi-bold text-left spb-8 text-line-break text-line-height-small">
         {{ title }}</p>
       <p class="text-body1 text-medium text-left text-tertiary text-line-break text-line-height-small">
         {{ description }}</p>

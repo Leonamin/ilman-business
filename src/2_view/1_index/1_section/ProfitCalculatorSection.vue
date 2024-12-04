@@ -139,14 +139,14 @@ const 손해_표시 = (손해: number): string => {
         </div>
 
         <p class="text-h2 text-bold text-center subtitle-summary"> {{ 총합_라운딩 }} </p>
-        <div class="center-column text-h6 line-height-28 text-semi-bold spb-24">
+        <div class="center-column text-subtitle2 line-height-28 text-semi-bold spb-24">
           <p>아임파인을 사용하지 않는다면</p>
           <div class="row-start">
             <p class="text-red">{{ 손해.toLocaleString() }}원</p>
             <p> 손해</p>
           </div>
         </div>
-        <div class="text-h5 text-semi-bold center-row spb-32">
+        <div class="text-subtitle1 text-semi-bold center-row spb-32">
           <p>만약 환자가 </p>
           <p class="text-blue">{{ 환자수 }}</p>
           <p>명이라면</p>

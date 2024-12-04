@@ -79,7 +79,7 @@ const description = () => {
           아임파인 일만사업 솔루션에<br>관심을 가져주셔서 감사합니다
         </p>
         <div class="spb-24"/>
-        <p class="text-h5 text-center text-semi-bold line-height-34 sm-line-height-24 text-line-break">
+        <p class="text-subtitle1 text-center text-semi-bold line-height-34 sm-line-height-24 text-line-break">
           {{ description() }}
         </p>
       </div>

@@ -53,12 +53,12 @@ const images = [
 <template>
   <div class="layout">
     <div class="main-content animate-content">
-      <container-catchphrase>
-        <p class="text-common text-catchphrase">진료는 그대로<br>매출은 최대로<br>아임파인 일만사업</p>
-        <p class="text-common text-small-catchphrase sp-catchphrase">일차의료 만성질환관리의 정답,
+      <div class="container-catchphrase">
+        <p class="text-h1 text-center text-secondary">진료는 그대로<br>매출은 최대로<br>아임파인 일만사업</p>
+        <p class="text-subtitle1 text-secondary text-center sp-catchphrase">일차의료 만성질환관리의 정답,
           <span class="mobile-break">아임파인 일만사업</span>
           </p>
-      </container-catchphrase>
+      </div>
 
       <div class="button-list sp-cp-button">
         <SolidButton
@@ -131,25 +131,6 @@ const images = [
   padding-inline: 16px;
 }
 
-.text-catchphrase {
-  color: var(--color-text-secondary, #1C1C1C);
-  text-align: center;
-  font-size: 48px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 64px; /* 133.333% */
-}
-
-.text-small-catchphrase {
-  color: var(--color-text-secondary, #1C1C1C);
-  text-align: center;
-
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 34px; /* 141.667% */
-}
-
 .sp-catchphrase {
   margin-top: 24px;
 }
@@ -185,23 +166,12 @@ const images = [
     padding-top: 120px;
   }
 
-  .text-catchphrase {
-    font-size: 32px;
-    line-height: 46px;
-  }
-
-  .text-small-catchphrase{
-    font-size: 20px;
-    line-height: 28px; /* 140% */
-  }
-
   .sp-catchphrase {
     margin-top: 16px;
   }
 
   .button-list {
-    flex-direction: column;
-    gap: 12px;
+    gap: 8px;
   }
 
   .sp-cp-button {
