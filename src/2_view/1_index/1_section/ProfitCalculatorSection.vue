@@ -130,42 +130,43 @@ const 손해_표시 = (손해: number): string => {
         },
       }"/>
     <div class="content">
-
       <div class="main-content">
-        <p class="text-h1 text-center spb-64">예상 매출 계산</p>
-        <div class="selector-container spb-24">
-          <span class="text-body1 text-semi-bold ">아임파인과 함께</span>
+        <h2 class="text-h2 text-center">예상 매출 계산</h2>
+        <div class="mt-64 sm-mt-36"/>
+        <div class="selector-container">
+          <span class="text-body1 text-semi-bold">아임파인과 함께</span>
           <AntSwitch :checked="useImFine" @click="onChangeImFine"/>
         </div>
-
-        <p class="text-h2 text-bold text-center subtitle-summary"> {{ 총합_라운딩 }} </p>
-        <div class="center-column text-subtitle2 line-height-28 text-semi-bold spb-24">
-          <p>아임파인을 사용하지 않는다면</p>
-          <div class="row-start">
-            <p class="text-red">{{ 손해.toLocaleString() }}원</p>
-            <p> 손해</p>
-          </div>
-        </div>
-        <div class="text-subtitle1 text-semi-bold center-row spb-32">
-          <p>만약 환자가 </p>
-          <p class="text-blue">{{ 환자수 }}</p>
-          <p>명이라면</p>
-        </div>
-
+        <div class="mt-32 sm-mt-24"/>
+        <p class="text-h1 text-bold text-center"> {{ 총합_라운딩 }} </p>
+        <div class="mt-16 sm-mt-8"/>
+        <p class="text-subtitle1 text-semi-bold text-tertiary text-center">
+          아임파인을 사용하지 않는다면
+          <span class="mobile-break">
+            <span class="text-red">{{ 손해.toLocaleString() }}원</span> 손해
+          </span>
+        </p>
+        <div class="mt-24"/>
+        <span class="text-h3 text-semi-bold text-center">
+          만약 환자가
+          <span class="text-blue">{{ 환자수 }}</span>명이라면
+        </span>
+        <div class="mt-20"/>
         <div class="slide-container">
           <AntSlider v-model:value="환자수" :min="MIN_환자수" :max="MAX_환자수" :tooltipOpen=false :step=10></AntSlider>
         </div>
         <div class="profit-container">
           <div class="profit-item" v-for="(value, key) in 표시되는_수익" :key="key">
             <div class="row-space-between">
-              <p class="text-body1 text-semi-bold">{{ key }}</p>
-              <p class="text-body2 text-medium">{{ value.value.toLocaleString() }}원</p>
+              <span class="text-body2 text-semi-bold">{{ key }}</span>
+              <span class="text-caption2 text-medium">{{ value.value.toLocaleString() }}원</span>
             </div>
+            <div class="mt-4"/>
             <Badge
                 :key="badgeColorPreset + useImFine + 손해목록[key]"
                 :class="['badge-item', {'badge-visible' : 손해목록[key].value != 0}]" :colorPreset='badgeColorPreset'
                 :text="손해_표시(손해목록[key].value)"
-                text-class="text-caption1 line-height-16"
+                text-class="text-caption3"
             />
           </div>
         </div>
@@ -209,8 +210,6 @@ const 손해_표시 = (손해: number): string => {
 
 /* 슬라이더 스타일 */
 
-/* 슬라이더의 채워진 영역 (Track) */
-
 .slide-container {
   margin-inline: 36px;
 }
@@ -247,17 +246,10 @@ const 손해_표시 = (손해: number): string => {
   opacity: 1;
 }
 
-.subtitle-summary {
-  line-height: 64px;
-}
 
 @media (max-width: 768px) {
   .layout {
     padding: var(--mobile-section-spacing) 0;
-  }
-
-  .subtitle-summary {
-    line-height: 48px;
   }
 }
 </style>
