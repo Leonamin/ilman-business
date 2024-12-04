@@ -109,7 +109,8 @@ const iconSizeChevron = computed(() => isMobile.value ? '24px' : '32px');
 <template>
   <div class="layout">
     <div class="content">
-      <h2 class="title text-h2 text-bold text-center">자주 묻는 질문</h2>
+      <h2 class="text-h2 text-center">자주 묻는 질문과 답변</h2>
+      <div class="mt-64 sm-mt-36"/>
       <div
           v-for="(item, index) in faqList"
           :key="index"
@@ -118,7 +119,7 @@ const iconSizeChevron = computed(() => isMobile.value ? '24px' : '32px');
         <div class="question-container" @click="toggleFAQ(index)">
           <div class="question">
             <img class="faq-icon" alt="질문 아이콘" src="/svgs/icons/icon_question.svg">
-            <div class="sp-icon-text"/>
+            <div class="mr-24 sm-mr-12"/>
             <p class="text-question text-common">
               {{ item.question }}
             </p>
@@ -137,7 +138,7 @@ const iconSizeChevron = computed(() => isMobile.value ? '24px' : '32px');
         </div>
         <div v-if="activeIndex === index" class="answer-container">
           <img class="faq-icon" alt="답변 아이콘" src="/svgs/icons/icon_answer.svg">
-          <div class="spl-24 sm-spl-12"/>
+          <div class="mr-24 sm-mr-12"/>
           <div>
             <p class="text-answer text-common">
               {{ item.answer }}
@@ -162,7 +163,7 @@ const iconSizeChevron = computed(() => isMobile.value ? '24px' : '32px');
   width: 100%;
   font-family: 'Noto Sans KR', sans-serif;
   padding: var(--desktop-section-spacing) 0;
-  padding-bottom: 128px;
+  padding-bottom: 240px;
 }
 
 .content {
@@ -251,6 +252,7 @@ const iconSizeChevron = computed(() => isMobile.value ? '24px' : '32px');
 @media (max-width: 768px) {
   .layout {
     padding: var(--mobile-section-spacing) 0;
+    padding-bottom: 100px;
   }
 
   .faq-icon {
