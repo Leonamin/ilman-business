@@ -8,7 +8,7 @@
         {{ props.feature.title }}</p>
       <div class="mt-16"/>
 <!--      <img class="expand-icon" src="/svgs/icons/icon-expand-circle.svg" alt="Expand Icon"/>-->
-      <p class="text-body1 text-tertiary text-left">
+      <p class="text-body2 text-normal text-tertiary text-left">
         {{ props.feature.description }}</p>
     </div>
   </div>
@@ -50,8 +50,8 @@ const props = defineProps<{
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.2); /* 반투명한 흰색 배경 */
-  backdrop-filter: blur(10px); /* 유리 표면 효과 */
+  background: rgba(255, 255, 255, 0.01); /* 반투명한 흰색 배경 */
+  backdrop-filter: blur(8px); /* 유리 표면 효과 */
   z-index: 1; /* 콘텐츠 뒤에 배치 */
   opacity: 1; /* 기본 상태에서는 숨김 */
   visibility: visible; /* 기본 상태에서는 숨김 */
