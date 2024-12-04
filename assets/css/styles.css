@@ -733,6 +733,10 @@
     color: var(--color-text-tertiary);
 }
 
+.text-inverse {
+    color: var(--color-text-inverse);
+}
+
 .text-positive {
     color: var(--color-text-green);
 }

@@ -1,6 +1,6 @@
 
 <template>
-  <div class="card">
+  <div class="content">
     <div class="backdrop"></div> <!-- 전체 영역에 적용될 블러 배경 -->
     <img class="card-image" :src="props.feature.image" alt="Feature Image"/>
     <div class="card-content">
@@ -23,7 +23,7 @@ const props = defineProps<{
 </script>
 
 <style scoped>
-.card {
+.content {
   position: relative;
   padding: var(--spacing-32);
   border-radius: 16px;
@@ -83,16 +83,16 @@ const props = defineProps<{
   transition: transform 0.5s, opacity 0.5s, visibility 0.5s, scale 0.5s;
 }
 
-.card:hover .animated-description {
+.content:hover .animated-description {
   opacity: 1;
 }
 
-.card:hover .backdrop {
+.content:hover .backdrop {
   opacity: 1; /* 완전히 보이게 */
   visibility: visible; /* 요소를 표시 */
 }
 
-.card:hover .expand-icon {
+.content:hover .expand-icon {
   display: none;
   opacity: 0;
   visibility: hidden;
@@ -100,24 +100,24 @@ const props = defineProps<{
 }
 
 @media (pointer: coarse) {
-  .card {
+  .content {
     padding: var(--spacing-24);
   }
 
   /* 모바일에서는 그냥 표시 */
-  .card .animated-title {
+  .content .animated-title {
   }
 
-  .card .animated-description {
+  .content .animated-description {
     opacity: 1;
   }
 
-  .card .backdrop {
+  .content .backdrop {
     opacity: 1; /* 완전히 보이게 */
     visibility: visible; /* 요소를 표시 */
   }
 
-  .card .expand-icon {
+  .content .expand-icon {
     display: none;
     opacity: 0;
     visibility: hidden;

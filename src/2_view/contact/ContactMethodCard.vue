@@ -7,7 +7,7 @@ defineProps<{
 </script>
 
 <template>
-  <div class="card container">
+  <div class="content container">
     <div>
       <p class="text-subtitle1 text-semi-bold text-left spb-8 text-line-break text-line-height-small">
         {{ title }}</p>
@@ -22,7 +22,7 @@ defineProps<{
 </template>
 
 <style scoped>
-.card {
+.content {
   padding: var(--spacing-32);
   border-radius: 16px;
   background-color: #FAFAFA;
@@ -42,7 +42,7 @@ defineProps<{
   margin-left: auto;
 }
 
-.card:hover {
+.content:hover {
   background-color: var(--color-bg-secondary);
 }
 

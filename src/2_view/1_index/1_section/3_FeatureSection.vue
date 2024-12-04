@@ -32,7 +32,7 @@ const features: FeatureModel[] = [
       <AnimatedElement :threshold=0.1>
         <div class="card-container">
           <FeatureCard
-              class="card"
+              class="content"
               :feature="feature" v-for="feature in features"
               :key="feature.title"
           />
