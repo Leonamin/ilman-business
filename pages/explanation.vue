@@ -235,14 +235,15 @@ section {
 }
 
 .download-button {
+  flex-shrink: 0; /* 버튼 크기가 줄어들지 않음 */
   display: flex;
-  padding: 16px;
   justify-content: center;
   align-items: center;
-  gap: var(--spacing-8, 8px);
+  padding: 12px 16px;
   border-radius: 16px;
   background: var(--color-bg-blue-light, #EFF6FF);
   cursor: pointer;
+  width: auto; /* 버튼 크기 고정 */
 }
 
 @media (max-width: 768px) {
