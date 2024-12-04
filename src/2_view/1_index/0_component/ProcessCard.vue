@@ -10,11 +10,11 @@ const props = defineProps<{
 <template>
   <div class="container card">
     <div>
-      <p class="text-common card-title">{{ props.process.title }}</p>
-      <div class="spb-8"/>
-      <p class="text-common card-description">{{ props.process.description }}</p>
+      <p class="text-subtitle1 text-left ">{{ props.process.title }}</p>
+      <div class="mt-8 sm-mt-4"/>
+      <p class="text-body2 text-tertiary text-left text-medium">{{ props.process.description }}</p>
     </div>
-    <div class="sp-content-icon"></div>
+    <div class="mt-36 sm-mt-12"></div>
     <div class="bottom">
       <img class="process-icon" :src="process.imageSrc" alt="절차 이미지"/>
     </div>
@@ -29,28 +29,6 @@ const props = defineProps<{
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-}
-
-.card-title {
-  color: var(--color-text-secondary, #1C1C1C);
-
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 34px; /* 141.667% */
-}
-
-.card-description {
-  color: var(--color-text-tertiary, #575757);
-
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 24px; /* 150% */
-}
-
-.sp-content-icon {
-  margin-top: 38px;
 }
 
 .card {
@@ -70,8 +48,9 @@ const props = defineProps<{
 }
 
 @media (max-width: 768px) {
-  .sp-content-icon {
-    margin-top: 62px;
+  .process-icon {
+    width: 54px;
+    height: 54px;
   }
 }
 

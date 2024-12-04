@@ -99,6 +99,10 @@
     margin-top: var(--spacing-48);
 }
 
+.mt-54 {
+    margin-top: 54px;
+}
+
 .mt-64 {
     margin-top: var(--spacing-64);
 }
@@ -243,6 +247,10 @@
 
     .sm-mt-48 {
         margin-top: var(--spacing-48);
+    }
+
+    .sm-mt-54 {
+        margin-top: 54px;
     }
 
     .sm-mt-64 {

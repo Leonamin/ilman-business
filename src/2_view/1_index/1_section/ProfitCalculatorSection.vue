@@ -132,7 +132,7 @@ const 손해_표시 = (손해: number): string => {
     <div class="content">
       <div class="main-content">
         <h2 class="text-h2 text-center">예상 매출 계산</h2>
-        <div class="mt-64 sm-mt-36"/>
+        <div class="mt-54 sm-mt-36"/>
         <div class="selector-container">
           <span class="text-body1 text-semi-bold">아임파인과 함께</span>
           <AntSwitch :checked="useImFine" @click="onChangeImFine"/>
