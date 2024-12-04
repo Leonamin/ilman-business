@@ -39,11 +39,10 @@ const interviews: InterviewModel[] = [
 <template>
   <div class="layout">
     <div class="content">
-      <h2 class="text-title text-common">고객 성공 사례</h2>
-      <div class="sp-title-card"/>
+      <h2 class="text-h2">고객 성공 사례</h2>
+      <div class="mt-64 sm-mt-36"/>
       <div class="interview-card-container">
         <InterviewCard
-            class="interview-card"
             v-for="(interview, index) in interviews"
             :key="index"
             :interview="interview"
@@ -60,6 +59,7 @@ const interviews: InterviewModel[] = [
   justify-content: center;
   align-items: center;
   width: 100%;
+  padding: var(--desktop-section-spacing) 0;
 }
 
 .content {
@@ -69,17 +69,6 @@ const interviews: InterviewModel[] = [
   align-items: center;
   min-width: 100%;
   max-width: var(--desktop-max-width);
-  padding: var(--desktop-section-spacing) 0;
-}
-
-.text-title {
-  color: var(--color-text-secondary, #1C1C1C);
-  text-align: center;
-
-  font-size: 40px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 56px; /* 140% */
 }
 
 .interview-card-container {
@@ -88,26 +77,13 @@ const interviews: InterviewModel[] = [
   gap: 80px;
 }
 
-.sp-title-card {
-  margin-top: 64px;
-}
-
 @media (max-width: 768px) {
-  .content {
+  .layout {
     padding: var(--mobile-section-spacing) 0;
   }
 
-  .interview-card {
-    height: auto;
-  }
-
-  .text-title {
-    font-size: 24px;
-    line-height: 32px;
-  }
-
-  .sp-title-card {
-    margin-top: 32px;
+  .interview-card-container {
+    gap: 36px;
   }
 }
 
