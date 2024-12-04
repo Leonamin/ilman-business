@@ -7,6 +7,7 @@ import DoctorInterview from "~/src/2_view/1_index/1_section/6_DoctorInterviewSec
 import ProfitCalculator from "~/src/2_view/1_index/1_section/4_ProfitCalculatorSection.vue";
 import Explanation from "~/src/2_view/1_index/1_section/2_ExplanationSection.vue";
 import FixedContactButton from "~/src/2_view/1_index/0_component/FixedContactButton.vue";
+import AdvertisementBannerSection from "~/src/2_view/1_index/1_section/7_AdvertisementBannerSection.vue";
 
 definePageMeta({
   title: '아임파인 일만사업',
@@ -75,6 +76,7 @@ const handleContact = () => {
       <ProfitCalculator id="profit-calculator"/>
       <WorkProcess id="process"/>
       <DoctorInterview id="interview"/>
+      <AdvertisementBannerSection id="advertisement"/>
       <FAQ id="faq"/>
     </div>
     <!--    <ScrollToTopButton/>-->
