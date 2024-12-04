@@ -56,8 +56,8 @@ onMounted(() => {
   <div class="layout">
     <div class="content">
 
-      <h2 class="text-title">아임파인의 일만사업 절차</h2>
-      <div class="sp-title-card"/>
+      <h2 class="text-h2 text-center">아임파인의 일만사업 절차</h2>
+      <div class="mt-54 sm-mt-36"/>
       <div class="process-list" v-if="isMobile">
         <div class="center-column" v-for="(item, index) in process" :key="item.title">
           <ProcessCard :process="item"/>
@@ -133,21 +133,6 @@ onMounted(() => {
   max-width: var(--desktop-max-width);
 }
 
-.text-title {
-  color: var(--color-text-secondary, #1C1C1C);
-  text-align: center;
-
-  /* heading/40 */
-  font-size: 40px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 56px; /* 140% */
-}
-
-.sp-title-card {
-  margin-top: 64px;
-}
-
 .process-list {
   display: flex;
   flex-direction: column;
@@ -184,15 +169,6 @@ onMounted(() => {
 @media (max-width: 768px) {
   .layout {
     padding: var(--mobile-section-spacing) 0;
-  }
-
-  .text-title {
-    font-size: 24px;
-    line-height: 32px;
-  }
-
-  .sp-title-card {
-    margin-top: 32px;
   }
 
   .process-outer {
