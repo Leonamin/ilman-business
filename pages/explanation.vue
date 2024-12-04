@@ -66,7 +66,7 @@ const downloadResource = (resource: FileModel) => {
     <!-- 최대 너비 제한 -->
     <div class="content">
       <header class="header">
-        <h1 class="text-h1 text-inverse text-center">일차의료 만성질환 관리사업</h1>
+        <h1 class="text-h1 text-inverse text-center">일차의료 만성질환 <span class="mobile-break">관리사업</span></h1>
         <div class="mt-24"/>
         <p class="text-subtitle1 text-inverse text-center text-semi-bold">
           국민건강보험 일차의료 만성질환 관리 시범사업은 고혈압·당뇨병 환자에게<br>지속적·포괄적 관리를 제공하여 치료 지속성 향상과 질환 악화 방지를 목표로 합니다.
@@ -77,7 +77,7 @@ const downloadResource = (resource: FileModel) => {
         <section>
           <h3 class="text-h3 text-left">사업 소개</h3>
           <div class="mt-24"/>
-          <p class="text-body2 text-tertiary">{{ introduction }}</p>
+          <p class="text-body2 text-tertiary text-normal">{{ introduction }}</p>
         </section>
         <!--        일만사업 관련 소식-->
         <section>
@@ -214,5 +214,26 @@ section {
   border-radius: 16px;
   background: var(--color-bg-blue-light, #EFF6FF);
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding-inline: 16px;
+    padding-top: 40px;
+    padding-bottom: 32px;
+  }
+
+  .news-list {
+    flex-direction: column;
+  }
+
+  .main-content {
+    gap: 12px;
+    padding-bottom: 0;
+  }
+
+  section {
+    padding: 24px;
+  }
 }
 </style>
