@@ -3,4 +3,5 @@ export interface NewsModel {
     date: string;
     title: string;
     content: string;
+    link: string;
 }

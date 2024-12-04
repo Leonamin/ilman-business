@@ -7,53 +7,76 @@ import {FileModel} from "~/src/0_models/FileModel.js";
 import {NewsModel} from "~/src/0_models/NewsModel.js";
 
 definePageMeta({
-  title: '일차의료 만성질환 관리사업',
+  title: '일차의료 만성질환관리 사업 소개',
   meta: [
     {
       name: 'description',
-      content: '일차의료 만성질환 관리사업이란?\n' +
+      content: '일차의료 만성질환관리 사업이란?\n' +
           '국민건강보험 일차의료 만성질환 관리 시범사업은 고혈압·당뇨병 환자에게 지속적·포괄적 관리를 제공하여 치료 지속성 향상과 질환 악화 방지를 목표로 합니다.'
     }
   ],
   layout: 'no-footer',
 });
 
-const introduction = "대한민국의 보건의료체계는 높은 접근성과 우수한 의료 인프라를 바탕으로 양질의 의료서비스를 제공하고 있습니다. \n" +
-    "하지만 만성질환 관리체계는 아직 미흡한 실정입니다.\n" +
+const introduction = "일차의료 만성질환관리 사업은 고혈압과 당뇨병 환자들에게 지속적이고 포괄적인 관리를 제공함으로써 치료 지속성을 높이고 질환의 악화를 방지하는 것을 목표로 하고 있습니다. 특히, 동네의원이 중심이 되어 환자별 맞춤형 연간 관리 계획을 수립하고, 의사와 케어코디네이터(간호사 또는 영양사)로 구성된 팀이 환자의 자기관리 능력을 강화할 수 있도록 지원합니다.\n" +
     "\n" +
-    "일차의료 만성질환 관리 시범사업은 동네의원 중심의 만성질환 관리 체계를 구축하여, \n" +
-    "고혈압·당뇨병 환자가 동네의원에서 지속적이고 포괄적인 관리를 받을 수 있도록 지원합니다.\n" +
+    "일차의료 만성질환관리 사업에 참여하면 원장님은 ‘만성질환 통합관리료’를 통해 추가적인 수익을 창출할 수 있습니다. 예를 들어, 환자 1인당 연간 약 30만 원의 수가를 청구할 수 있으며, 500명의 환자를 관리할 경우 연간 약 1억 5,000만 원의 수익을 기대할 수 있습니다. 또한, 기존 본인부담률이 30%에서 20%로 낮아지고 건강생활실천지원금이 제공되기 때문에 환자의 만족도와 치료 지속성이 높아집니다.\n" +
     "\n" +
-    "참여 의원에서는 환자별 맞춤형 교육·상담을 제공하고, 질환 관리에 필요한 정보를 제공하여 자가관리를 지원합니다. \n" +
-    "또한 환자의 생활습관 개선을 위한 교육과 상담도 함께 제공됩니다."
+    "원장님의 주요 역할은 환자의 건강상태를 평가하고 개인별 맞춤형 관리 계획을 수립합니다.\n" +
+    "이후 환자들에게 질환 관리에 대한 체계적인 교육과 상담을 제공합니다.\n" +
+    "마지막으로 간호사와 영양사 등과 협력하여 팀 기반의 포괄적인 관리를 진행합니다.\n" +
+    "\n" +
+    "일만사업에 참여하신다면 원장님께서는 새로운 수익 창출의 기회가 되는 동시에, 환자의 건강을 증진시키고 의원의 진료 효율성을 높이는 데 기여할 수 있습니다."
 
 // 목업 데이터
 const news = ref<NewsModel[]>([
   {
-    id: 1, title: '만성질환 관리 사업 새 지침 발표', date: '2024-03-15',
-    content: "건강보험심사평가원은 일차의료 만성질환 관리 시범사업의 새로운 운영 지침을 발표했습니다.",
+    id: 1, title: '일차의료 만성질환관리 본사업 전환', date: '2024-09-29',
+    content: "“가까운 동네의원에서 고혈압·당뇨병을 관리해 보세요” " +
+        "환자 본인부담률 20% 적용 및 건강생활실천지원금 제공",
+    link: "https://www.mohw.go.kr/board.es?mid=a10503010100&bid=0027&act=view&list_no=1483237&tag=&nPage=1",
   },
   {
-    id: 2, title: '신청서, 보고서 양식 개정', date: '2024-03-10',
-    content: "건강보험심사평가원은 일차의료 만성질환 관리 시범사업의 새로운 운영 지침을 발표했습니다.",
-
+    id: 2, title: '9월 시작 ‘일차의료 만성질환 관리’ 본사업, 시범사업과 차이는?', date: '2024-08-29',
+    content: "코디네이터 고용 의료기관 자율…1만2천 의원 참여 가능\n" +
+        "배경책 건강정책국장, 전문기자협의회와 간담회서 밝혀\n" +
+        "천식 등 호흡기질환 관리는 별도 시범사업 후 醫와 논의",
+    link: "https://www.docdocdoc.co.kr/news/articleView.html?idxno=3020473",
   },
   {
-    id: 3, title: '환자 관리 성과 개선 사례', date: '2024-03-05',
-    content: "건강보험심사평가원은 일차의료 만성질환 관리 시범사업의 새로운 운영 지침을 발표했습니다.",
+    id: 3, title: '동네의원 만성질환 관리제 본사업 전환…통합관리료 신설', date: '2024-05-30',
+    content: "시범사업 도입 4년여만…환자 한 명당 최고 약 8만원 \n" +
+        "입덧 치료제 급여화…소아진료 네트워크 시범사업도 추진\n",
+    link: "https://www.doctorsnews.co.kr/news/articleView.html?idxno=154894",
   },
 ]);
 
 const resources = ref<FileModel[]>([
-  {id: 1, name: '프로그램 안내서', size: '2.4 MB'},
-  {id: 2, name: '환자 정보 양식', size: '1.1 MB'},
-  {id: 3, name: '의사용 매뉴얼', size: '1.8 MB'},
-  {id: 4, name: '자주 묻는 질문', size: '2.4 MB'},
+  {
+    id: 1, name: '20240909요양기관대상 설명회 자료', size: '14.7 MB',
+    link: 'https://ilman-file-storage.s3.ap-northeast-2.amazonaws.com/20240909%E1%84%8B%E1%85%AD%E1%84%8B%E1%85%A3%E1%86%BC%E1%84%80%E1%85%B5%E1%84%80%E1%85%AA%E1%86%AB%E1%84%83%E1%85%A2%E1%84%89%E1%85%A1%E1%86%BC+%E1%84%89%E1%85%A5%E1%86%AF%E1%84%86%E1%85%A7%E1%86%BC%E1%84%92%E1%85%AC+%E1%84%8C%E1%85%A1%E1%84%85%E1%85%AD.pdf',
+  },
+  {
+    id: 2, name: '만성질환 통합관리 수가 안내 ', size: '5.3 MB',
+    link: 'https://ilman-file-storage.s3.ap-northeast-2.amazonaws.com/%E1%84%86%E1%85%A1%E1%86%AB%E1%84%89%E1%85%A5%E1%86%BC%E1%84%8C%E1%85%B5%E1%86%AF%E1%84%92%E1%85%AA%E1%86%AB+%E1%84%90%E1%85%A9%E1%86%BC%E1%84%92%E1%85%A1%E1%86%B8%E1%84%80%E1%85%AA%E1%86%AB%E1%84%85%E1%85%B5+%E1%84%89%E1%85%AE%E1%84%80%E1%85%A1+%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%82%E1%85%A2+.pdf',
+  },
+  {
+    id: 3, name: '만성질환통합관리료질의응답', size: '678 KB',
+    link: 'https://ilman-file-storage.s3.ap-northeast-2.amazonaws.com/%E1%84%86%E1%85%A1%E1%86%AB%E1%84%89%E1%85%A5%E1%86%BC%E1%84%8C%E1%85%B5%E1%86%AF%E1%84%92%E1%85%AA%E1%86%AB%E1%84%90%E1%85%A9%E1%86%BC%E1%84%92%E1%85%A1%E1%86%B8%E1%84%80%E1%85%AA%E1%86%AB%E1%84%85%E1%85%B5%E1%84%85%E1%85%AD%E1%84%8C%E1%85%B5%E1%86%AF%E1%84%8B%E1%85%B4%E1%84%8B%E1%85%B3%E1%86%BC%E1%84%83%E1%85%A1%E1%86%B8.pdf'
+  },
 ]);
 
 // 다운로드 함수
 const downloadResource = (resource: FileModel) => {
-  alert(`${resource.name}을(를) 다운로드합니다.`);
+  if (resource.link) {
+    window.open(resource.link, '_blank');
+  }
+};
+
+const navigateToNews = (news: NewsModel) => {
+  if (news.link) {
+    window.open(news.link, '_blank');
+  }
 };
 </script>
 
@@ -84,7 +107,7 @@ const downloadResource = (resource: FileModel) => {
           <h3 class="text-h3 text-left">일만사업 관련 소식</h3>
           <div class="mt-24"/>
           <div class="news-list">
-            <div class="news-item" v-for="article in news" :key="article.id">
+            <div class="news-item" v-for="article in news" :key="article.id" @click="navigateToNews(article)">
               <span class="text-subtitle3"> {{ article.title }}</span>
               <div class="mt-2"/>
               <span class="text-caption2 text-tertiary">{{ article.date }}</span>
@@ -180,9 +203,15 @@ section {
 }
 
 .news-item {
+  flex: 1;
   border-radius: 16px;
   border: 1px solid var(--color-border-secondary, #DEDEDE);
   padding: 24px;
+  cursor: pointer;
+}
+
+.news-item:hover {
+  background-color: var(--color-bg-primary-hover);
 }
 
 .resource-desc-item {
