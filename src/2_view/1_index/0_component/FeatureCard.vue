@@ -1,12 +1,14 @@
+
 <template>
   <div class="card">
     <div class="backdrop"></div> <!-- 전체 영역에 적용될 블러 배경 -->
     <img class="card-image" :src="props.feature.image" alt="Feature Image"/>
     <div class="card-content">
-      <p class="title text-semi-bold text-left spb-8 text-line-break line-height-34">
+      <p class="text-subtitle1 text-left animated-title">
         {{ props.feature.title }}</p>
-      <img class="expand-icon" src="/svgs/icons/icon-expand-circle.svg" alt="Expand Icon"/>
-      <p class="description text-medium text-left text-tertiary text-line-break line-height-20">
+      <div class="mt-16"/>
+<!--      <img class="expand-icon" src="/svgs/icons/icon-expand-circle.svg" alt="Expand Icon"/>-->
+      <p class="text-body1 text-tertiary text-left">
         {{ props.feature.description }}</p>
     </div>
   </div>
@@ -31,7 +33,6 @@ const props = defineProps<{
   align-items: flex-start;
   gap: 16px;
   overflow: hidden;
-  border: solid 1px var(--color-border-primary);
 }
 
 .card-image {
@@ -52,8 +53,8 @@ const props = defineProps<{
   background: rgba(255, 255, 255, 0.2); /* 반투명한 흰색 배경 */
   backdrop-filter: blur(10px); /* 유리 표면 효과 */
   z-index: 1; /* 콘텐츠 뒤에 배치 */
-  opacity: 0; /* 기본 상태에서는 숨김 */
-  visibility: hidden; /* 기본 상태에서는 숨김 */
+  opacity: 1; /* 기본 상태에서는 숨김 */
+  visibility: visible; /* 기본 상태에서는 숨김 */
   transition: opacity 0.5s ease, visibility 0.5s ease; /* 부드러운 전환 */
 }
 
@@ -63,14 +64,12 @@ const props = defineProps<{
   width: 100%;
 }
 
-.title {
-  font-size: var(--font-size-h24);
+.animated-title {
   transition: font-size 0.5s, line-height 0.5s;
 }
 
-.description {
+.animated-description {
   opacity: 0;
-  font-size: var(--font-size-body16);
   transition: opacity 0.5s;
   z-index: 1;
 }
@@ -84,12 +83,7 @@ const props = defineProps<{
   transition: transform 0.5s, opacity 0.5s, visibility 0.5s, scale 0.5s;
 }
 
-.card:hover .title {
-  font-size: var(--font-size-h18);
-  line-height: 24px;
-}
-
-.card:hover .description {
+.card:hover .animated-description {
   opacity: 1;
 }
 
@@ -99,19 +93,22 @@ const props = defineProps<{
 }
 
 .card:hover .expand-icon {
+  display: none;
   opacity: 0;
   visibility: hidden;
   transform: scale(0);
 }
 
 @media (pointer: coarse) {
-  /* 모바일에서는 그냥 표시 */
-  .card .title {
-    font-size: var(--font-size-h18);
-    line-height: 24px;
+  .card {
+    padding: var(--spacing-24);
   }
 
-  .card .description {
+  /* 모바일에서는 그냥 표시 */
+  .card .animated-title {
+  }
+
+  .card .animated-description {
     opacity: 1;
   }
 
@@ -121,6 +118,7 @@ const props = defineProps<{
   }
 
   .card .expand-icon {
+    display: none;
     opacity: 0;
     visibility: hidden;
     transform: scale(0);

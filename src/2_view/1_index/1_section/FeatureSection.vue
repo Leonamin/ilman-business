@@ -26,8 +26,8 @@ const features: FeatureModel[] = [
   <div class="layout">
     <div class="content">
       <AnimatedElement>
-        <h2 class="text-common text-title">아임파인으로<br>일만사업에 참여한다면?</h2>
-        <div class="sp-title-card"></div>
+        <h2 class="text-h2 text-center">아임파인으로<br>일만사업에 참여한다면?</h2>
+        <div class="mt-64 sm-mt-32"></div>
       </AnimatedElement>
       <AnimatedElement :threshold=0.1>
         <div class="card-container">
@@ -60,17 +60,6 @@ const features: FeatureModel[] = [
   max-width: var(--desktop-max-width);
 }
 
-.text-title {
-  color: var(--color-text-secondary, #1C1C1C);
-  text-align: center;
-
-  font-size: 40px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 56px; /* 140% */
-}
-
-
 /* 일만사업 기능 스타일링 */
 .card-container {
   display: grid;
@@ -92,17 +81,12 @@ const features: FeatureModel[] = [
   .layout {
     flex-direction: column;
     height: auto;
-    margin-top: 68px;
-    margin-bottom: 42px;
+    margin-top: var(--mobile-section-spacing);
+    margin-bottom: var(--mobile-section-spacing);
   }
 
   .content {
     padding: 0 var(--spacing-16);
-  }
-
-  .text-title {
-    font-size: 24px;
-    line-height: 34px; /* 141.667% */
   }
 
   .card-container {
@@ -112,7 +96,7 @@ const features: FeatureModel[] = [
   }
 
   .sp-title-card {
-    margin-top: 32px;
+    margin-top: 36px;
   }
 }
 
