@@ -9,7 +9,7 @@
     --app-bar-height-mobile: 56px;
     --desktop-max-width: 1128px;
     --desktop-section-spacing: 170px;
-    --mobile-section-spacing: 56px;
+    --mobile-section-spacing: 50px;
 
     --title-spacing: 64px;
 
@@ -37,6 +37,8 @@
     --font-size-large: 24px;
 
     /* 패딩 변수 */
+    --spacing-0: 0;
+    --spacing-2: 2px;
     --spacing-4: 4px;
     --spacing-8: 8px;
     --spacing-12: 12px;
