@@ -1,6 +1,6 @@
 <template>
   <div class="layout">
-    <IndexHeader/>
+    <IndexHeader class="mobile-header"/>
     <main>
       <NuxtPage/>
     </main>
@@ -28,7 +28,11 @@ main {
 
 @media (max-width: 768px) {
   main {
-    padding-top: var(--app-bar-height-mobile); /* 모바일 환경에서 높이 보정 */
+    padding-top: 0; /* 모바일 환경에서 높이 보정 */
+  }
+
+  .mobile-header {
+    display: none;
   }
 }
 </style>
