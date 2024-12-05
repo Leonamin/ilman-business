@@ -1,5 +1,7 @@
 <script setup lang="ts">
 
+import OutlineInput from "~/src/2_view/0_components/input/OutlineInput.vue";
+
 const props = defineProps<{
   title: string;
   description: string;
@@ -32,10 +34,10 @@ const hasDescription = computed(() => props.description.length > 0);
     </p>
 
     <!-- Ant Input -->
-    <a-input
+    <OutlineInput
         v-model:value="localValue"
-        :placeholder="props.placeholder"
-        style="padding: 10px 12px"
+        :hintText="props.placeholder"
+        input-style="text-body2"
     />
   </div>
 </template>
