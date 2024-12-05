@@ -7,6 +7,31 @@ const handleContact = () => {
   window.location.href = 'http://pf.kakao.com/_KmHpG';
 };
 
+const isMobile = ref(false);
+onMounted(() => {
+  window.addEventListener("resize", () => {
+    isMobile.value = window.innerWidth <= 768;
+  });
+  isMobile.value = window.innerWidth <= 768;
+});
+
+const computedStyle = computed(() => {
+      if (isMobile.value) {
+        return {
+          padding: '12px 16px',
+          iconSize: '24px',
+          prefixIconPadding: '8px',
+        }
+      } else {
+        return {
+          padding: '16px 24px',
+          iconSize: '36px',
+          prefixIconPadding: '8px',
+        }
+      }
+    }
+)
+
 </script>
 
 <template>
@@ -14,8 +39,9 @@ const handleContact = () => {
 
     <SolidButton
         preset="blue" text="문의하기" border-radius="100px" prefix-icon="/svgs/icons/icon-kakaotalk.svg"
-        prefix-icon-size="24px"
-        padding="12px 16px" prefix-icon-padding="8px"
+        :prefix-icon-size=computedStyle.iconSize
+        :padding=computedStyle.padding
+        :prefix-icon-padding=computedStyle.prefixIconPadding
         @click="handleContact"/>
   </div>
 
