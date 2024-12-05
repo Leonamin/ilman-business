@@ -10,6 +10,7 @@ import {Airtable_Select_EMR, Airtable_Select_연락수단} from "~/src/0_models/
 import DropdownField from "~/src/2_view/apply-form/0_components/DropdownField.vue";
 import MultilineTextField from "~/src/2_view/apply-form/0_components/MultilineTextField.vue";
 import {definePageMeta} from "#imports";
+import ASpin from "ant-design-vue/es/spin";
 
 definePageMeta({
   title: '아임파인 일만사업 도입 신청서',
@@ -212,7 +213,7 @@ const isLoading = ref<boolean>(false);
 
 <template>
   <div v-if="isLoading" class="loading-overlay">
-    <a-spin size="large" tip="로딩 중..."/>
+    <ASpin size="large" tip="로딩 중..."/>
   </div>
 
   <div class="layout">
