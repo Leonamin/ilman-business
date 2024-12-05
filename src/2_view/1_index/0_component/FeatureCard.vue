@@ -1,12 +1,12 @@
 
 <template>
-  <div class="content">
+  <div class="card-layout">
     <div class="backdrop"></div> <!-- 전체 영역에 적용될 블러 배경 -->
     <img class="card-image" :src="props.feature.image" alt="Feature Image"/>
     <div class="card-content">
       <p class="text-subtitle1 text-left animated-title">
         {{ props.feature.title }}</p>
-      <div class="mt-16"/>
+      <div class="mt-16 sm-mt-8"/>
 <!--      <img class="expand-icon" src="/svgs/icons/icon-expand-circle.svg" alt="Expand Icon"/>-->
       <p class="text-body2 text-normal text-tertiary text-left">
         {{ props.feature.description }}</p>
@@ -23,7 +23,7 @@ const props = defineProps<{
 </script>
 
 <style scoped>
-.content {
+.card-layout {
   position: relative;
   padding: var(--spacing-32);
   border-radius: 16px;
@@ -62,66 +62,19 @@ const props = defineProps<{
   position: relative;
   z-index: 2; /* 배경보다 앞에 배치 */
   width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .animated-title {
   transition: font-size 0.5s, line-height 0.5s;
 }
 
-.animated-description {
-  opacity: 0;
-  transition: opacity 0.5s;
-  z-index: 1;
-}
-
-.expand-icon {
-  width: 24px;
-  height: 24px;
-  opacity: 1;
-  visibility: visible;
-  transform: scale(1);
-  transition: transform 0.5s, opacity 0.5s, visibility 0.5s, scale 0.5s;
-}
-
-.content:hover .animated-description {
-  opacity: 1;
-}
-
-.content:hover .backdrop {
-  opacity: 1; /* 완전히 보이게 */
-  visibility: visible; /* 요소를 표시 */
-}
-
-.content:hover .expand-icon {
-  display: none;
-  opacity: 0;
-  visibility: hidden;
-  transform: scale(0);
-}
-
 @media (pointer: coarse) {
-  .content {
+  .card-layout {
     padding: var(--spacing-24);
-  }
-
-  /* 모바일에서는 그냥 표시 */
-  .content .animated-title {
-  }
-
-  .content .animated-description {
-    opacity: 1;
-  }
-
-  .content .backdrop {
-    opacity: 1; /* 완전히 보이게 */
-    visibility: visible; /* 요소를 표시 */
-  }
-
-  .content .expand-icon {
-    display: none;
-    opacity: 0;
-    visibility: hidden;
-    transform: scale(0);
   }
 }
 

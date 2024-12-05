@@ -30,9 +30,9 @@ const features: FeatureModel[] = [
         <div class="mt-54 sm-mt-36"></div>
       </AnimatedElement>
       <AnimatedElement :threshold=0.1>
-        <div class="card-container">
+        <div class="card-list">
           <FeatureCard
-              class="content"
+              class="card-item"
               :feature="feature" v-for="feature in features"
               :key="feature.title"
           />
@@ -61,16 +61,16 @@ const features: FeatureModel[] = [
 }
 
 /* 일만사업 기능 스타일링 */
-.card-container {
-  display: grid;
+.card-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
   gap: 24px;
+}
 
-  grid-template-columns: repeat(3, 1fr); /* 세 개의 열 */
-  grid-auto-rows: 1fr; /* 모든 행 높이를 동일하게 */
-  /* 부모 요소가 자식 크기에 맞게 확장되도록 */
-  align-items: stretch;
-
-  width: 100%;
+.card-item {
+  flex: 1;
 }
 
 @media (max-width: 768px) {
@@ -85,14 +85,11 @@ const features: FeatureModel[] = [
     padding: 0 var(--spacing-16);
   }
 
-  .card-container {
-    grid-template-columns: 1fr; /* 하나의 열 */
-    grid-auto-rows: 1fr; /* 모든 행 높이를 동일하게 */
-    gap: 12px;
-  }
+  .card-list {
+    display: flex;
+    flex-direction: column;
 
-  .sp-title-card {
-    margin-top: 36px;
+    gap: 12px;
   }
 }
 
