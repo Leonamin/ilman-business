@@ -66,7 +66,8 @@ const navItem = {
 }
 
 .logo-1 {
-  max-width: 58px;
+  width: 48px;
+  height: 48px;
 }
 
 .logo-2 {
@@ -85,14 +86,6 @@ const navItem = {
   display: flex;
   align-items: center;
   gap: 4px;
-}
-
-.logo-1 {
-  max-width: 58px;
-}
-
-.logo-2 {
-  max-width: 167px;
 }
 
 .header-nav-item {
@@ -119,6 +112,11 @@ const navItem = {
 
   .header-nav-item {
     display: none; /* 향후 햄버거 메뉴 등으로 대체 가능 */
+  }
+
+  .logo-1 {
+    width: 40px;
+    height: 40px;
   }
 
   .logo-2 {
