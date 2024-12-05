@@ -231,62 +231,64 @@ const isLoading = ref<boolean>(false);
 
       </div>
       <div class="form-container">
-        <InlineTextField
-            :title="forms[0].title"
-            :description="forms[0].description || ''"
-            :is-important="forms[0].required || false"
-            :placeholder="forms[0].hintText"
-            v-model="refValue[forms[0].fieldName].value"
-        />
-        <InlineTextField
-            :title="forms[1].title"
-            :description="forms[1].description || ''"
-            :is-important="forms[1].required || false"
-            :placeholder="forms[1].hintText"
-            v-model="refValue[forms[1].fieldName].value"
-        />
-        <InlineTextField
-            :title="forms[2].title"
-            :description="forms[2].description || ''"
-            :is-important="forms[2].required || false"
-            :placeholder="forms[2].hintText"
-            v-model="refValue[forms[2].fieldName].value"
-        />
-        <InlineTextField
-            :title="forms[3].title"
-            :description="forms[3].description || ''"
-            :is-important="forms[3].required || false"
-            :placeholder="forms[3].hintText"
-            v-model="refValue[forms[3].fieldName].value"
-        />
-        <DropdownField
-            :title="forms[4].title"
-            :description="forms[4].description || ''"
-            :is-required="forms[4].required || false"
-            :options="(forms[4] as DropDownFormModel).formObject.options"
-            v-model="refValue[forms[4].fieldName].value"
-        />
-        <InlineTextField
-            v-if="showEtcInlineTextEmr"
-            :title="etcForm.title"
-            :description="etcForm.description || ''"
-            :is-important="etcForm.required || false"
-            :placeholder="etcForm.hintText"
-            v-model="refValue[etcForm.fieldName].value"
-        />
-        <DropdownField
-            :title="forms[5].title"
-            :description="forms[5].description || ''"
-            :is-required="forms[5].required || false"
-            :options="(forms[5] as DropDownFormModel).formObject.options"
-            v-model="refValue[forms[5].fieldName].value"
-        />
-        <MultilineTextField
-            :title="forms[6].title"
-            :placeholder="forms[6].hintText"
-            :is-required="forms[6].required || false"
-            v-model="refValue[forms[6].fieldName].value"
-        />
+        <client-only>
+          <InlineTextField
+              :title="forms[0].title"
+              :description="forms[0].description || ''"
+              :is-important="forms[0].required || false"
+              :placeholder="forms[0].hintText"
+              v-model="refValue[forms[0].fieldName].value"
+          />
+          <InlineTextField
+              :title="forms[1].title"
+              :description="forms[1].description || ''"
+              :is-important="forms[1].required || false"
+              :placeholder="forms[1].hintText"
+              v-model="refValue[forms[1].fieldName].value"
+          />
+          <InlineTextField
+              :title="forms[2].title"
+              :description="forms[2].description || ''"
+              :is-important="forms[2].required || false"
+              :placeholder="forms[2].hintText"
+              v-model="refValue[forms[2].fieldName].value"
+          />
+          <InlineTextField
+              :title="forms[3].title"
+              :description="forms[3].description || ''"
+              :is-important="forms[3].required || false"
+              :placeholder="forms[3].hintText"
+              v-model="refValue[forms[3].fieldName].value"
+          />
+          <DropdownField
+              :title="forms[4].title"
+              :description="forms[4].description || ''"
+              :is-required="forms[4].required || false"
+              :options="(forms[4] as DropDownFormModel).formObject.options"
+              v-model="refValue[forms[4].fieldName].value"
+          />
+          <InlineTextField
+              v-if="showEtcInlineTextEmr"
+              :title="etcForm.title"
+              :description="etcForm.description || ''"
+              :is-important="etcForm.required || false"
+              :placeholder="etcForm.hintText"
+              v-model="refValue[etcForm.fieldName].value"
+          />
+          <DropdownField
+              :title="forms[5].title"
+              :description="forms[5].description || ''"
+              :is-required="forms[5].required || false"
+              :options="(forms[5] as DropDownFormModel).formObject.options"
+              v-model="refValue[forms[5].fieldName].value"
+          />
+          <MultilineTextField
+              :title="forms[6].title"
+              :placeholder="forms[6].hintText"
+              :is-required="forms[6].required || false"
+              v-model="refValue[forms[6].fieldName].value"
+          />
+        </client-only>
       </div>
       <div class="spb-24"/>
       <div class="button-container">
