@@ -28,6 +28,8 @@ useHead({
 
 import ContactMethodCard from "~/src/2_view/contact/ContactMethodCard.vue";
 
+const router = useRouter();
+
 const methods = [
   {
     title: '전화 문의',
@@ -41,7 +43,7 @@ const methods = [
     title: '도입 신청서 작성',
     description: '도입 신청서 양식을 작성하세요.',
     onClick: () => {
-      window.location.href = '/apply-form';
+      router.push('/apply-form');
     },
     imageSrc: '/svgs/icons/icon_file_folder.svg',
   },
