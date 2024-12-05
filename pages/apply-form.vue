@@ -359,7 +359,7 @@ const isLoading = ref<boolean>(false);
 .form-container {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 24px;
   width: 100%;
 }
 
@@ -376,6 +376,10 @@ const isLoading = ref<boolean>(false);
   .layout {
     max-width: 90%;
     padding-inline: var(--spacing-16);
+  }
+
+  .form-container {
+    gap: 20px;
   }
 }
 </style>

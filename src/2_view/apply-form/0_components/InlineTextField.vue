@@ -23,13 +23,13 @@ const hasDescription = computed(() => props.description.length > 0);
 <template>
   <div class="container">
     <!-- 타이틀과 중요 표시 -->
-    <div class="row-start text-body1 text-bold text-semi-bold">
+    <div class="row-start text-body2 text-semi-bold">
       <p>{{ title }}</p>
-      <p v-if="isImportant" class="text-red">*</p>
+      <p v-if="isImportant" class="text-blue">*</p>
     </div>
-
+    <div class="mt-8"/>
     <!-- 설명 -->
-    <p v-if="hasDescription" class="text-body1 row-start text-tertiary line-height-20">
+    <p v-if="hasDescription" class="text-caption2 text-medium text-tertiary">
       {{ description }}
     </p>
 
@@ -49,6 +49,5 @@ const hasDescription = computed(() => props.description.length > 0);
   align-items: flex-start;
   justify-content: center;
   width: 100%;
-  gap: 8px;
 }
 </style>
