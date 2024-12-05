@@ -7,14 +7,16 @@ defineProps<{
 </script>
 
 <template>
-  <div class="content container">
+  <div class="card container">
     <div>
-      <p class="text-subtitle1 text-semi-bold text-left spb-8 text-line-break text-line-height-small">
+      <p class="text-subtitle1">
         {{ title }}</p>
-      <p class="text-body1 text-medium text-left text-tertiary text-line-break text-line-height-small">
+      <div class="mt-8"/>
+      <p class="text-body2 text-medium text-tertiary">
         {{ description }}</p>
     </div>
-    <img src="/svgs/icons/icon_arrow_forward.svg" class="forward-icon">
+    <div class="mt-16"/>
+    <img src="/svgs/icons/icon_arrow_forward.svg" alt="들어가기 아이콘" class="forward-icon">
     <div class="bottom">
       <img class="bottom-icon" :src="imageSrc" alt="icon">
     </div>
@@ -22,7 +24,7 @@ defineProps<{
 </template>
 
 <style scoped>
-.content {
+.card {
   padding: var(--spacing-32);
   border-radius: 16px;
   background-color: #FAFAFA;
@@ -34,7 +36,6 @@ defineProps<{
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  gap: 14px;
 }
 
 .bottom {
@@ -42,7 +43,7 @@ defineProps<{
   margin-left: auto;
 }
 
-.content:hover {
+.card:hover {
   background-color: var(--color-bg-secondary);
 }
 

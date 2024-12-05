@@ -74,17 +74,16 @@ const description = () => {
   <div class="layout">
     <div class="content">
       <div class="text-box">
-
-        <p class="text-h1 text-center text-bold line-height-64 sm-text-h2 sm-text-semi-bold sm-line-height-34">
+        <p class="text-h2 text-center">
           아임파인 일만사업 솔루션에<br>관심을 가져주셔서 감사합니다
         </p>
-        <div class="spb-24"/>
-        <p class="text-subtitle1 text-center text-semi-bold line-height-34 sm-line-height-24 text-line-break">
+        <div class="mt-32 sm-mt-16"/>
+        <p class="text-body2 text-center text-semi-bold">
           {{ description() }}
         </p>
       </div>
-      <div class="spb-64"/>
-      <div class="contacts-container">
+      <div class="mt-64 sm-mt-32"/>
+      <div class="contact-list">
         <ContactMethodCard
             class="flex-equal" :title="method.title" :description="method.description" :image-src="method.imageSrc"
             @click="method.onClick" v-for="(method, index) in methods"
@@ -120,11 +119,12 @@ const description = () => {
   justify-content: center;
 }
 
-.contacts-container {
+.contact-list {
   display: flex;
   flex-direction: row;
   justify-content: center;
   gap: 24px;
+  padding-inline: 16px;
 }
 
 .flex-equal {
@@ -134,28 +134,16 @@ const description = () => {
 
 @media (max-width: 768px) {
   .content {
-    padding: 128px 16px;
-    width: auto;
+    padding: 60px 0;
   }
 
-  .contacts-container {
+  .text-box {
+    padding-inline: 16px;
+  }
+
+  .contact-list {
     flex-direction: column;
-  }
-
-  .sm-text-h2 {
-    font-size: 24px;
-  }
-
-  .sm-text-semi-bold {
-    font-weight: 600;
-  }
-
-  .sm-line-height-34 {
-    line-height: 34px;
-  }
-
-  .sm-line-height-24 {
-    line-height: 24px;
+    padding-inline: 16px;
   }
 }
 
