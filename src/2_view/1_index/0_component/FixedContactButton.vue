@@ -3,10 +3,8 @@
 // 상단으로 스크롤 이동
 import SolidButton from "~/src/2_view/0_components/button/SolidButton.vue";
 
-const router = useRouter();
-
 const handleContact = () => {
-  router.push('/contact');
+  window.location.href = 'http://pf.kakao.com/_KmHpG';
 };
 
 </script>
