@@ -103,7 +103,6 @@ blockquote {
 }
 blockquote:before,
 blockquote:after {
-    content: "";
     content: none;
 }
 del {
@@ -148,4 +147,8 @@ html {
 a,
 a:hover {
     color: inherit;
+}
+
+* {
+    box-sizing: border-box;
 }
