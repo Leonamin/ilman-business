@@ -31,11 +31,9 @@ const minLine = computed(() => props.minLine || 4);
       <p>{{ title }}</p>
       <p v-if="isRequired" class="text-blue">*</p>
     </div>
-    <div class="mt-8"/>
     <!-- 설명 -->
     <p v-if="hasDescription" class="text-body1 row-start text-tertiary">
       {{ description }}
-      <div class="mt-8"/>
     </p>
     <!-- Ant Input -->
     <ATextarea
@@ -56,5 +54,6 @@ const minLine = computed(() => props.minLine || 4);
   align-items: flex-start;
   justify-content: center;
   width: 100%;
+  gap: 8px;
 }
 </style>
