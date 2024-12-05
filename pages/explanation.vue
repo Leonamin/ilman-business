@@ -142,9 +142,9 @@ const navigateToNews = (news: NewsModel) => {
               </div>
               <div class="download-button" @click="downloadResource(resource)">
                 <div class="center-row">
-                  <img class="icon-download" src="/svgs/icons/icon-download-blue.svg" alt="다운로드 아이콘"/>
+                  <img class="icon-download" src="/svgs/icons/icon-view-blue.svg" alt="다운로드 아이콘"/>
                   <div class="mr-8"/>
-                  <span class="text-caption2 text-medium text-blue">다운로드</span>
+                  <span class="text-caption2 text-medium text-blue">확인하기</span>
                 </div>
               </div>
             </div>
