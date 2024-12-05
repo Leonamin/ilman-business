@@ -8,7 +8,7 @@ const props = defineProps<{
 </script>
 
 <template>
-  <div class="container content">
+  <div class="card-container card-content">
     <div>
       <p class="text-subtitle1 text-left ">{{ props.process.title }}</p>
       <div class="mt-8 sm-mt-4"/>
@@ -24,14 +24,14 @@ const props = defineProps<{
 </template>
 
 <style scoped>
-.container {
+.card-container {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
 }
 
-.content {
+.card-content {
   padding: var(--spacing-36);
   background-color: #FAFAFA;
   border-radius: 16px;
