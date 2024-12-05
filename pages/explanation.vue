@@ -3,8 +3,8 @@
 <script setup lang="ts">
 import {ref} from 'vue';
 
-import {FileModel} from "~/src/0_models/FileModel.js";
-import {NewsModel} from "~/src/0_models/NewsModel.js";
+import {type FileModel} from "~/src/0_models/FileModel.js";
+import {type NewsModel} from "~/src/0_models/NewsModel.js";
 
 definePageMeta({
   title: '일차의료 만성질환관리 사업 소개',
@@ -12,10 +12,21 @@ definePageMeta({
     {
       name: 'description',
       content: '일차의료 만성질환관리 사업이란?\n' +
-          '국민건강보험 일차의료 만성질환 관리 시범사업은 고혈압·당뇨병 환자에게 지속적·포괄적 관리를 제공하여 치료 지속성 향상과 질환 악화 방지를 목표로 합니다.'
+          '국민건강보험 일차의료 만성질환관리 사업은 고혈압·당뇨병 환자에게 지속적·포괄적 관리를 제공하여 치료 지속성 향상과 질환 악화 방지를 목표로 합니다.'
     }
   ],
   layout: 'no-footer',
+});
+
+useHead({
+  title: '일차의료 만성질환관리 사업 소개',
+  meta: [
+    {
+      name: 'description',
+      content: '일차의료 만성질환관리 사업이란?\n' +
+          '국민건강보험 일차의료 만성질환관리 사업은 고혈압·당뇨병 환자에게 지속적·포괄적 관리를 제공하여 치료 지속성 향상과 질환 악화 방지를 목표로 합니다.'
+    }
+  ],
 });
 
 const introduction = "일차의료 만성질환관리 사업은 고혈압과 당뇨병 환자들에게 지속적이고 포괄적인 관리를 제공함으로써 치료 지속성을 높이고 질환의 악화를 방지하는 것을 목표로 하고 있습니다. 특히, 동네의원이 중심이 되어 환자별 맞춤형 연간 관리 계획을 수립하고, 의사와 케어코디네이터(간호사 또는 영양사)로 구성된 팀이 환자의 자기관리 능력을 강화할 수 있도록 지원합니다.\n" +
@@ -89,10 +100,12 @@ const navigateToNews = (news: NewsModel) => {
     <!-- 최대 너비 제한 -->
     <div class="content">
       <header class="header">
-        <h1 class="text-h1 text-inverse text-center">일차의료 만성질환 <span class="mobile-break">관리사업</span></h1>
+        <h1 class="text-h1 text-inverse text-center desktop-visible">일차의료 만성질환관리 사업</h1>
+        <h1 class="text-h1 text-inverse text-center mobile-visible">일차의료 만성질환<br>관리 사업</h1>
+
         <div class="mt-24"/>
         <p class="text-subtitle1 text-inverse text-center text-semi-bold">
-          국민건강보험 일차의료 만성질환 관리 시범사업은 고혈압·당뇨병 환자에게<br>지속적·포괄적 관리를 제공하여 치료 지속성 향상과 질환 악화 방지를 목표로 합니다.
+          국민건강보험 일차의료 만성질환관리 사업은 고혈압·당뇨병 환자에게<br>지속적·포괄적 관리를 제공하여 치료 지속성 향상과 질환 악화 방지를 목표로 합니다.
         </p>
       </header>
       <main class="main-content">

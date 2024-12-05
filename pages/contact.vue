@@ -50,7 +50,7 @@ const methods = [
     description: '카카오톡으로 문의하실 수 있습니다.\n' + '여기를 눌러 일만사업 채널 입장',
     imageSrc: '/svgs/icons/icon-kakaotalk.svg',
     onClick: () => {
-      window.location.href = 'http://pf.kakao.com/_KmHpG';
+      window.location.href = 'https://pf.kakao.com/_KmHpG';
     },
   }
 ]
