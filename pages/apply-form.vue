@@ -3,7 +3,7 @@ import InlineTextField from "~/src/2_view/apply-form/0_components/InlineTextFiel
 import SolidButton from "~/src/2_view/0_components/button/SolidButton.vue";
 import {
   type ApplyFormModelBase,
-  createApplyFormModel,
+  createApplyFormModel, type DropDownFormModel,
 } from "~/src/0_models/ApplyFormModel";
 import {FormService} from "~/src/1_service/AirtableService";
 import {Airtable_Select_EMR, Airtable_Select_연락수단} from "~/src/0_models/types/AirtableType";
@@ -262,7 +262,7 @@ const isLoading = ref<boolean>(false);
             :title="forms[4].title"
             :description="forms[4].description || ''"
             :is-required="forms[4].required || false"
-            :options="forms[4].formObject.options"
+            :options="(forms[4] as DropDownFormModel).formObject.options"
             v-model="refValue[forms[4].fieldName].value"
         />
         <InlineTextField
@@ -277,7 +277,7 @@ const isLoading = ref<boolean>(false);
             :title="forms[5].title"
             :description="forms[5].description || ''"
             :is-required="forms[5].required || false"
-            :options="forms[5].formObject.options"
+            :options="(forms[5] as DropDownFormModel).formObject.options"
             v-model="refValue[forms[5].fieldName].value"
         />
         <MultilineTextField
@@ -317,7 +317,8 @@ const isLoading = ref<boolean>(false);
   justify-content: center;
   scroll-behavior: smooth;
   width: 100%;
-  padding-block: var(--desktop-section-spacing);
+  padding-top: 80px;
+  padding-bottom: 148px;
 }
 
 .content {
@@ -356,6 +357,9 @@ const isLoading = ref<boolean>(false);
 @media (max-width: 768px) {
   .layout {
     padding-inline: var(--spacing-16);
+
+    padding-top: 40px;
+    padding-bottom: 60px;
   }
 
   .form-container {

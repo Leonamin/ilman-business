@@ -1,6 +1,10 @@
 <script setup lang="ts">
-import { computed } from "vue";
+import {computed} from "vue";
 import ChevronDown from "~/src/2_view/0_components/icons/ChevronDown.vue";
+import AntDropDown from "ant-design-vue/es/dropdown";
+import AntButton from "ant-design-vue/es/button";
+import AntMenu from "ant-design-vue/es/menu";
+const { Item: AMenuItem  } = AntMenu;
 
 const props = defineProps<{
   modelValue: string;
@@ -29,34 +33,30 @@ const handleSelect = (value: string) => {
 <template>
   <div class="container">
     <!-- 타이틀과 중요 표시 -->
-    <div class="row-start text-body1 text-bold text-semi-bold">
+    <div class="row-start text-body2 text-semi-bold">
       <p>{{ title }}</p>
-      <p v-if="isRequired" class="text-red">*</p>
+      <p v-if="isRequired" class="text-blue">*</p>
     </div>
-
     <!-- 설명 -->
-    <p v-if="hasDescription" class="text-body1 row-start text-tertiary">
+    <p v-if="hasDescription" class="text-caption2 text-medium text-tertiary">
       {{ description }}
     </p>
-
     <!-- 드롭다운 -->
-    <a-dropdown class="dropdown-container">
+    <AntDropDown class="dropdown-container">
       <template #overlay>
-        <a-menu>
+        <AntMenu>
           <!-- 빈 문자열 처리 -->
           <a-menu-item v-for="수단 in 연락수단" :key="수단" @click="handleSelect(수단)">
             {{ 수단 }}
           </a-menu-item>
-        </a-menu>
+        </AntMenu>
       </template>
-      <a-button
-          style="padding: 20px 12px"
-
-      >
+      <AntButton
+          style="padding: 20px 12px">
         {{ props.modelValue || '선택' }}
         <ChevronDown color="black" size="20"/>
-      </a-button>
-    </a-dropdown>
+      </AntButton>
+    </AntDropDown>
   </div>
 </template>
 

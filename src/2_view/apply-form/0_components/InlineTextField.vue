@@ -27,12 +27,9 @@ const hasDescription = computed(() => props.description.length > 0);
       <p>{{ title }}</p>
       <p v-if="isImportant" class="text-blue">*</p>
     </div>
-    <div class="mt-8"/>
-    <!-- 설명 -->
     <p v-if="hasDescription" class="text-caption2 text-medium text-tertiary">
       {{ description }}
     </p>
-
     <!-- Ant Input -->
     <OutlineInput
         v-model:value="localValue"
@@ -49,5 +46,6 @@ const hasDescription = computed(() => props.description.length > 0);
   align-items: flex-start;
   justify-content: center;
   width: 100%;
+  gap: 8px;
 }
 </style>

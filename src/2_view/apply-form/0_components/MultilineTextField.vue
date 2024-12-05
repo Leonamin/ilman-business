@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import ATextarea from "ant-design-vue/es/input/TextArea";
 
 const props = defineProps<{
   title: string;
@@ -26,18 +27,18 @@ const minLine = computed(() => props.minLine || 4);
 <template>
   <div class="container">
     <!-- 타이틀과 중요 표시 -->
-    <div class="row-start text-body1 text-bold text-semi-bold line-height-24 spb-4">
+    <div class="row-start text-body2 text-semi-bold">
       <p>{{ title }}</p>
-      <p v-if="isRequired" class="text-red">*</p>
+      <p v-if="isRequired" class="text-blue">*</p>
     </div>
-
+    <div class="mt-8"/>
     <!-- 설명 -->
-    <p v-if="hasDescription" class="text-body1 row-start text-tertiary line-height-20 spb-4">
+    <p v-if="hasDescription" class="text-body1 row-start text-tertiary">
       {{ description }}
+      <div class="mt-8"/>
     </p>
-
     <!-- Ant Input -->
-    <a-textarea
+    <ATextarea
         v-model:value="localValue"
         :placeholder="props.placeholder"
         :maxlength="maxLength"

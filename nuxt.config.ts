@@ -3,7 +3,7 @@ export default defineNuxtConfig({
     compatibilityDate: '2024-04-03',
 
     build: {
-        // transpile: ['ant-design-vue', 'lodash-es'],
+        transpile: ['ant-design-vue'],
     },
 
     devtools: {enabled: true},
@@ -15,9 +15,9 @@ export default defineNuxtConfig({
     //         },
     //     },
     // },
-    modules: [
-        '@ant-design-vue/nuxt'
-    ],
+    // modules: [
+    //     '@ant-design-vue/nuxt',
+    // ],
     css: [
         '@/assets/css/global.css',
         '@/assets/css/reset.css',
