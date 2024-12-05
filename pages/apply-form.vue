@@ -109,14 +109,14 @@ const forms: ApplyFormModelBase[] = [
 ]
 
 const etcForm: ApplyFormModelBase =
-  createApplyFormModel(
-      {
-        fieldName: 'etcEmr',
-        title: '기타 전차차트(EMR)',
-        hintText: '기타 전자차트(EMR)를 입력해주세요',
-        required: false,
-      },
-  )
+    createApplyFormModel(
+        {
+          fieldName: 'etcEmr',
+          title: '기타 전차차트(EMR)',
+          hintText: '기타 전자차트(EMR)를 입력해주세요',
+          required: false,
+        },
+    )
 
 
 const refValue: Record<string, Ref<string, string>> = forms.reduce((acc, form) => {
@@ -216,107 +216,81 @@ const isLoading = ref<boolean>(false);
   </div>
 
   <div class="layout">
-    <div class="text-container">
-      <p class="text-h1 spb-16">
-        도입 신청서
-      </p>
-      <p class="text-body1 text-tertiary line-height-24 spb-36">
-        소중한 시간 내어주셔서 감사합니다. 저희와 함께하시면 어려울게 없습니다.<br>
-        영업일 기준 1일내 응답 드리겠습니다.
-      </p>
-    </div>
-    <div class="dv-hori-1 spb-36">
+    <div class="content">
+      <div class="text-container">
+        <p class="text-h1 spb-16">
+          도입 신청서
+        </p>
+        <p class="text-body1 text-tertiary line-height-24 spb-36">
+          소중한 시간 내어주셔서 감사합니다. 저희와 함께하시면 어려울게 없습니다.<br>
+          영업일 기준 1일내 응답 드리겠습니다.
+        </p>
+      </div>
+      <div class="dv-hori-1 spb-36">
 
-    </div>
-    <div class="form-container">
-      <InlineTextField
-          :title="forms[0].title"
-          :description="forms[0].description || ''"
-          :is-important="forms[0].required || false"
-          :placeholder="forms[0].hintText"
-          v-model="refValue[forms[0].fieldName].value"
-      />
-      <InlineTextField
-          :title="forms[1].title"
-          :description="forms[1].description || ''"
-          :is-important="forms[1].required || false"
-          :placeholder="forms[1].hintText"
-          v-model="refValue[forms[1].fieldName].value"
-      />
-      <InlineTextField
-          :title="forms[2].title"
-          :description="forms[2].description || ''"
-          :is-important="forms[2].required || false"
-          :placeholder="forms[2].hintText"
-          v-model="refValue[forms[2].fieldName].value"
-      />
-      <InlineTextField
-          :title="forms[3].title"
-          :description="forms[3].description || ''"
-          :is-important="forms[3].required || false"
-          :placeholder="forms[3].hintText"
-          v-model="refValue[forms[3].fieldName].value"
-      />
-      <DropdownField
-          :title="forms[4].title"
-          :description="forms[4].description || ''"
-          :is-required="forms[4].required || false"
-          :options="forms[4].formObject.options"
-          v-model="refValue[forms[4].fieldName].value"
-      />
-      <InlineTextField
-          v-if="showEtcInlineTextEmr"
-          :title="etcForm.title"
-          :description="etcForm.description || ''"
-          :is-important="etcForm.required || false"
-          :placeholder="etcForm.hintText"
-          v-model="refValue[etcForm.fieldName].value"
-      />
-      <DropdownField
-          :title="forms[5].title"
-          :description="forms[5].description || ''"
-          :is-required="forms[5].required || false"
-          :options="forms[5].formObject.options"
-          v-model="refValue[forms[5].fieldName].value"
-      />
-      <MultilineTextField
-          :title="forms[6].title"
-          :placeholder="forms[6].hintText"
-          :is-required="forms[6].required || false"
-          v-model="refValue[forms[6].fieldName].value"
-      />
-      <!--      <div-->
-      <!--          v-for="form in forms"-->
-      <!--          :key="form.fieldName"-->
-      <!--      >-->
-      <!--        <InlineTextField-->
-      <!--            v-if="form.type === 'text'"-->
-      <!--            :title="form.title"-->
-      <!--            :description="form.description || ''"-->
-      <!--            :placeholder="form.hintText"-->
-      <!--            :is-important="form.required || false"-->
-      <!--            v-model="refValue[form.fieldName].value"-->
-      <!--        />-->
-      <!--        <DropdownField-->
-      <!--            v-if="form.type === 'drop-down'"-->
-      <!--            :title="form.title"-->
-      <!--            :description="form.description || ''"-->
-      <!--            :is-required="form.required || false"-->
-      <!--            :options="form.formObject.options"-->
-      <!--            v-model="refValue[form.fieldName].value"-->
-      <!--        />-->
-      <!--        <MultilineTextField-->
-      <!--            v-if="form.type === 'multi-line'"-->
-      <!--            :title="form.title"-->
-      <!--            :placeholder="form.hintText"-->
-      <!--            :is-required="form.required || false"-->
-      <!--            v-model="refValue[form.fieldName].value"-->
-      <!--        />-->
-      <!--      </div>-->
-    </div>
-    <div class="spb-24"/>
-    <div class="button-container">
-      <SolidButton preset="blue" text="제출하기" @click="submit"/>
+      </div>
+      <div class="form-container">
+        <InlineTextField
+            :title="forms[0].title"
+            :description="forms[0].description || ''"
+            :is-important="forms[0].required || false"
+            :placeholder="forms[0].hintText"
+            v-model="refValue[forms[0].fieldName].value"
+        />
+        <InlineTextField
+            :title="forms[1].title"
+            :description="forms[1].description || ''"
+            :is-important="forms[1].required || false"
+            :placeholder="forms[1].hintText"
+            v-model="refValue[forms[1].fieldName].value"
+        />
+        <InlineTextField
+            :title="forms[2].title"
+            :description="forms[2].description || ''"
+            :is-important="forms[2].required || false"
+            :placeholder="forms[2].hintText"
+            v-model="refValue[forms[2].fieldName].value"
+        />
+        <InlineTextField
+            :title="forms[3].title"
+            :description="forms[3].description || ''"
+            :is-important="forms[3].required || false"
+            :placeholder="forms[3].hintText"
+            v-model="refValue[forms[3].fieldName].value"
+        />
+        <DropdownField
+            :title="forms[4].title"
+            :description="forms[4].description || ''"
+            :is-required="forms[4].required || false"
+            :options="forms[4].formObject.options"
+            v-model="refValue[forms[4].fieldName].value"
+        />
+        <InlineTextField
+            v-if="showEtcInlineTextEmr"
+            :title="etcForm.title"
+            :description="etcForm.description || ''"
+            :is-important="etcForm.required || false"
+            :placeholder="etcForm.hintText"
+            v-model="refValue[etcForm.fieldName].value"
+        />
+        <DropdownField
+            :title="forms[5].title"
+            :description="forms[5].description || ''"
+            :is-required="forms[5].required || false"
+            :options="forms[5].formObject.options"
+            v-model="refValue[forms[5].fieldName].value"
+        />
+        <MultilineTextField
+            :title="forms[6].title"
+            :placeholder="forms[6].hintText"
+            :is-required="forms[6].required || false"
+            v-model="refValue[forms[6].fieldName].value"
+        />
+      </div>
+      <div class="spb-24"/>
+      <div class="button-container">
+        <SolidButton preset="blue" text="제출하기" @click="submit"/>
+      </div>
     </div>
   </div>
 </template>
@@ -341,11 +315,18 @@ const isLoading = ref<boolean>(false);
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: var(--color-bg-primary);
   scroll-behavior: smooth;
+  width: 100%;
+  padding-block: var(--desktop-section-spacing);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   max-width: var(--desktop-max-width);
-  margin: 0 auto;
-  padding: 80px 0;
 }
 
 .text-container {
@@ -374,7 +355,6 @@ const isLoading = ref<boolean>(false);
 
 @media (max-width: 768px) {
   .layout {
-    max-width: 90%;
     padding-inline: var(--spacing-16);
   }
 
