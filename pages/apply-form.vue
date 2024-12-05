@@ -89,9 +89,11 @@ const forms: ApplyFormModelBase[] = [
       {
         fieldName: 'contactMethod',
         title: '연락받으실 수단',
-        description: '연락받으실 수단을 선택해주세요',
+        description: '저희에게 연락받으실 수단을 알려주세요.\n' +
+            '1. 현재 폼에 작성해주신 전화번호로 전화 드리거나.\n' +
+            '2. 카카오톡 일만사업 채널로 메세지 드립니다.\n' +
+            '따로 선택하지 않으시면 영업일에 전화드립니다.',
         required: false,
-        initialValue: Airtable_Select_연락수단[0],
         type: 'drop-down',
         formObject: {
           options: Airtable_Select_연락수단,

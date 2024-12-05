@@ -509,7 +509,7 @@
 }
 
 /* 텍스트 크기 */
-:where(.text-h1, .text-h2, .text-h3, .text-h4, .text-subtitle1, .text-subtitle2, .text-subtitle3, .text-body1, .text-body2, .text-caption1) {
+:where(.text-h1, .text-h2, .text-h3, .text-h4, .text-subtitle1, .text-subtitle2, .text-subtitle3, .text-body1, .text-body2, .text-caption1, .text-caption2, .text-caption3) {
     word-break: keep-all;
     white-space: pre-line;
     word-wrap: break-word;
