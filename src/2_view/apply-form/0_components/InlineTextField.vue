@@ -30,9 +30,8 @@ const hasDescription = computed(() => props.description.length > 0);
     <p v-if="hasDescription" class="text-caption2 text-medium text-tertiary">
       {{ description }}
     </p>
-    <!-- Ant Input -->
     <OutlineInput
-        v-model:value="localValue"
+        v-model="localValue"
         :hintText="props.placeholder"
         input-style="text-body2"
     />
