@@ -33,9 +33,9 @@ const router = useRouter();
 const methods = [
   {
     title: '전화 문의',
-    description: "02-6952-3078\n" + "(평일 오전 10시 ~ 오후 7시)",
+    description: "02-6952-3079\n" + "(평일 오전 10시 ~ 오후 7시)",
     onClick: () => {
-      window.location.href = 'tel:02-6952-3078';
+      window.location.href = 'tel:02-6952-3079';
     },
     imageSrc: '/svgs/icons/icon_human_question.svg',
   },

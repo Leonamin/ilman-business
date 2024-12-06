@@ -68,8 +68,8 @@ const forms: ApplyFormModelBase[] = [
   createApplyFormModel(
       {
         fieldName: 'phone',
-        title: '전화번호',
-        hintText: '전화번호를 입력해주세요',
+        title: '연락처',
+        hintText: '연락처를 입력해주세요',
         required: true,
       },
   ),
@@ -77,7 +77,7 @@ const forms: ApplyFormModelBase[] = [
       {
         fieldName: 'emr',
         title: '사용중인 전자차트(EMR)',
-        description: '사용중인 전자차트(EMR)을 선택해주세요',
+        description: '사용중인 전자차트를 선택해주세요',
         required: true,
         type: 'drop-down',
         formObject: {
@@ -89,10 +89,9 @@ const forms: ApplyFormModelBase[] = [
       {
         fieldName: 'contactMethod',
         title: '연락받으실 수단',
-        description: '저희에게 연락받으실 수단을 알려주세요.\n' +
-            '1. 현재 폼에 작성해주신 전화번호로 전화 드리거나.\n' +
-            '2. 카카오톡 일만사업 채널로 메세지 드립니다.\n' +
-            '따로 선택하지 않으시면 영업일에 전화드립니다.',
+        description: '현재 [ 연락처로 전화받기 ]로 설정되어 있습니다.\n' +
+            '\n' +
+            '채널을 통해 텍스트로 안내받기 원하신다면 수단을 변경해주세요.',
         required: false,
         type: 'drop-down',
         initialValue: Airtable_Select_연락수단[0],
@@ -117,7 +116,7 @@ const etcForm: ApplyFormModelBase =
         {
           fieldName: 'etcEmr',
           title: '기타 전차차트(EMR)',
-          hintText: '기타 전자차트(EMR)를 입력해주세요',
+          hintText: '기타 전자차트를 입력해주세요',
           required: false,
         },
     )
