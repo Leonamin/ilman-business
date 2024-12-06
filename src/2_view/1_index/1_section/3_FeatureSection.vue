@@ -26,7 +26,7 @@ const features: FeatureModel[] = [
   <div class="layout">
     <div class="content">
       <AnimatedElement>
-        <h2 class="text-h2 text-center">아임파인으로<br>일만사업에 참여한다면?</h2>
+        <h2 class="text-h2 text-center">아임파인 솔루션과 함께<br>일만사업에 참여한다면?</h2>
         <div class="mt-64 sm-mt-36"></div>
       </AnimatedElement>
       <AnimatedElement :threshold=0.1>
