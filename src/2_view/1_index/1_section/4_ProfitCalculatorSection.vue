@@ -15,7 +15,7 @@ const onChangeImFine = () => {
 // 가격 설정
 const 가격 = {
   초기평가: 35060,
-  계획수립: 27500,
+  // 계획수립: 27500,
   점검평가료: 27500,
   환자관리료: 11660,
   교육상담료: 15330,
@@ -28,7 +28,7 @@ const 회차_스스로 = {
   // "환자관리료": 4.8,
   // "교육상담료": 6,
   "초기평가": 0.48,
-  "계획수립": 0.6,
+  // "계획수립": 0.6,
   "점검평가료": 0.3,
   "환자관리료": 2.9,
   "교육상담료": 4,
@@ -36,10 +36,17 @@ const 회차_스스로 = {
 
 const 회차_아임파인_사용시 = {
   "초기평가": 1,
-  "계획수립": 2,
+  // "계획수립": 1,
   "점검평가료": 1.6,
   "환자관리료": 9.6,
   "교육상담료": 8,
+}
+
+// key 값 이하 수수료 예 100명 이하까지는 0.85
+const 수수료 = {
+  100: 0.85,
+  300: 0.9,
+  500: 0.95,
 }
 
 // 환자 수와 관련된 변수
@@ -54,7 +61,7 @@ const {calculateProfit, calculateDiff, calculateTotalProfit, formatTotalProfit} 
 
 const 스스로한_경우_수익 = {
   초기평가: calculateProfit(가격["초기평가"], 회차_스스로["초기평가"]),
-  계획수립: calculateProfit(가격["계획수립"], 회차_스스로["계획수립"]),
+  // 계획수립: calculateProfit(가격["계획수립"], 회차_스스로["계획수립"]),
   점검평가료: calculateProfit(가격["점검평가료"], 회차_스스로["점검평가료"]),
   환자관리료: calculateProfit(가격["환자관리료"], 회차_스스로["환자관리료"]),
   교육상담료: calculateProfit(가격["교육상담료"], 회차_스스로["교육상담료"]),
@@ -62,7 +69,7 @@ const 스스로한_경우_수익 = {
 
 const 아임파인_사용한_경우_수익 = {
   초기평가: calculateProfit(가격["초기평가"], 회차_아임파인_사용시["초기평가"]),
-  계획수립: calculateProfit(가격["계획수립"], 회차_아임파인_사용시["계획수립"]),
+  // 계획수립: calculateProfit(가격["계획수립"], 회차_아임파인_사용시["계획수립"]),
   점검평가료: calculateProfit(가격["점검평가료"], 회차_아임파인_사용시["점검평가료"]),
   환자관리료: calculateProfit(가격["환자관리료"], 회차_아임파인_사용시["환자관리료"]),
   교육상담료: calculateProfit(가격["교육상담료"], 회차_아임파인_사용시["교육상담료"]),
@@ -71,7 +78,7 @@ const 아임파인_사용한_경우_수익 = {
 // 아임파인 사용안할 시 손해 목록
 const 손해목록 = {
   초기평가: calculateDiff(스스로한_경우_수익["초기평가"], 아임파인_사용한_경우_수익["초기평가"]),
-  계획수립: calculateDiff(스스로한_경우_수익["계획수립"], 아임파인_사용한_경우_수익["계획수립"]),
+  // 계획수립: calculateDiff(스스로한_경우_수익["계획수립"], 아임파인_사용한_경우_수익["계획수립"]),
   점검평가료: calculateDiff(스스로한_경우_수익["점검평가료"], 아임파인_사용한_경우_수익["점검평가료"]),
   환자관리료: calculateDiff(스스로한_경우_수익["환자관리료"], 아임파인_사용한_경우_수익["환자관리료"]),
   교육상담료: calculateDiff(스스로한_경우_수익["교육상담료"], 아임파인_사용한_경우_수익["교육상담료"]),
@@ -80,7 +87,34 @@ const 손해목록 = {
 
 // 화면에 표시할 값
 
+// 수수료
+type FeeRule = {
+  maxLimit: number | null; // 상한선 (null은 무제한을 의미)
+  rate: number; // 수수료율
+};
+
+const 오백만원 = 5000000;
+const 천만원 = 10000000;
+// 수수료 규칙 리스트
+const feeRules: FeeRule[] = [
+  {maxLimit: 오백만원, rate: 0.15},
+  {maxLimit: 천만원, rate: 0.13},
+  {maxLimit: null, rate: 0.10},
+];
+
+// 주어진 숫자에 해당하는 수수료율을 계산
+function getFeeRate(amount: number): number {
+  for (const rule of feeRules) {
+    if (rule.maxLimit === null || amount <= rule.maxLimit) {
+      console.log(amount + "원 룰:" + rule);
+      return rule.rate;
+    }
+  }
+  throw new Error("No matching fee rule found");
+}
+
 // 수익
+
 
 const 표시되는_수익 = computed(() => {
   if (useImFine.value) {
@@ -93,7 +127,14 @@ const 표시되는_수익 = computed(() => {
 // 총합 계산
 const 총합 = () => {
   if (useImFine.value) {
-    return calculateTotalProfit(아임파인_사용한_경우_수익);
+    const 총수익 = calculateTotalProfit(아임파인_사용한_경우_수익);
+    return computed(() => {
+      const 수수료율 = getFeeRate(총수익.value);
+      const 수수료 = 총수익.value * 수수료율;
+
+      console.log("원금: " + 총수익.value + "수수료율: " + 수수료율 + " 수수료: " + 수수료);
+      return 총수익.value - 수수료;
+    })
   } else {
     return calculateTotalProfit(스스로한_경우_수익);
   }

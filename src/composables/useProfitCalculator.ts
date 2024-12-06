@@ -9,7 +9,7 @@ export const useProfitCalculator = (
         회차: number,
     ): ComputedRef<number> => {
         return computed(() => {
-            const 수익 = 가격 * 회차 * Math.round(환자수.value);
+            const 수익 = 가격 * 회차 * 환자수.value;
             return 수익;
         });
     };
