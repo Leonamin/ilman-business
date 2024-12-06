@@ -65,22 +65,22 @@ const news = ref<NewsModel[]>([
 const resources = ref<FileModel[]>([
   {
     id: 1, name: '20240909요양기관대상 설명회 자료', size: '14.7 MB',
-    link: 'https://ilman-file-storage.s3.ap-northeast-2.amazonaws.com/20240909%E1%84%8B%E1%85%AD%E1%84%8B%E1%85%A3%E1%86%BC%E1%84%80%E1%85%B5%E1%84%80%E1%85%AA%E1%86%AB%E1%84%83%E1%85%A2%E1%84%89%E1%85%A1%E1%86%BC+%E1%84%89%E1%85%A5%E1%86%AF%E1%84%86%E1%85%A7%E1%86%BC%E1%84%92%E1%85%AC+%E1%84%8C%E1%85%A1%E1%84%85%E1%85%AD.pdf',
+    link: '/pdf/20240909요양기관대상 설명회 자료.pdf',
   },
   {
-    id: 2, name: '만성질환 통합관리 수가 안내 ', size: '5.3 MB',
-    link: 'https://ilman-file-storage.s3.ap-northeast-2.amazonaws.com/%E1%84%86%E1%85%A1%E1%86%AB%E1%84%89%E1%85%A5%E1%86%BC%E1%84%8C%E1%85%B5%E1%86%AF%E1%84%92%E1%85%AA%E1%86%AB+%E1%84%90%E1%85%A9%E1%86%BC%E1%84%92%E1%85%A1%E1%86%B8%E1%84%80%E1%85%AA%E1%86%AB%E1%84%85%E1%85%B5+%E1%84%89%E1%85%AE%E1%84%80%E1%85%A1+%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%82%E1%85%A2+.pdf',
+    id: 2, name: '만성질환 통합관리 수가 안내', size: '5.3 MB',
+    link: '/pdf/만성질환 통합관리 수가 안내.pdf',
   },
   {
     id: 3, name: '만성질환통합관리료질의응답', size: '678 KB',
-    link: 'https://ilman-file-storage.s3.ap-northeast-2.amazonaws.com/%E1%84%86%E1%85%A1%E1%86%AB%E1%84%89%E1%85%A5%E1%86%BC%E1%84%8C%E1%85%B5%E1%86%AF%E1%84%92%E1%85%AA%E1%86%AB%E1%84%90%E1%85%A9%E1%86%BC%E1%84%92%E1%85%A1%E1%86%B8%E1%84%80%E1%85%AA%E1%86%AB%E1%84%85%E1%85%B5%E1%84%85%E1%85%AD%E1%84%8C%E1%85%B5%E1%86%AF%E1%84%8B%E1%85%B4%E1%84%8B%E1%85%B3%E1%86%BC%E1%84%83%E1%85%A1%E1%86%B8.pdf'
+    link: '/pdf/만성질환통합관리료질의응답.pdf',
   },
 ]);
 
 // 다운로드 함수
 const downloadResource = (resource: FileModel) => {
   if (resource.link) {
-    window.open(resource.link, '_blank');
+    window.location.href = resource.link;
   }
 };
 
