@@ -57,7 +57,7 @@ onMounted(() => {
     <div class="content">
 
       <h2 class="text-h2 text-center">아임파인의 일만사업 절차</h2>
-      <div class="mt-54 sm-mt-36"/>
+      <div class="mt-64 sm-mt-36"/>
       <div class="process-list" v-if="isMobile">
         <div class="center-column" v-for="(item, index) in process" :key="item.title">
           <ProcessCard :process="item"/>
