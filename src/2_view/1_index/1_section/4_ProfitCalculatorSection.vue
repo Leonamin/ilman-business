@@ -211,6 +211,12 @@ const 손해_표시 = (손해: number): string => {
             />
           </div>
         </div>
+        <p class="mt-16 sm-mt-8 text-caption2 text-medium text-tertiary">
+          <sup>
+            *
+          </sup>
+          수수료를 제외한 원장님의 순매출을 표시합니다.
+        </p>
       </div>
     </div>
   </div>
@@ -252,7 +258,6 @@ const 손해_표시 = (손해: number): string => {
 /* 슬라이더 스타일 */
 
 .slide-container {
-  margin-inline: 36px;
 }
 
 .profit-container {
@@ -261,7 +266,6 @@ const 손해_표시 = (손해: number): string => {
   align-items: stretch;
   border-radius: 24px;
   border: solid 1px var(--color-border-primary);
-  margin: 16px;
   padding: 36px;
   gap: 8px;
 }
@@ -290,7 +294,8 @@ const 손해_표시 = (손해: number): string => {
 
 @media (max-width: 768px) {
   .layout {
-    padding: var(--mobile-section-spacing) 0;
+    padding: var(--mobile-section-spacing) 16px;
+
   }
 }
 </style>
