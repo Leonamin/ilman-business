@@ -95,6 +95,7 @@ const forms: ApplyFormModelBase[] = [
             '따로 선택하지 않으시면 영업일에 전화드립니다.',
         required: false,
         type: 'drop-down',
+        initialValue: Airtable_Select_연락수단[0],
         formObject: {
           options: Airtable_Select_연락수단,
         }
