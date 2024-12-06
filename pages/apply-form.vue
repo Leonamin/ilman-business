@@ -60,7 +60,7 @@ const forms: ApplyFormModelBase[] = [
       {
         fieldName: 'region',
         title: '지역명',
-        hintText: '지역명을 입력해주세요',
+        hintText: '예시) 서울시 강남구',
         required: true,
       },
   ),
