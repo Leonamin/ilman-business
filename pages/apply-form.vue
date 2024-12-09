@@ -263,7 +263,7 @@ const isLoading = ref<boolean>(false);
               :description="forms[3].description || ''"
               :is-important="forms[3].required || false"
               :placeholder="forms[3].hintText"
-              :inputmode="(forms[3] as TextFormModel).formObject.keyboardType"
+              :input-mode="(forms[3] as TextFormModel).formObject.keyboardType"
               v-model="refValue[forms[3].fieldName].value"
           />
           <DropdownField
