@@ -149,7 +149,7 @@ const 손해 = computed(() => {
 });
 
 const badgeColorPreset = computed(() => {
-  return useImFine.value ? 'blue' : 'red';
+  return useImFine.value ? 'red' : 'blue';
 });
 
 const 손해_절댓값 = (손해: number): number => {
