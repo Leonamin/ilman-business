@@ -5,17 +5,18 @@
       @focusout="isActive = false"
   >
     <input
-        v-model="inputValue"
+        v-model="localValue"
         :style="inputStyle"
         :placeholder="hintText"
         class="text-caption2 text-tertiary"
         :type="props.inputMode"
+        :maxlength="props.maxLength"
         :inputmode="props.inputMode"
     />
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref, computed, watch } from "vue";
 
 const props = defineProps({
@@ -62,10 +63,21 @@ const props = defineProps({
     type: String,
     default: "text",
   },
+  // 포맷하는 함수
+  formatter: {
+    type: Function,
+    default: (value: string) => value,
+  },
+  maxLength: {
+    type: Number,
+    default: 100,
+  }
 });
 
 const emit = defineEmits(["update:modelValue"]);
-const inputValue = ref(props.modelValue);
+
+// 로컬 상태 관리
+const localValue = ref(props.modelValue);
 const isActive = ref(false);
 
 const containerStyle = computed(() => ({
@@ -85,20 +97,17 @@ const inputStyle = computed(() => ({
   ...props.textStyle,
 }));
 
-const hintStyle = computed(() => ({
-  ...props.hintTextStyle,
-}));
-
-watch(inputValue, (newValue) => {
-  emit("update:modelValue", newValue);
+// 로컬 값이 변경될 때 포맷팅 적용
+watch(localValue, (newValue) => {
+  const formattedValue = props.formatter(newValue);
+  if (formattedValue !== newValue) {
+    localValue.value = formattedValue; // 포맷팅된 값을 로컬에 반영
+  }
+  emit("update:modelValue", formattedValue); // 부모 컴포넌트에 업데이트
 });
 
+// 부모에서 모델 값 변경 시 로컬 값 업데이트
 watch(() => props.modelValue, (newValue) => {
-  inputValue.value = newValue;
+  localValue.value = props.formatter(newValue);
 });
 </script>
-
-
-
-<style scoped>
-</style>

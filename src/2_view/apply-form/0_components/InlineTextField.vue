@@ -9,6 +9,8 @@ const props = defineProps<{
   isImportant: boolean;
   inputMode?: string
   modelValue: string;
+  formatter?: (value: string) => string;
+  maxLength?: number;
 }>();
 
 const emit = defineEmits(['update:modelValue']);
@@ -36,6 +38,8 @@ const hasDescription = computed(() => props.description.length > 0);
         :hintText="props.placeholder"
         input-style="text-body2"
         :inputMode="props.inputMode"
+        :formatter="props.formatter"
+        :max-length="props.maxLength"
     />
   </div>
 </template>

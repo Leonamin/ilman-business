@@ -36,8 +36,13 @@ export interface DropDownFormModel extends ApplyFormModelBase {
 // ApplyFormModel 유니온 타입
 export type ApplyFormModel = TextFormModel | LongTextFormModel | DropDownFormModel;
 
+
+export type KeyBoardInputMode =  "text" | "tel" | "none" | "email" | "search" | "url" | "numeric" | "decimal" | undefined;
+
 export interface TextFormObject {
-    keyboardType?: string;
+    keyboardType?: KeyBoardInputMode
+    maxLength?: number;
+    formatter?: (value: string) => string;
 }
 
 export interface LongTextFormObject {

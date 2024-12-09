@@ -11,6 +11,7 @@ import DropdownField from "~/src/2_view/apply-form/0_components/DropdownField.vu
 import MultilineTextField from "~/src/2_view/apply-form/0_components/MultilineTextField.vue";
 import {definePageMeta} from "#imports";
 import ASpin from "ant-design-vue/es/spin";
+import {formatPhoneNumber} from "~/src/9_utils/format/numberFormat";
 
 definePageMeta({
   title: '아임파인 일만사업 도입 신청서',
@@ -72,7 +73,9 @@ const forms: ApplyFormModelBase[] = [
         hintText: '연락처를 입력해주세요',
         required: true,
         formObject: {
-         keyboardType: 'tel',
+          keyboardType: 'tel',
+          formatter: formatPhoneNumber,
+          maxLength: 13,
         }
       },
   ),
@@ -264,6 +267,8 @@ const isLoading = ref<boolean>(false);
               :is-important="forms[3].required || false"
               :placeholder="forms[3].hintText"
               :input-mode="(forms[3] as TextFormModel).formObject.keyboardType"
+              :formatter="(forms[3] as TextFormModel).formObject.formatter"
+              :max-length="(forms[3] as TextFormModel).formObject.maxLength"
               v-model="refValue[forms[3].fieldName].value"
           />
           <DropdownField
