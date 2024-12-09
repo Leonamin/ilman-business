@@ -37,11 +37,10 @@ export interface DropDownFormModel extends ApplyFormModelBase {
 export type ApplyFormModel = TextFormModel | LongTextFormModel | DropDownFormModel;
 
 export interface TextFormObject {
-    placeholder: string;
+    keyboardType?: string;
 }
 
 export interface LongTextFormObject {
-    placeholder: string;
 }
 
 export interface DropDownFormObject {
@@ -55,7 +54,6 @@ const defaultApplyFormModel: ApplyFormModel = {
     required: false,
     type: 'text',
     formObject: {
-        placeholder: '',
     },
 };
 
@@ -68,4 +66,11 @@ export function createApplyFormModel<T extends ApplyFormModel>(
         ...defaultForm,
         ...form,
     };
+}
+
+export function createTextFormModel(form: Partial<TextFormModel>): TextFormModel {
+    return createApplyFormModel<TextFormModel>({
+        ...form,
+        type: 'text',
+    });
 }

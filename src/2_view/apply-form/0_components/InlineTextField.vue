@@ -7,6 +7,7 @@ const props = defineProps<{
   description: string;
   placeholder?: string;
   isImportant: boolean;
+  inputMode?: string
   modelValue: string;
 }>();
 
@@ -34,6 +35,7 @@ const hasDescription = computed(() => props.description.length > 0);
         v-model="localValue"
         :hintText="props.placeholder"
         input-style="text-body2"
+        :inputMode="props.inputMode"
     />
   </div>
 </template>

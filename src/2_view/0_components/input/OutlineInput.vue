@@ -9,6 +9,8 @@
         :style="inputStyle"
         :placeholder="hintText"
         class="text-caption2 text-tertiary"
+        :type="props.inputMode"
+        :inputmode="props.inputMode"
     />
   </div>
 </template>
@@ -55,6 +57,10 @@ const props = defineProps({
   maxWidth: {
     type: String,
     default: "none", // 기본값: 제한 없음
+  },
+  inputMode: {
+    type: String,
+    default: "text",
   },
 });
 

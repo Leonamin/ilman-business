@@ -3,7 +3,7 @@ import InlineTextField from "~/src/2_view/apply-form/0_components/InlineTextFiel
 import SolidButton from "~/src/2_view/0_components/button/SolidButton.vue";
 import {
   type ApplyFormModelBase,
-  createApplyFormModel, type DropDownFormModel,
+  createApplyFormModel, createTextFormModel, type DropDownFormModel, type TextFormModel,
 } from "~/src/0_models/ApplyFormModel";
 import {FormService} from "~/src/1_service/AirtableService";
 import {Airtable_Select_EMR, Airtable_Select_연락수단} from "~/src/0_models/types/AirtableType";
@@ -65,12 +65,15 @@ const forms: ApplyFormModelBase[] = [
       },
   ),
 
-  createApplyFormModel(
+  createTextFormModel(
       {
         fieldName: 'phone',
         title: '연락처',
         hintText: '연락처를 입력해주세요',
         required: true,
+        formObject: {
+         keyboardType: 'tel',
+        }
       },
   ),
   createApplyFormModel(
@@ -260,6 +263,7 @@ const isLoading = ref<boolean>(false);
               :description="forms[3].description || ''"
               :is-important="forms[3].required || false"
               :placeholder="forms[3].hintText"
+              :inputmode="(forms[3] as TextFormModel).formObject.keyboardType"
               v-model="refValue[forms[3].fieldName].value"
           />
           <DropdownField
