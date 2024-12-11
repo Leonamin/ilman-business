@@ -4,7 +4,6 @@ import SolidButton from "~/src/2_view/0_components/button/SolidButton.vue";
 const labels: string[] = [
   '기존 진료 그대로',
   '설치 비용 무료',
-  '전 과정 원격, 방문 지원',
   '중도 해지 수수료 0원',
 ]
 
