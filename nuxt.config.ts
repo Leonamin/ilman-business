@@ -49,4 +49,40 @@ export default defineNuxtConfig({
         '@/plugins/Vue3Marquee.client.ts',
     ],
 
+    modules: [
+        '@nuxtjs/sitemap'
+    ],
+    site: {
+        url: 'https://cdcare.imfinedr.com',
+    },
+    sitemap: {
+        hostname: 'https://cdcare.imfinedr.com',
+        gzip: true,
+        routes: [
+            {
+                url: '/',
+                changefreq: 'weekly',
+                priority: 1.0,
+                lastmod: new Date().toISOString()
+            },
+            {
+                url: '/explanation',
+                changefreq: 'weekly',
+                priority: 0.8,
+                lastmod: new Date().toISOString()
+            },
+            {
+                url: '/contact',
+                changefreq: 'weekly',
+                priority: 0.5,
+                lastmod: new Date().toISOString()
+            },
+            {
+                url: '/apply-form',
+                changefreq: 'weekly',
+                priority: 0.8,
+                lastmod: new Date().toISOString()
+            }
+        ]
+    }
 })
