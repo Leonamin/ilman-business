@@ -1,10 +1,13 @@
 import { initializeApp, type FirebaseApp } from "firebase/app";
-import { type Analytics, getAnalytics } from "firebase/analytics";
+import { type Analytics, getAnalytics, logEvent } from "firebase/analytics";
+import { useRouter } from "#app";
 
 let firebaseApp: FirebaseApp | null = null;
 let analyticsInstance: Analytics | null = null;
 
 export const useFirebase = () => {
+    const router = useRouter();
+
     const initializeFirebase = () => {
         if (process.server) {
             return {
@@ -33,6 +36,16 @@ export const useFirebase = () => {
         try {
             firebaseApp = initializeApp(firebaseConfig);
             analyticsInstance = getAnalytics(firebaseApp);
+
+            // 라우터 이벤트 리스너 등록
+            router.afterEach((to) => {
+                if (analyticsInstance) {
+                    logEvent(analyticsInstance, 'page_view', {
+                        page_path: to.path,
+                        page_title: to.name
+                    });
+                }
+            });
             
             return {
                 app: firebaseApp,
