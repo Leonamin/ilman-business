@@ -1,3 +1,8 @@
+<script setup lang="ts">
+const tel: string = '02-6952-3079';
+const telLink: string = `tel:${tel}`;
+</script>
+
 <template>
   <footer class="footer">
     <div class="content text-tertiary">
@@ -7,7 +12,7 @@
           <span class="text-subtitle3 text-bold text-secondary">주식회사 케어스퀘어</span>
         </div>
         <div class="row-start text-line-break">
-          <a class="text-body2 text-semi-bold" href="tel:02-6952-3079">문의하기 02-6952-3078</a>
+          <a class="text-body2 text-semi-bold" :href="telLink">문의하기 {{tel}}</a>
           <div class="spl-24"/>
           <span class="text-body2 text-normal">(평일 오전 10시 ~ 오후 7시)</span>
         </div>
@@ -67,5 +72,3 @@
 }
 
 </style>
-<script setup lang="ts">
-</script>
